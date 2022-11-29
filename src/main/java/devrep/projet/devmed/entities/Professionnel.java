@@ -16,8 +16,11 @@ public class Professionnel extends Utilisateur{
     @Column(name="horaires", nullable = false, length = 500)
     private String mesHoraires; // pattern: JOUR(HH:MM-HH:MM);...
 
-    private String mesCrenauxLibres; // pattern: JJ-MM-AAAA(HH:MM-HH:MM)
-    
+    @Basic
+    @Column(nullable = false)
+    private int duréeRdv;
+    // private String mesCrenauxLibres; // pattern: JJ-MM-AAAA(HH:MM-HH:MM)
+
     @Basic
     @Column(name="tel", nullable=false, length=16)
     private String numTelephone;

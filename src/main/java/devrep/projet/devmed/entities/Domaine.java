@@ -1,11 +1,16 @@
 package devrep.projet.devmed.entities;
 
 public enum Domaine {
-    Genéraliste("Généraliste"),
+    Generaliste("Generaliste"),
     Ophtalmologue("Ophtalmologue"),
-    Pédiatre("Pédiatre");
-
-    // quand on définit les valeurs par nous-même on doit ajouter l'attribut, un constructeur et un getter
+    Pediatre("Pediatre"),
+    Addictologue("Addictologue"),
+    Allergologue("Allergologue"),        
+    Dermatologue("Dermatologue"),
+    Diabetologue("Diabetologue"), 
+    Gynecologue("Gynecologue"), 
+    Hematologue("Hematologue"); 
+    // quand on definit les valeurs par nous-même on doit ajouter l'attribut, un constructeur et un getter
     String code;
     Domaine(String code){
         this.code = code;
