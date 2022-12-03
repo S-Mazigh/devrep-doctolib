@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import devrep.projet.devmed.entities.Etat;
-import devrep.projet.devmed.entities.Patient;
 import devrep.projet.devmed.service.DataService;
 import devrep.projet.devmed.service.SearchService;
 
@@ -54,16 +53,16 @@ public class WebController {
         boolean isDone = dataService.addPatient(allParams);
         if(isDone)
             return "Connexion";
-        state.setBadEmail(true);
+        state.setBadEmail(true); // existe déja
         return "InscriptionUser";
     }
 
-    @PostMapping(path = "/signup/professionel")
+    @PostMapping(path = "/signup/pro")
     public String addPro(Model model, @ModelAttribute("etat") Etat state, @RequestParam Map<String, String> allParams) {
         boolean isDone = dataService.addPro(allParams);
         if(isDone)
             return "Connexion";
-        state.setBadEmail(true);
+        state.setBadEmail(true); // existe déja
         return "InscriptionPro";
     }
 

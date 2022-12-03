@@ -3,45 +3,62 @@
 <html>
     <head>
         <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
+        <link rel="stylesheet" href="../styles/styleLog.css"/>
         <title>Inscription patient</title>
     </head>
     <body>
         <!-- zone de connexion -->
-        <h1>Inscription</h1>
-        
-        <br/><input type="Nom" placeholder="Nom" required/>
-
-        <br/><input type="Prenom" placeholder="Prenom" required/>
-
-        <br/><input type="Email" placeholder="E-mail" required/>
-
-        <br/><input type="Password" placeholder="Password" required/>
-        
-        <br/>
-        <label for="domain-select">Choissisez votre profession</label>
-        <select name="domain" id="domain-select">
-            <option value="">--Please choose an option--</option>
-            <option value="Generaliste">Généraliste</option>
-            <option value="Ophtalmologue">Ophtalmologue</option>
-            <option value="Pediatre">Pédiatre</option>
-            <option value="Addictologue">Addictologue</option>
-            <option value="Allergologue">Allergologue</option>
-            <option value="Dermatologue">Dermatologue</option>
-            <option value="Diabetologue">Diabetologue</option>
-            <option value="Gynecologue">Gynecologue</option>
-            <option value="Hematologue">Hematologue</option>
-        </select>
-
-        <br/><button>
-            S'inscrire !
-        </button>
-
-        <br/><button>
-            S'inscrire en tant que patient !
-        </button>
-
-        <br/><button>
-            Déjà inscrit ? Se connecter !
-        </button>
+        <div class="login-card-container">
+            <div class="login-card">
+                <div class="login-card-header">
+                    <h1>Inscription professionel</h1>
+                </div>
+                <form action="/signup/pro" class="login-card-form" method="post" accept-charset="utf-8">
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">person</span>
+                        <input type="text" placeholder="Nom" id="nomForm"
+                        required>
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">group</span>
+                        <input type="text" placeholder="Prenom" id="prenomForm"
+                        required>
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">mail</span>
+                        <input type="text" placeholder="Email" id="emailForm" 
+                        autofocus required>
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">lock</span>
+                        <input type="password" placeholder="Password" id="passwordForm"
+                        required>
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">medical_services</span>
+                        <select name="domain" id="domain-select">
+                            <option value="">--Profession--</option>
+                            <option value="Generaliste">Généraliste</option>
+                            <option value="Ophtalmologue">Ophtalmologue</option>
+                            <option value="Pediatre">Pédiatre</option>
+                            <option value="Addictologue">Addictologue</option>
+                            <option value="Allergologue">Allergologue</option>
+                            <option value="Dermatologue">Dermatologue</option>
+                            <option value="Diabetologue">Diabetologue</option>
+                            <option value="Gynecologue">Gynecologue</option>
+                            <option value="Hematologue">Hematologue</option>
+                        </select>
+                    </div>
+                    <button type="submit">S'inscrire</button>
+                </form>
+                <div class="login-card-footer">
+                    <button type="submit">S'inscrire en tant que professionnel !</button>
+                </div>
+                <div class="login-card-footer">
+                    Déjà inscrit ? <a href="#">Se connecter !</a>
+                </div>
+            </div>
+        </div>
     </body>
 </html> 

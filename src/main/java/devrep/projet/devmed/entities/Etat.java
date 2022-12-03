@@ -11,7 +11,7 @@ public class Etat {
         this.badEmail = false;
         this.connected = false;
         this.wrongPass = false;
-        this.who = new Patient();
+        this.who = new Utilisateur();
         this.who.setNom("Guest");
         this.isPro = false;
     }

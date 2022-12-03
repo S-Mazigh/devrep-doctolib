@@ -6,23 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import devrep.projet.devmed.entities.Professionnel;
-import devrep.projet.devmed.repository.ProfessionnelRepository;
+import devrep.projet.devmed.entities.Utilisateur;
+import devrep.projet.devmed.repository.UtilisateurRepository;
 
 /* utilise partout le transactional vu qu'il est desactivé dans DevmedApplication */
 @Service
 public class SearchService {
 
     @Autowired
-    ProfessionnelRepository proRepo;
+    UtilisateurRepository proRepo;
 
     @Transactional(readOnly = true)
-    public List<Professionnel> getProByName(String fullname, String where) {
+    public List<Utilisateur> getProByName(String fullname, String where) {
         // string split needed
         String[] fullName = fullname.split(" ");
         String nom = fullName[1];
         String prenom = fullName[0];
-        List<Professionnel> toReturn = null;
+        List<Utilisateur> toReturn = null;
         // Faire attention si l'utilisateur a inverser le nom et prénom ou s'il a donné
         // qu'un nom ou prénom
         if (where.isBlank()) {
@@ -57,7 +57,7 @@ public class SearchService {
     }
 
     @Transactional(readOnly = true)
-    public List<Professionnel> getProByDomaine(String domaine, String where) {
+    public List<Utilisateur> getProByDomaine(String domaine, String where) {
         if (where.isBlank())
             return proRepo.findByDomaine(domaine);
         else {

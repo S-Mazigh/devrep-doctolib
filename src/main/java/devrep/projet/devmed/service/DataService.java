@@ -9,22 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import devrep.projet.devmed.entities.Domaine;
 import devrep.projet.devmed.entities.Etat;
-import devrep.projet.devmed.entities.Patient;
-import devrep.projet.devmed.entities.Professionnel;
 import devrep.projet.devmed.entities.Utilisateur;
-import devrep.projet.devmed.repository.PatientRepository;
-import devrep.projet.devmed.repository.ProfessionnelRepository;
+import devrep.projet.devmed.repository.UtilisateurRepository;
 
 /* utilise partout le transactional vu qu'il est desactivé dans DevmedApplication */
 @Service
 public class DataService {
 
     @Autowired
-    private ProfessionnelRepository proBD;
-
-    @Autowired
-    private PatientRepository patientBD;
+    private UtilisateurRepository UtilisateurBD;
 
     private String encrypt(String toEncrypt) {
         String generatedPassword = null;
@@ -41,38 +36,41 @@ public class DataService {
 
     @Transactional
     public boolean addPatient(Map<String, String> allParams) {
-        Patient toAdd;
+        Utilisateur toAdd;
         // check if email is unique
-        toAdd = patientBD.findByEmail(allParams.get("Email"));
+        toAdd = UtilisateurBD.findByEmail(allParams.get("Email"));
         if (toAdd != null) {// already exists
             return false;
         }
-        toAdd = new Patient();
+        toAdd = new Utilisateur();
         toAdd.setEmail(allParams.get("Email"));
         toAdd.setMotDePasse(encrypt(allParams.get("Password")));
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
+        toAdd.setAuthority("patient");
         // appel à la bd
-        patientBD.save(toAdd);
+        UtilisateurBD.save(toAdd);
         return true;
     }
 
     @Transactional
     public boolean addPro(Map<String, String> allParams) {
-        Professionnel toAdd;
+        Utilisateur toAdd;
         // check if email is unique
-        toAdd = proBD.findByEmail(allParams.get("Email"));
+        toAdd = UtilisateurBD.findByEmail(allParams.get("Email"));
         if (toAdd != null) {// already exists
             return false;
         }
-        toAdd = new Professionnel();
+        toAdd = new Utilisateur();
         toAdd.setEmail(allParams.get("Email"));
         toAdd.setMotDePasse(encrypt(allParams.get("Password")));
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
+        toAdd.setMonDomaine(Domaine.valueOf(allParams.get("domain")));
+        toAdd.setAuthority("pro");
         // ajout des rendez vous ...
         // appel à la bd
-        proBD.save(toAdd);
+        UtilisateurBD.save(toAdd);
         return true;
     }
 
@@ -81,7 +79,7 @@ public class DataService {
         Etat newState = new Etat(); // init to all false and Guest.
         Utilisateur user;
         if (isPro.equals("pro")) {
-            user = proBD.findByEmail(email);
+            user = UtilisateurBD.findByEmail(email);
             if (user == null) {
                 newState.setBadEmail(true);
                 return newState;
@@ -97,7 +95,7 @@ public class DataService {
             newState.setWho(user);
             return newState;
         } else { // patient
-            user = patientBD.findByEmail(email);
+            user = UtilisateurBD.findByEmail(email);
             if (user == null) {
                 newState.setBadEmail(true);
                 return newState;
@@ -125,7 +123,7 @@ public class DataService {
             // mettre à jour les truc exclusifs aux pros
             // tel, rdv ...
             // ajout de la nouvelle version
-            proBD.save((Professionnel) user);
+            UtilisateurBD.save((Utilisateur) user);
             return;
         }
         // ajout de la nouvelle version
@@ -134,6 +132,6 @@ public class DataService {
          * un objet avec un query qu'on le maj et on resave il remarquera que la
          * primary key n'a pas changé du coup il update
          */
-        patientBD.save((Patient) user);
+        UtilisateurBD.save((Utilisateur) user);
     }
 }

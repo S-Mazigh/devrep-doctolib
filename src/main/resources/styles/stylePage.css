@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+
+li a {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  height: auto;
+}
+
+li .form-item {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+  align-items: center;
+}
+
+.form-item input[type=text] {
+  font-family: 'Poppins', sans-serif;
+  font-size: 100%;
+  font-weight: 500;
+  background-color: #333;
+  color: white;
+  outline: none;
+  max-width: 200px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.form-item input[type=text]::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.form-item input[type=text]:hover::placeholder {
+  opacity: 0.6;
+}
+
+.form-item input[type=text]:focus::placeholder {
+  opacity: 0.6;
+}
+
+.item-icon {
+  padding-right: .5rem;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
