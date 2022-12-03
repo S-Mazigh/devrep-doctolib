@@ -19,7 +19,7 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long>{
     List<Utilisateur> findByNomAndPrenomAndAdresseContaining(String nom, String prenom, String adresse);
     List<Utilisateur> findByPrenomAndAdresseContaining(String prenom, String adresse);
     List<Utilisateur> findByNomAndAdresseContaining(String nom,String adresse);
-    List<Utilisateur> findAdresseContaining(String adresse);
+    List<Utilisateur> findByAdresseContaining(String adresse);
 
     // with domaine
     List<Utilisateur> findByDomaine(String domaine);

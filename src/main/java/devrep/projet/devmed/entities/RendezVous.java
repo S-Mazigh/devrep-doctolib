@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -19,8 +18,8 @@ public class RendezVous {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
-    @OneToOne
-    private Long patientId;
+    @ManyToOne
+    private Utilisateur patient;
 
     @ManyToOne
     private Utilisateur pro;
@@ -38,12 +37,12 @@ public class RendezVous {
         Id = id;
     }
 
-    public Long getPatientId() {
-        return patientId;
+    public Utilisateur getPatient() {
+        return patient;
     }
 
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
+    public void setPatientId(Utilisateur patient) {
+        this.patient = patient;
     }
 
     public Utilisateur getPro() {

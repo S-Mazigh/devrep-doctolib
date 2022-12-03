@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.boot.model.TruthValue;
+
 @Entity
 // @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class Utilisateur {
@@ -31,39 +33,40 @@ public class Utilisateur {
     @Column(name="authority", length=10, nullable=false)
     private String authority;
 
+
     @Basic
-    @Column(name="motdepasse", length=100, nullable = false)
+    @Column(name="motdepasse", length=64, nullable = false)
     private String motDePasse; // encodé et taille mini ?
 
 
     // Pour Pro
     // @Enumerated(EnumType.STRING) // pour garder le nom et non la valeur dans la base de données
     // @Enumerated(EnumType.ORDINAL) // pour garder la valeur et non le nom dans la base de données
-    private Domaine monDomaine;
+    private Domaine domaine;
 
     @Basic
-    @Column(name="horaires", nullable = false, length = 500)
+    @Column(name="horaires", nullable = true, length = 500)
     private String mesHoraires; // pattern: JOUR(HH:MM-HH:MM);...
 
     @Basic
-    @Column(name="dureeRdv", nullable = false)
+    @Column(name="dureeRdv", nullable = true)
     private int duréeRdv;
     // private String mesCrenauxLibres; // pattern: JJ-MM-AAAA(HH:MM-HH:MM)
 
     @Basic
-    @Column(name="tel", nullable=false, length=16)
+    @Column(name="tel", nullable=true, length=16)
     private String numTelephone;
 
     @Basic
-    @Column(name="adresse", nullable=false)
+    @Column(name="adresse", nullable=true)
     private String adresse;
 
-    public Domaine getMonDomaine() {
-        return monDomaine;
+    public Domaine getDomaine() {
+        return domaine;
     }
 
-    public void setMonDomaine(Domaine monDomaine) {
-        this.monDomaine = monDomaine;
+    public void setDomaine(Domaine domaine) {
+        this.domaine = domaine;
     }
 
     public String getNom() {

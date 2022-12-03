@@ -14,7 +14,7 @@ import devrep.projet.devmed.repository.UtilisateurRepository;
 public class SearchService {
 
     @Autowired
-    UtilisateurRepository proRepo;
+    UtilisateurRepository userRepo;
 
     @Transactional(readOnly = true)
     public List<Utilisateur> getProByName(String fullname, String where) {
@@ -27,41 +27,41 @@ public class SearchService {
         // qu'un nom ou prénom
         if (where.isBlank()) {
             if (!nom.isBlank() && !prenom.isBlank()){
-                toReturn = proRepo.findByNomAndPrenom(prenom, nom);
-                toReturn.addAll(proRepo.findByNomAndPrenom(nom, prenom));
+                toReturn = userRepo.findByNomAndPrenom(prenom, nom);
+                toReturn.addAll(userRepo.findByNomAndPrenom(nom, prenom));
                 return toReturn;
             }
             if (!nom.isBlank()) {
-                toReturn = proRepo.findByNom(prenom);
-                toReturn.addAll(proRepo.findByPrenom(prenom));
+                toReturn = userRepo.findByNom(prenom);
+                toReturn.addAll(userRepo.findByPrenom(prenom));
                 return toReturn;
             }
             else // if all blank
-                return proRepo.findAll();
+                return userRepo.findAll();
         } else {
             if (!nom.isBlank() && !prenom.isBlank()) {
-                toReturn = proRepo.findByNomAndPrenomAndAdresseContaining(prenom, nom, where);
-                toReturn.addAll(proRepo.findByNomAndPrenomAndAdresseContaining(nom, prenom, where));
+                toReturn = userRepo.findByNomAndPrenomAndAdresseContaining(prenom, nom, where);
+                toReturn.addAll(userRepo.findByNomAndPrenomAndAdresseContaining(nom, prenom, where));
                 return toReturn;
             }
                 
             if (!nom.isBlank()) {
-                toReturn = proRepo.findByNomAndAdresseContaining(prenom, where);
-                toReturn.addAll(proRepo.findByPrenomAndAdresseContaining(prenom, where));
+                toReturn = userRepo.findByNomAndAdresseContaining(prenom, where);
+                toReturn.addAll(userRepo.findByPrenomAndAdresseContaining(prenom, where));
                 return toReturn;
             }
                 
             else // if nom et prenom are blank
-                return proRepo.findAdresseContaining(where);
+                return userRepo.findByAdresseContaining(where);
         }
     }
 
     @Transactional(readOnly = true)
     public List<Utilisateur> getProByDomaine(String domaine, String where) {
         if (where.isBlank())
-            return proRepo.findByDomaine(domaine);
+            return userRepo.findByDomaine(domaine);
         else {
-            return proRepo.findByDomaineAndAdresseContaining(domaine, where);
+            return userRepo.findByDomaineAndAdresseContaining(domaine, where);
         }
     }
 }

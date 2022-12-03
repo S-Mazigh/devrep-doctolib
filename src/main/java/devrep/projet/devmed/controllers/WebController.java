@@ -37,6 +37,27 @@ public class WebController {
         return state;
     }
 
+    @GetMapping(path = "/login")
+    public String getLogin() {
+        return "Connexion";
+    }
+
+    @GetMapping(path = "/signup/pro")
+    public String getSignUpPro() {
+        return "InscriptionPro";
+    }
+
+    @GetMapping(path = "/signup/patient")
+    public String getSignUpPatient() {
+        System.out.println("ON PASSE");
+        return "InscriptionUser";
+    }
+
+    @GetMapping(path = "/error")
+    public String getError() {
+        return "InscriptionUser";
+    }
+
     // RequestMappings
     @GetMapping(path = "/home/search")
     public String getSearchPro(Model model, @RequestParam("searchField") String searchField,
@@ -50,6 +71,7 @@ public class WebController {
     @PostMapping(path = "/signup/patient")
     public String addPatient(Model model, @ModelAttribute("etat") Etat state,
             @RequestParam Map<String, String> allParams) {
+        System.out.println("ON PASSE");
         boolean isDone = dataService.addPatient(allParams);
         if(isDone)
             return "Connexion";
@@ -66,6 +88,7 @@ public class WebController {
         return "InscriptionPro";
     }
 
+    /*
     @PostMapping(path = "/login")
     public String loginPro(Model model, @ModelAttribute("etat") Etat state, @RequestParam("Email") String email,
             @RequestParam("Password") String mdp, @RequestParam("pro") String isPro) {
@@ -76,6 +99,7 @@ public class WebController {
         else
             return "Home"; 
     }
+    */
 
     @PostMapping(path = "/profile") // à voir si doit séparer patient et pro
     public String modifyProfile(Model model, @ModelAttribute("etat") Etat state, @RequestParam Map<String, String> allParams) {

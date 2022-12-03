@@ -15,20 +15,20 @@
                 <div class="login-card-header">
                     <h1>Connexion</h1>
                 </div>
-                <form class="login-card-form" method="post" accept-charset="utf-8">
+                <form class="login-card-form" method="post" accept-charset="utf-8" action="login">
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">mail</span>
-                        <input type="text" placeholder="Enter Email" id="emailForm" 
+                        <input name="Email" type="text" placeholder="Enter Email" id="emailForm" 
                         autofocus required>
                     </div>
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">lock</span>
-                        <input type="password" placeholder="Enter Password" id="passwordForm"
+                        <input name="Password" type="password" placeholder="Enter Password" id="passwordForm"
                         required>
                     </div>
                     <div class="form-item-other">
                         <div class="checkbox">
-                            <input type="checkbox" id="pro" checked>
+                            <input name="Role" type="checkbox" id="pro">
                             <label for="pro">Vous êtes un professionel</label>
                         </div>
                     </div>

@@ -1,8 +1,5 @@
 package devrep.projet.devmed.service;
 
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +10,7 @@ import devrep.projet.devmed.entities.Domaine;
 import devrep.projet.devmed.entities.Etat;
 import devrep.projet.devmed.entities.Utilisateur;
 import devrep.projet.devmed.repository.UtilisateurRepository;
+import devrep.projet.devmed.security.ApplicationSecurityConfiguration;
 
 /* utilise partout le transactional vu qu'il est desactivé dans DevmedApplication */
 @Service
@@ -21,6 +19,10 @@ public class DataService {
     @Autowired
     private UtilisateurRepository UtilisateurBD;
 
+    @Autowired
+    private ApplicationSecurityConfiguration secuConfig;
+
+    /*
     private String encrypt(String toEncrypt) {
         String generatedPassword = null;
         try {
@@ -33,6 +35,7 @@ public class DataService {
         }
         return generatedPassword;
     }
+    */
 
     @Transactional
     public boolean addPatient(Map<String, String> allParams) {
@@ -44,7 +47,7 @@ public class DataService {
         }
         toAdd = new Utilisateur();
         toAdd.setEmail(allParams.get("Email"));
-        toAdd.setMotDePasse(encrypt(allParams.get("Password")));
+        toAdd.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
         toAdd.setAuthority("patient");
@@ -63,10 +66,10 @@ public class DataService {
         }
         toAdd = new Utilisateur();
         toAdd.setEmail(allParams.get("Email"));
-        toAdd.setMotDePasse(encrypt(allParams.get("Password")));
+        toAdd.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
-        toAdd.setMonDomaine(Domaine.valueOf(allParams.get("domain")));
+        toAdd.setDomaine(Domaine.valueOf(allParams.get("domain")));
         toAdd.setAuthority("pro");
         // ajout des rendez vous ...
         // appel à la bd
@@ -74,6 +77,7 @@ public class DataService {
         return true;
     }
 
+    /*
     @Transactional
     public Etat loginUser(String email, String password, String isPro) {
         Etat newState = new Etat(); // init to all false and Guest.
@@ -111,12 +115,13 @@ public class DataService {
             return newState;
         }
     }
+    */
 
     @Transactional
     public void modifyProfile(Etat state, Map<String, String> allParams) {
         Utilisateur user = state.getWho();
         user.setEmail(allParams.get("Email"));
-        user.setMotDePasse(encrypt(allParams.get("Password")));
+        user.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
         user.setNom(allParams.get("Nom"));
         user.setPrenom(allParams.get("Prenom"));
         if (state.isPro()) {
