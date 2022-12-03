@@ -6,12 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public abstract class Utilisateur {
+// @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class Utilisateur {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -29,8 +28,43 @@ public abstract class Utilisateur {
     private String email; // a tester avec un regex ?
 
     @Basic
+    @Column(name="authority", length=10, nullable=false)
+    private String authority;
+
+    @Basic
     @Column(name="motdepasse", length=100, nullable = false)
     private String motDePasse; // encodé et taille mini ?
+
+
+    // Pour Pro
+    // @Enumerated(EnumType.STRING) // pour garder le nom et non la valeur dans la base de données
+    // @Enumerated(EnumType.ORDINAL) // pour garder la valeur et non le nom dans la base de données
+    private Domaine monDomaine;
+
+    @Basic
+    @Column(name="horaires", nullable = false, length = 500)
+    private String mesHoraires; // pattern: JOUR(HH:MM-HH:MM);...
+
+    @Basic
+    @Column(name="dureeRdv", nullable = false)
+    private int duréeRdv;
+    // private String mesCrenauxLibres; // pattern: JJ-MM-AAAA(HH:MM-HH:MM)
+
+    @Basic
+    @Column(name="tel", nullable=false, length=16)
+    private String numTelephone;
+
+    @Basic
+    @Column(name="adresse", nullable=false)
+    private String adresse;
+
+    public Domaine getMonDomaine() {
+        return monDomaine;
+    }
+
+    public void setMonDomaine(Domaine monDomaine) {
+        this.monDomaine = monDomaine;
+    }
 
     public String getNom() {
         return nom;
@@ -55,6 +89,46 @@ public abstract class Utilisateur {
     }
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
+    }
+    public String getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
+
+    // Pour les pro
+    public String getMesHoraires() {
+        return mesHoraires;
+    }
+
+    public void setMesHoraires(String mesHoraires) {
+        this.mesHoraires = mesHoraires;
+    }
+
+    public int getDuréeRdv() {
+        return duréeRdv;
+    }
+
+    public void setDuréeRdv(int duréeRdv) {
+        this.duréeRdv = duréeRdv;
+    }
+
+    public String getNumTelephone() {
+        return numTelephone;
+    }
+
+    public void setNumTelephone(String numTelephone) {
+        this.numTelephone = numTelephone;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
     
 }

@@ -23,7 +23,7 @@ public class RendezVous {
     private Long patientId;
 
     @ManyToOne
-    private Professionnel pro;
+    private Utilisateur pro;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date daterdv;
@@ -46,11 +46,11 @@ public class RendezVous {
         this.patientId = patientId;
     }
 
-    public Professionnel getPro() {
+    public Utilisateur getPro() {
         return pro;
     }
 
-    public void setPro(Professionnel pro) {
+    public void setPro(Utilisateur pro) {
         this.pro = pro;
     }
 
