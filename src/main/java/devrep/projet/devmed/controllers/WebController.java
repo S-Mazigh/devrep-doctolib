@@ -2,7 +2,12 @@ package devrep.projet.devmed.controllers;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.WebAttributes;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +47,21 @@ public class WebController {
         return "Connexion";
     }
 
+    @GetMapping(path = "/login-error")
+    public String getError(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession(false);
+        String errorMessage = null;
+        if (session != null) {
+            AuthenticationException ex = (AuthenticationException) session
+                    .getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
+            if (ex != null) {
+                errorMessage = ex.getMessage();
+            }
+        }
+        model.addAttribute("errorMessage", errorMessage);
+        return "Connexion";
+    }
+
     @GetMapping(path = "/signup/pro")
     public String getSignUpPro() {
         return "InscriptionPro";
@@ -49,13 +69,13 @@ public class WebController {
 
     @GetMapping(path = "/signup/patient")
     public String getSignUpPatient() {
-        System.out.println("ON PASSE");
+        // System.out.println("ON PASSE");
         return "InscriptionUser";
     }
 
-    @GetMapping(path = "/error")
-    public String getError() {
-        return "InscriptionUser";
+    @GetMapping(path = "/home")
+    public String getHome() {
+        return "Navbar";
     }
 
     // RequestMappings
@@ -71,38 +91,41 @@ public class WebController {
     @PostMapping(path = "/signup/patient")
     public String addPatient(Model model, @ModelAttribute("etat") Etat state,
             @RequestParam Map<String, String> allParams) {
-        System.out.println("ON PASSE");
+        // System.out.println("ON PASSE");
         boolean isDone = dataService.addPatient(allParams);
-        if(isDone)
-            return "Connexion";
+        if (isDone)
+            return "redirect:/login"; // sans redirect il continuera sur le meme path (i.e. /signup/login) ce qui veut rien dire.
         state.setBadEmail(true); // existe déja
-        return "InscriptionUser";
+        return "redirect:/signup/patient";
     }
 
     @PostMapping(path = "/signup/pro")
     public String addPro(Model model, @ModelAttribute("etat") Etat state, @RequestParam Map<String, String> allParams) {
         boolean isDone = dataService.addPro(allParams);
-        if(isDone)
-            return "Connexion";
+        if (isDone)
+            return "redirect:/login";
         state.setBadEmail(true); // existe déja
-        return "InscriptionPro";
+        return "redirect:/signup/pro";
     }
 
     /*
-    @PostMapping(path = "/login")
-    public String loginPro(Model model, @ModelAttribute("etat") Etat state, @RequestParam("Email") String email,
-            @RequestParam("Password") String mdp, @RequestParam("pro") String isPro) {
-        Etat newState = dataService.loginUser(email, mdp, isPro);
-        state = newState;
-        if(!state.isConnected() || state.isWrongPass() || state.isBadEmail())
-            return "Connexion";
-        else
-            return "Home"; 
-    }
-    */
+     * @PostMapping(path = "/login")
+     * public String loginPro(Model model, @ModelAttribute("etat") Etat
+     * state, @RequestParam("Email") String email,
+     * 
+     * @RequestParam("Password") String mdp, @RequestParam("pro") String isPro) {
+     * Etat newState = dataService.loginUser(email, mdp, isPro);
+     * state = newState;
+     * if(!state.isConnected() || state.isWrongPass() || state.isBadEmail())
+     * return "Connexion";
+     * else
+     * return "Home";
+     * }
+     */
 
     @PostMapping(path = "/profile") // à voir si doit séparer patient et pro
-    public String modifyProfile(Model model, @ModelAttribute("etat") Etat state, @RequestParam Map<String, String> allParams) {
+    public String modifyProfile(Model model, @ModelAttribute("etat") Etat state,
+            @RequestParam Map<String, String> allParams) {
         dataService.modifyProfile(state, allParams);
         return "Profile";
     }

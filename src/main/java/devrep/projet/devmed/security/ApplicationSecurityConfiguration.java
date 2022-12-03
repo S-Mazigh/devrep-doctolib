@@ -39,7 +39,14 @@ public class ApplicationSecurityConfiguration {
      
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().permitAll();
+        http.authorizeRequests().antMatchers("/", "/home/**", "/js/**", "/css/**","/signup/**").permitAll()
+                                .antMatchers("/profile", "/profile/modify", "/getAppointment").authenticated()
+                                .antMatchers("/profile/modify/**").hasAuthority("PRO");
+        http.formLogin().usernameParameter("Email").passwordParameter("Password")
+            .loginPage("/login").permitAll()
+            .defaultSuccessUrl("/home")
+            .failureUrl("/login-error")
+            .and().logout().permitAll();
         http.cors().and().csrf().disable();
         /*
         http.authorizeRequests().anyRequest().permitAll()

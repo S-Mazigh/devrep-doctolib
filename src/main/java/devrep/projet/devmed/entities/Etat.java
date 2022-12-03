@@ -13,6 +13,7 @@ public class Etat {
         this.wrongPass = false;
         this.who = new Utilisateur();
         this.who.setNom("Guest");
+        this.who.setAuthority("GUEST");
         this.isPro = false;
     }
     public Etat(Etat otherState) {

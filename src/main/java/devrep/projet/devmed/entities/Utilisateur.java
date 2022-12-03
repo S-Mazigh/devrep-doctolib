@@ -7,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.boot.model.TruthValue;
-
 @Entity
 // @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class Utilisateur {
@@ -31,7 +29,7 @@ public class Utilisateur {
 
     @Basic
     @Column(name="authority", length=10, nullable=false)
-    private String authority;
+    private String authority; // GUEST , PATIENT, PRO
 
 
     @Basic

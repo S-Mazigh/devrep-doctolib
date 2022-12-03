@@ -50,7 +50,7 @@ public class DataService {
         toAdd.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
-        toAdd.setAuthority("patient");
+        toAdd.setAuthority("PATIENT");
         // appel à la bd
         UtilisateurBD.save(toAdd);
         return true;
@@ -70,7 +70,7 @@ public class DataService {
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
         toAdd.setDomaine(Domaine.valueOf(allParams.get("domain")));
-        toAdd.setAuthority("pro");
+        toAdd.setAuthority("PRO");
         // ajout des rendez vous ...
         // appel à la bd
         UtilisateurBD.save(toAdd);
@@ -128,7 +128,7 @@ public class DataService {
             // mettre à jour les truc exclusifs aux pros
             // tel, rdv ...
             // ajout de la nouvelle version
-            UtilisateurBD.save((Utilisateur) user);
+            UtilisateurBD.save(user);
             return;
         }
         // ajout de la nouvelle version
