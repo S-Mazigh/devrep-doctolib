@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import devrep.projet.devmed.entities.Utilisateur;
+import devrep.projet.devmed.repository.UtilisateurRepository;
 
 public class UserDetailsServiceImpl implements UserDetailsService {
 
@@ -13,7 +14,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) 
         throws UsernameNotFoundException {
-        Utilisateur user = userRepository.findByEmail();
+        Utilisateur user = userRepository.findByEmail(email);
         if (user == null) {
             throw new UsernameNotFoundException(email);
         }

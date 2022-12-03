@@ -1,8 +1,10 @@
 package devrep.projet.devmed.security;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import devrep.projet.devmed.entities.Utilisateur;
@@ -17,7 +19,8 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return user.getRole();
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getAuthority());
+        return Arrays.asList(authority);
     }
 
     @Override
