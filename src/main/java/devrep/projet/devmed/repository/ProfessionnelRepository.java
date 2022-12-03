@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import devrep.projet.devmed.entities.Professionnel;
 
-public interface ProfessionnelRepository extends JpaRepository<Professionnel, Long>{
+public interface ProfessionnelRepository extends JpaRepository<Professionnel, Long> {
     // Unique professionnel
     Professionnel findByEmail(String email);
 
