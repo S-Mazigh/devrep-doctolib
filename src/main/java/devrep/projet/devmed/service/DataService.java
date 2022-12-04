@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import devrep.projet.devmed.entities.Domaine;
 import devrep.projet.devmed.entities.Etat;
 import devrep.projet.devmed.entities.Utilisateur;
 import devrep.projet.devmed.repository.UtilisateurRepository;
@@ -69,8 +68,7 @@ public class DataService {
         toAdd.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
-        System.out.println(allParams);
-        toAdd.setDomaine(Domaine.valueOf("Generaliste"));//allParams.get("domain")));
+        toAdd.setDomaine(allParams.get("domaine"));//allParams.get("domain")));
         toAdd.setAuthority("PRO");
         // ajout des rendez vous ...
         // appel à la bd

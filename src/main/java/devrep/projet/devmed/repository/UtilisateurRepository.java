@@ -11,15 +11,15 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long>{
     Utilisateur findByEmail(String email);
 
     // Lists
-    List<Utilisateur> findByNomAndPrenom(String nom, String prenom);
-    List<Utilisateur> findByNom(String nom);
-    List<Utilisateur> findByPrenom(String prenom);
+    List<Utilisateur> findByNomAndPrenomAndAuthority(String nom, String prenom, String authority);
+    List<Utilisateur> findByNomAndAuthority(String nom, String authority);
+    List<Utilisateur> findByPrenomAndAuthority(String prenom, String authority);
 
     // with address
-    List<Utilisateur> findByNomAndPrenomAndAdresseContaining(String nom, String prenom, String adresse);
-    List<Utilisateur> findByPrenomAndAdresseContaining(String prenom, String adresse);
-    List<Utilisateur> findByNomAndAdresseContaining(String nom,String adresse);
-    List<Utilisateur> findByAdresseContaining(String adresse);
+    List<Utilisateur> findByNomAndPrenomAndAuthorityAndAdresseContaining(String nom, String prenom, String authority, String adresse);
+    List<Utilisateur> findByPrenomAndAuthorityAndAdresseContaining(String prenom, String authority, String adresse);
+    List<Utilisateur> findByNomAndAuthorityAndAdresseContaining(String nom, String authority, String adresse);
+    List<Utilisateur> findByAuthorityAndAdresseContaining(String authority, String adresse);
 
     // with domaine
     List<Utilisateur> findByDomaine(String domaine);

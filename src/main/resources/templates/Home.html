@@ -28,21 +28,13 @@
                 </a>
             </li>
             <li>
-                <div th:if="${!etat?.connected || !etat?.isPro}">
-                    <a style="float: right" href="/signup/pro">
-                        <span class="item-icon material-symbols-rounded"> verified </span>
-                        <span>Vous êtes un professionnel?</span>
-                    </a>
-                </div>
-            </li>
-            <li>
                 <div th:switch="${etat?.connected}">
                     <span th:case="${false}">
                     </span>
                     <div th:case="${true}">
                         <a style="float: right" href="/logout-all">
                             <span class="item-icon material-symbols-rounded"> logout </span>
-                            <span>Vous deconnecter</span>
+                            <span>Vous déconnecter</span>
                         </a>
                         <a style="float: right" href="/profile">
                             <span class="item-icon material-symbols-rounded">
@@ -51,6 +43,14 @@
                             <span>Votre profil</span>
                         </a>
                     </div>
+            </li>
+            <li>
+                <div th:if="${!etat?.connected || !etat?.isPro}">
+                    <a style="float: right" href="/signup/pro">
+                        <span class="item-icon material-symbols-rounded"> verified </span>
+                        <span>Vous êtes un professionnel?</span>
+                    </a>
+                </div>
             </li>
             <li>
                 <span th:if="${etat?.connected && etat?.isPro}" th:inline="text">
@@ -74,14 +74,35 @@
             <h1>Trouvez un rendez-vous avec un professionnel !</h1>
         </div>
         <div class="formSearchCont">
-            <form class="search-card-form" method="post" accept-charset="utf-8">
+            <form class="search-card-form" action="/home/search" method="post" accept-charset="utf-8">
                 <div class="form-item">
                     <span class="item-icon material-symbols-rounded">search</span>
-                    <input type="text" placeholder="Professionnel, Spécialité" id="searchForm" autofocus required />
+                    <input type="text" name="searchWords" placeholder="Professionnel, Spécialité" id="searchForm"
+                        autofocus required />
                     <span class="item-icon material-symbols-rounded">where_to_vote</span>
-                    <input type="text" placeholder="Où ?" id="searchForm" autofocus required />
+                    <input type="text" name="searchWhere" placeholder="Où ?" id="searchForm" autofocus />
+                    <input type="submit" hidden />
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="searchResults">
+        <div id="byNom" th:each="r: ${listePro}">
+            <div class="oneResult" th:object="${r}">
+                <span style="font-weight:bold" th:text="'Dr '+*{nom}" />
+                <span th:text="*{prenom}" />
+                <br/>
+                <span style="font-weight:bold" th:text="*{domaine}" />
+                <br/>
+                <span th:text="*{adresse}" />
+            </div>
+        </div>
+        <div id="byDomaine" th:each="r: ${listeProDomaine}">
+            <div th:object="${r}">
+                <span style="font-weight:bold" th:text="'Dr '+*{nom}" /> <span th:text="*{prenom}" />
+                <span th:text="*{domaine}" />
+                <span th:text="*{adresse}" />
+            </div>
         </div>
     </div>
 </body>

@@ -51,14 +51,14 @@ public class ApplicationSecurityConfiguration {
         http.authorizeRequests().antMatchers("/", "/home/**", "/js/**", "/css/**","/signup/**").permitAll()
                                 .antMatchers("/profile", "/profile/modify", "/getAppointment").authenticated()
                                 .antMatchers("/profile/modify/**").hasAuthority("PRO");
-        http.formLogin().usernameParameter("Email").passwordParameter("Password")
+        http.formLogin().usernameParameter("Email").passwordParameter("Password") // c'est name des input du form
             .loginPage("/login").permitAll()
             .successHandler(new AuthenticationSuccessHandler() {
                 @Override
                 public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
                     MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
                     Etat state = (Etat) request.getSession(false).getAttribute("etat");
-                    if(state!=null)
+                    if(state!=null) // sinon NullPointerException possible
                     {
                         state.setConnected(true);
                         state.setBadEmail(false);
@@ -67,11 +67,11 @@ public class ApplicationSecurityConfiguration {
                         state.setPro(state.getWho().getAuthority().equals("PRO"));
                         request.getSession().setAttribute("etat", state);
                     }
-                    System.out.println("Authentication: "+state);
+                    System.err.println("Authentication: "+state);
                     response.sendRedirect("/home");
                 }
             })
-            .failureUrl("/login-error")
+            .failureUrl("/login-error") //  l'exception : (AuthenticationException) session.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
             .and()
             .logout().logoutUrl("/logout-all").logoutSuccessUrl("/home");
         // Pour pouvoir faire des post. Faut voir si c'est possible de faire autrement.

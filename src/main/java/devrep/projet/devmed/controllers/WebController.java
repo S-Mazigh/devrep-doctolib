@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import devrep.projet.devmed.entities.Etat;
+import devrep.projet.devmed.entities.Utilisateur;
 import devrep.projet.devmed.service.DataService;
 import devrep.projet.devmed.service.SearchService;
 
@@ -44,25 +46,26 @@ public class WebController {
 
     @GetMapping(path = "/home")
     public String getHome(Model model) {
-        System.out.println("Home: "+model.getAttribute("etat"));
+        System.err.println("Home: "+model.getAttribute("etat"));
+        System.err.println("Home: "+model.getAttribute("listePro"));
         return "Home";
     }
 
     @GetMapping(path ="/categories")
     public String getCategories(Model model) {
-        System.out.println("Categories: "+model.getAttribute("etat"));
+        System.err.println("Categories: "+model.getAttribute("etat"));
         return "Categories";
     }
 
     @GetMapping(path = "/login")
     public String getLogin(Model model) {
-        System.out.println("Connexion: "+model.getAttribute("etat"));
+        System.err.println("Connexion: "+model.getAttribute("etat"));
         return "Connexion";
     }
 
     @GetMapping(path="/profile")
     public String getProfile(Model model) {
-        System.out.println("Profile: "+model.getAttribute("etat"));
+        System.err.println("Profile: "+model.getAttribute("etat"));
         return "Profile";
     }
 
@@ -84,31 +87,34 @@ public class WebController {
 
     @GetMapping(path = "/signup/pro")
     public String getSignUpPro(Model model) {
-        System.out.println("Inscription pro: "+model.getAttribute("etat"));
+        System.err.println("Inscription pro: "+model.getAttribute("etat"));
         return "InscriptionPro";
     }
 
     @GetMapping(path = "/signup/patient")
     public String getSignUpPatient(Model model) {
-        System.out.println("Inscription patient: "+model.getAttribute("etat"));
+        System.err.println("Inscription patient: "+model.getAttribute("etat"));
         return "InscriptionUser";
     }
 
     // RequestMappings
-    @GetMapping(path = "/home/search")
-    public String getSearchPro(Model model, @RequestParam("searchField") String searchField,
+    @PostMapping(path = "/home/search")
+    public String getSearchPro(Model model, RedirectAttributes redirect, @RequestParam("searchWords") String searchWords,
             @RequestParam(name = "searchWhere", required = false) String searchWhere,
             @ModelAttribute("etat") Etat state) {
-        model.addAttribute("listePro", searchService.getProByName(searchField, searchWhere));
-        model.addAttribute("listeProDomaine", searchService.getProByDomaine(searchField, searchWhere));
-        System.out.println("Search: "+model.getAttribute("etat"));
-        return "Home";
+        // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
+        redirect.addFlashAttribute("listePro", searchService.getProByName(searchWords, searchWhere));
+        redirect.addFlashAttribute("listeProDomaine", searchService.getProByDomaine(searchWords, searchWhere));
+        System.err.println("Results: "+redirect.getAttribute("listePro"));
+        System.err.println("Search: "+model.getAttribute("etat"));
+        
+        return "redirect:/home";
     }
 
     @PostMapping(path = "/signup/patient")
     public String addPatient(Model model, @ModelAttribute("etat") Etat state,
             @RequestParam Map<String, String> allParams) {
-        // System.out.println("ON PASSE");
+        // System.err.println("ON PASSE");
         boolean isDone = dataService.addPatient(allParams);
         if (isDone)
             return "redirect:/login"; // sans redirect il continuera sur le meme path (i.e. /signup/login) ce qui veut rien dire.

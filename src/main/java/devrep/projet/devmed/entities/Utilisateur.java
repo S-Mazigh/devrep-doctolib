@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,8 +43,8 @@ public class Utilisateur implements Serializable{
 
     // Pour Pro
     // @Enumerated(EnumType.STRING) // pour garder le nom et non la valeur dans la base de données
-    // @Enumerated(EnumType.ORDINAL) // pour garder la valeur et non le nom dans la base de données
-    private Domaine domaine;
+    //@Enumerated(EnumType.ORDINAL) // pour garder la valeur et non le nom dans la base de données
+    private String domaine;
 
     @Basic
     @Column(name="horaires", nullable = true, length = 500)
@@ -61,11 +63,11 @@ public class Utilisateur implements Serializable{
     @Column(name="adresse", nullable=true)
     private String adresse;
 
-    public Domaine getDomaine() {
+    public String getDomaine() {
         return domaine;
     }
 
-    public void setDomaine(Domaine domaine) {
+    public void setDomaine(String domaine) {
         this.domaine = domaine;
     }
 

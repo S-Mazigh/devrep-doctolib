@@ -1,4 +1,4 @@
-package devrep.projet.devmed.entities;
+/*package devrep.projet.devmed.entities;
 
 import java.util.stream.Stream;
 
@@ -23,3 +23,4 @@ public class DomaineConverter implements AttributeConverter<Domaine,String>{
             .orElseThrow(IllegalArgumentException::new);
     }
 }
+*/

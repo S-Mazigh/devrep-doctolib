@@ -102,3 +102,19 @@ li a {
 li a:hover {
   background-color: #111;
 }
+
+.searchResults{
+  display: flex;
+}
+
+.oneResult{
+  border: 2px solid whitesmoke;
+  border-radius: 3px;
+  transition: 2s;
+  padding: 10px 10px 10px 10px;
+  margin: 2px 2px;
+}
+.oneResult:hover{
+  box-shadow: 5px 5px whitesmoke;
+  border-color: #048B9A;
+}

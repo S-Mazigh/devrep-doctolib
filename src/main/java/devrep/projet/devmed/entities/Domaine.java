@@ -1,4 +1,4 @@
-package devrep.projet.devmed.entities;
+/*package devrep.projet.devmed.entities;
 
 public enum Domaine {
     Generaliste("Generaliste"),
@@ -18,4 +18,4 @@ public enum Domaine {
     String getCode() {
         return this.code;
     }
-}
+}*/
