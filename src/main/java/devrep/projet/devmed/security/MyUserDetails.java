@@ -17,6 +17,14 @@ public class MyUserDetails implements UserDetails {
         this.user = user;
     }
 
+    public Utilisateur getUser() {
+        return user;
+    }
+
+    public void setUser(Utilisateur user) {
+        this.user = user;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getAuthority());
@@ -44,5 +52,10 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() { return true; }
+
+    @Override
+    public String toString() {
+        return "MyUserDetails [user=" + user + "]";
+    }
     
 }

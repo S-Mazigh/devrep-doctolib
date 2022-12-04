@@ -14,6 +14,7 @@
                 <div class="login-card-header">
                     <h1>Inscription patient</h1>
                 </div>
+                <div class="alert" th:if="${etat.badEmail}" th:inline="text"><ul><li>Votre émail est déja enrigistrée.</li><li>Veuillez saisir une autre si vous voulez vous inscrire.</li></ul></div>
                 <form action="/signup/patient" class="login-card-form" method="post" accept-charset="utf-8">
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">person</span>

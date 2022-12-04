@@ -13,7 +13,7 @@ public class Etat {
         this.wrongPass = false;
         this.who = new Utilisateur();
         this.who.setNom("Guest");
-        this.who.setAuthority("GUEST");
+        //this.who.setAuthority("GUEST");
         this.isPro = false;
     }
     public Etat(Etat otherState) {
@@ -54,4 +54,10 @@ public class Etat {
     public void setPro(boolean isPro) {
         this.isPro = isPro;
     }
+    @Override
+    public String toString() {
+        return "Etat [connected=" + connected + ", badEmail=" + badEmail + ", isPro=" + isPro + ", wrongPass="
+                + wrongPass + ", who=" + who + "]";
+    }
+    
 }

@@ -69,7 +69,8 @@ public class DataService {
         toAdd.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
-        toAdd.setDomaine(Domaine.valueOf(allParams.get("domain")));
+        System.out.println(allParams);
+        toAdd.setDomaine(Domaine.valueOf("Generaliste"));//allParams.get("domain")));
         toAdd.setAuthority("PRO");
         // ajout des rendez vous ...
         // appel à la bd

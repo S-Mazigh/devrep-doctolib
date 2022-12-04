@@ -1,5 +1,7 @@
 package devrep.projet.devmed.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +11,7 @@ import javax.persistence.Id;
 
 @Entity
 // @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class Utilisateur {
+public class Utilisateur implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -130,6 +132,13 @@ public class Utilisateur {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    @Override
+    public String toString() {
+        return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", authority="
+                + authority + ", motDePasse=" + motDePasse + ", domaine=" + domaine + ", mesHoraires=" + mesHoraires
+                + ", duréeRdv=" + duréeRdv + ", numTelephone=" + numTelephone + ", adresse=" + adresse + "]";
     }
     
 }

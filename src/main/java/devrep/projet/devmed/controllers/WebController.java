@@ -42,9 +42,28 @@ public class WebController {
         return state;
     }
 
+    @GetMapping(path = "/home")
+    public String getHome(Model model) {
+        System.out.println("Home: "+model.getAttribute("etat"));
+        return "Home";
+    }
+
+    @GetMapping(path ="/categories")
+    public String getCategories(Model model) {
+        System.out.println("Categories: "+model.getAttribute("etat"));
+        return "Categories";
+    }
+
     @GetMapping(path = "/login")
-    public String getLogin() {
+    public String getLogin(Model model) {
+        System.out.println("Connexion: "+model.getAttribute("etat"));
         return "Connexion";
+    }
+
+    @GetMapping(path="/profile")
+    public String getProfile(Model model) {
+        System.out.println("Profile: "+model.getAttribute("etat"));
+        return "Profile";
     }
 
     @GetMapping(path = "/login-error")
@@ -52,6 +71,7 @@ public class WebController {
         HttpSession session = request.getSession(false);
         String errorMessage = null;
         if (session != null) {
+            // A améliorer pour differencier mauvais mdp ou mauvaise email
             AuthenticationException ex = (AuthenticationException) session
                     .getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
             if (ex != null) {
@@ -63,19 +83,15 @@ public class WebController {
     }
 
     @GetMapping(path = "/signup/pro")
-    public String getSignUpPro() {
+    public String getSignUpPro(Model model) {
+        System.out.println("Inscription pro: "+model.getAttribute("etat"));
         return "InscriptionPro";
     }
 
     @GetMapping(path = "/signup/patient")
-    public String getSignUpPatient() {
-        // System.out.println("ON PASSE");
+    public String getSignUpPatient(Model model) {
+        System.out.println("Inscription patient: "+model.getAttribute("etat"));
         return "InscriptionUser";
-    }
-
-    @GetMapping(path = "/home")
-    public String getHome() {
-        return "Navbar";
     }
 
     // RequestMappings
@@ -85,6 +101,7 @@ public class WebController {
             @ModelAttribute("etat") Etat state) {
         model.addAttribute("listePro", searchService.getProByName(searchField, searchWhere));
         model.addAttribute("listeProDomaine", searchService.getProByDomaine(searchField, searchWhere));
+        System.out.println("Search: "+model.getAttribute("etat"));
         return "Home";
     }
 
