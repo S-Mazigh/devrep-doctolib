@@ -4,11 +4,10 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
-        <link rel="stylesheet" href="/css/stylePage.css"/>
+        <link rel="stylesheet" href="../static/css/stylePage.css"/>
         <title>DevrepDocto</title>
     </head>
     <body>
-        <!-- header bar -->
         <div class="headerbar">
             <ul>
                 <li>
@@ -28,26 +27,15 @@
                     </a>
                 </li>
                 <li>
-                    <form class="login-card-form" method="post" accept-charset="utf-8">
-                        <div class="form-item">
-                            <span class="item-icon material-symbols-rounded">search</span>
-                            <input type="text" placeholder="Professionnel, Spécialité" id="searchForm" 
-                            autofocus required>
-                            <input type="text" placeholder="Où ?" id="searchForm" 
-                            autofocus required>
-                        </div>
-                    </form>
-                </li>
-                <li>
-                    <a href="#">
+                    <a style="float: right;" href="/signup/pro">
                         <span class="item-icon material-symbols-rounded">
-                            account_circle
+                            verified
                         </span>
-                        <span>Mon profil</span>
+                        <span>Je suis un professionnel</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/login">
+                    <a style="float: right;" href="/login">
                         <span class="item-icon material-symbols-rounded">
                             login
                         </span>
@@ -55,14 +43,31 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/signup/pro">
+                    <a style="float: right;" href="#">
                         <span class="item-icon material-symbols-rounded">
-                            verified
+                            account_circle
                         </span>
-                        <span>Je suis un professionnel</span>
+                        <span>Mon profil</span>
                     </a>
                 </li>
             </ul>
         </div>
+        <div class="searchCont">
+            <div class="titleSearchCont">
+                <h1>Trouvez un rendez-vous avec un professionnel !</h1>
+            </div>
+            <div class="formSearchCont">
+                <form class="search-card-form" method="post" accept-charset="utf-8">
+                    <div class="form-item">
+                        <span class="item-icon material-symbols-rounded">search</span>
+                        <input type="text" placeholder="Professionnel, Spécialité" id="searchForm" 
+                        autofocus required>
+                        <span class="item-icon material-symbols-rounded">where_to_vote</span>
+                        <input type="text" placeholder="Où ?" id="searchForm" 
+                        autofocus required>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
-</html> 
+</html>

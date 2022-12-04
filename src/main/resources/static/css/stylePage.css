@@ -3,26 +3,61 @@
 body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
-}
-
-.headerbar {
-  position: fixed;
-  top: 0;
+  margin: 0;
   width: 100%;
 }
 
-ul {
+.headerbar {
+  width: 100%;
+  background-color: #333;
+}
+
+.searchCont {
   display: flex;
+  background-color: #048B9A;
+  color: white;
+  height: 300px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titleSearchCont {
+  margin-bottom: 20px;
+}
+
+
+.formSearchCont {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.form-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+ul {
+  display: block;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  justify-content: space-between;
-  flex-direction: row;
 }
 
 
@@ -33,31 +68,21 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
   height: auto;
-}
-
-li .form-item {
-  display: flex;
-  color: white;
-  text-align: center;
-  padding: 12px 14px;
-  text-decoration: none;
-  align-items: center;
+  float: left;
 }
 
 .form-item input[type=text] {
   font-family: 'Poppins', sans-serif;
   font-size: 100%;
   font-weight: 500;
-  background-color: #333;
-  color: white;
+  color: #333;
   outline: none;
-  max-width: 200px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .form-item input[type=text]::placeholder {
-  color: white;
+  color: #333;
   opacity: 1;
 }
 
