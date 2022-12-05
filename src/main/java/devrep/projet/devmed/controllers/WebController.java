@@ -64,12 +64,6 @@ public class WebController {
         return "Connexion";
     }
 
-    @GetMapping(path="/profile")
-    public String getProfile(Model model) {
-        System.err.println("Profile: "+model.getAttribute("etat"));
-        return "Profile";
-    }
-
     @GetMapping(path = "/login-error")
     public String getError(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession(false);
@@ -165,6 +159,6 @@ public class WebController {
     public String modifyProfile(Model model, @ModelAttribute("etat") Etat state,
             @RequestParam Map<String, String> allParams) {
         dataService.modifyProfile(state, allParams);
-        return "redirect:/profile/private";
+        return "redirect:/profile";
     }
 }
