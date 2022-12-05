@@ -49,7 +49,7 @@ public class ApplicationSecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/", "/home/**", "/js/**", "/css/**","/signup/**").permitAll()
-                                .antMatchers("/profile", "/profile/modify", "/getAppointment").authenticated()
+                                .antMatchers("/profile/public/*", "/profile", "/profile/public/getAppointment").authenticated()
                                 .antMatchers("/profile/modify/**").hasAuthority("PRO");
         http.formLogin().usernameParameter("Email").passwordParameter("Password") // c'est name des input du form
             .loginPage("/login").permitAll()

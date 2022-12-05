@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -146,10 +147,24 @@ public class WebController {
      * }
      */
 
-    @PostMapping(path = "/profile") // à voir si doit séparer patient et pro
+    @GetMapping(path="/profile/public/{id}")
+    public String getAProfile(Model model, @PathVariable(name="id") Long id) {
+        // Le Not found est gére par thymeleaf avec un if.
+        model.addAttribute("theOther", searchService.getById(id));
+        System.err.println("MyProfile: "+model.getAttribute("etat"));
+        return "PubProfile";
+    }
+
+    @GetMapping(path="/profile")
+    public String getMyProfile(Model model) {
+        System.err.println("MyProfile: "+model.getAttribute("etat"));
+        return "Profile";
+    }
+
+    @PostMapping(path = "/profile/modify") // à voir si doit séparer patient et pro
     public String modifyProfile(Model model, @ModelAttribute("etat") Etat state,
             @RequestParam Map<String, String> allParams) {
         dataService.modifyProfile(state, allParams);
-        return "Profile";
+        return "redirect:/profile/private";
     }
 }

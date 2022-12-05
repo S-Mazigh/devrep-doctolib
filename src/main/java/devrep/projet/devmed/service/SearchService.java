@@ -1,6 +1,7 @@
 package devrep.projet.devmed.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,16 @@ public class SearchService {
     UtilisateurRepository userRepo;
 
     @Transactional(readOnly = true)
+    public Utilisateur getById(Long id){
+        Optional<Utilisateur> result = userRepo.findById(id);
+        if(result.isPresent())
+            return result.get();
+        Utilisateur error = new Utilisateur();
+        error.setNom("Unknown");
+        return error;
+    }
+
+    @Transactional(readOnly = true)
     public List<Utilisateur> getProByName(String fullname, String where) {
         // string split needed
         String[] fullName = fullname.split(" ");
@@ -30,27 +41,27 @@ public class SearchService {
         // qu'un nom ou prénom
         if (where.isBlank()) {
             if (!nom.isBlank() && !prenom.isBlank()){
-                toReturn = userRepo.findByNomAndPrenomAndAuthority(prenom, nom, "PRO");
-                toReturn.addAll(userRepo.findByNomAndPrenomAndAuthority(nom, prenom, "PRO"));
+                toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthority(prenom, nom, "PRO");
+                toReturn.addAll(userRepo.findByNomLikeAndPrenomLikeAndAuthority(nom, prenom, "PRO"));
                 return toReturn;
             }
             if (!nom.isBlank()) {
-                toReturn = userRepo.findByNomAndAuthority(prenom, "PRO");
-                toReturn.addAll(userRepo.findByPrenomAndAuthority(prenom, "PRO"));
+                toReturn = userRepo.findByNomLikeAndAuthority(prenom, "PRO");
+                toReturn.addAll(userRepo.findByPrenomLikeAndAuthority(prenom, "PRO"));
                 return toReturn;
             }
             else // if all blank
                 return userRepo.findAll();
         } else {
             if (!nom.isBlank() && !prenom.isBlank()) {
-                toReturn = userRepo.findByNomAndPrenomAndAuthorityAndAdresseContaining(prenom, nom, "PRO", where);
-                toReturn.addAll(userRepo.findByNomAndPrenomAndAuthorityAndAdresseContaining(nom, prenom, "PRO", where));
+                toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndAdresseContaining(prenom, nom, "PRO", where);
+                toReturn.addAll(userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndAdresseContaining(nom, prenom, "PRO", where));
                 return toReturn;
             }
                 
             if (!nom.isBlank()) {
-                toReturn = userRepo.findByNomAndAuthorityAndAdresseContaining(prenom,"PRO", where);
-                toReturn.addAll(userRepo.findByPrenomAndAuthorityAndAdresseContaining(prenom,"PRO", where));
+                toReturn = userRepo.findByNomLikeAndAuthorityAndAdresseContaining(prenom,"PRO", where);
+                toReturn.addAll(userRepo.findByPrenomLikeAndAuthorityAndAdresseContaining(prenom,"PRO", where));
                 return toReturn;
             }
                 
@@ -63,9 +74,9 @@ public class SearchService {
     @Transactional(readOnly = true)
     public List<Utilisateur> getProByDomaine(String domaine, String where) {
         if (where.isBlank())
-            return userRepo.findByDomaine(domaine);
+            return userRepo.findByDomaineLike(domaine);
         else {
-            return userRepo.findByDomaineAndAdresseContaining(domaine, where);
+            return userRepo.findByDomaineLikeAndAdresseContaining(domaine, where);
         }
     }
 }
