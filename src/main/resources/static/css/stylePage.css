@@ -9,6 +9,7 @@ body {
   align-items: center;
   margin: 0;
   width: 100%;
+  background-color: #048B9A;
 }
 
 .headerbar {
@@ -27,6 +28,12 @@ body {
   flex-direction: column;
 }
 
+.searchResults {
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: white;
+}
+
 .titleSearchCont {
   margin-bottom: 20px;
 }
@@ -39,10 +46,7 @@ body {
   align-items: center;
   background-color: white;
   border-radius: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 10px;
 }
 
 .form-item {
@@ -61,6 +65,15 @@ ul {
   background-color: #333;
 }
 
+p {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  height: auto;
+  float: left;
+}
 
 li a {
   display: flex;

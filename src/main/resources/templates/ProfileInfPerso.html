@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
-    <link rel="stylesheet" href="/css/stylePage.css" />
+    <link rel="stylesheet" href="/css/styleProfile.css" />
     <title>DevrepDocto</title>
 </head>
 
@@ -21,9 +21,10 @@
             </li>
             <li>
                 <a href="/categories">
-                    <span class="item-icon material-symbols-rounded"> medical_services </span>
+                    <span class="item-icon material-symbols-rounded">
+                        medical_services
+                    </span>
                     <span>Catégories</span>
-                <!-- Menu déroulant lancant une recherche en fonction de la catégorie selectionnée -->
                 </a>
             </li>
             <li>
@@ -48,6 +49,7 @@
                             <span>[[${'Bonjour '+etat?.who?.prenom}]]</span>
                         </a>
                     </div>
+                </div>
             </li>
             <li>
                 <div th:if="${!etat?.connected}">
@@ -59,41 +61,27 @@
             </li>
         </ul>
     </div>
-    <div class="searchCont">
-        <div class="titleSearchCont">
-            <h1>Trouvez un rendez-vous avec un professionnel !</h1>
-        </div>
-        <div class="formSearchCont">
-            <form class="search-card-form" action="/home/search" method="post" accept-charset="utf-8">
-                <div class="form-item">
-                    <span class="item-icon material-symbols-rounded">search</span>
-                    <input type="text" name="searchWords" placeholder="Professionnel, Spécialité" id="searchForm"
-                        autofocus required />
-                    <span class="item-icon material-symbols-rounded">where_to_vote</span>
-                    <input type="text" name="searchWhere" placeholder="Où ?" id="searchForm" autofocus />
-                    <input type="submit" hidden />
-                </div>
-            </form>
-        </div>
+    <div class="sous-header">
+        <ul>
+            <li style="border-right: solid 1px white; background-color: black;">
+                <a class="item-sous" href="/profile/infPerso">
+                    <span>Informations personnelles</span>
+                </a>
+            </li>
+            <li style="border-left: solid 1px white;">
+                <a class="item-sous" href="/profile/rdv">
+                    <span>Vos rendez-vous</span>
+                </a>
+            </li>
+        </ul>
     </div>
-    <div class="searchResults">
-        <div id="byNom" th:each="r: ${listePro}">
-            <div class="oneResult" th:object="${r}">
-                <span style="font-weight:bold" th:text="'Dr '+*{nom}" />
-                <span th:text="*{prenom}" />
-                <br/>
-                <span style="font-weight:bold" th:text="*{domaine}" />
-                <br/>
-                <span th:text="*{adresse}" />
-            </div>
-        </div>
-        <div id="byDomaine" th:each="r: ${listeProDomaine}">
-            <div th:object="${r}">
-                <span style="font-weight:bold" th:text="'Dr '+*{nom}" /> <span th:text="*{prenom}" />
-                <span th:text="*{domaine}" />
-                <span th:text="*{adresse}" />
-            </div>
-        </div>
+    <div class="info-profile">
+        <span>Prenom : [[${etat?.who?.prenom}]]</span>
+        <span>Nom : [[${etat?.who?.nom}]]</span>
+        <span>Email : [[${etat?.who?.email}]]</span>
+        <span th:if="${etat?.isPro}">Domaine : [[${etat?.who?.domaine}]]</span>
+        <span th:if="${etat?.isPro}">Telephone : [[${etat?.who?.numTelephone}]]</span>
+        <span th:if="${etat?.isPro}">Adresse : [[${etat?.who?.adresse}]]</span>
     </div>
 </body>
 </html>

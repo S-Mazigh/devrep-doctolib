@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import devrep.projet.devmed.entities.Etat;
-import devrep.projet.devmed.entities.Utilisateur;
 import devrep.projet.devmed.service.DataService;
 import devrep.projet.devmed.service.SearchService;
 
@@ -149,10 +148,16 @@ public class WebController {
         return "PubProfile";
     }
 
-    @GetMapping(path="/profile")
+    @GetMapping(path="/profile/infPerso")
     public String getMyProfile(Model model) {
         System.err.println("MyProfile: "+model.getAttribute("etat"));
-        return "Profile";
+        return "ProfileInfPerso";
+    }
+
+    @GetMapping(path="/profile/rdv")
+    public String getMyRdv(Model model) {
+        System.err.println("MyProfile: "+model.getAttribute("etat"));
+        return "ProfileRdv";
     }
 
     @PostMapping(path = "/profile/modify") // à voir si doit séparer patient et pro
