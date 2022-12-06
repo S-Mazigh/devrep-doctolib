@@ -1,6 +1,7 @@
 package devrep.projet.devmed.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -42,6 +43,8 @@ public class Utilisateur implements Serializable{
     // Pour Pro
     // @Enumerated(EnumType.STRING) // pour garder le nom et non la valeur dans la base de données
     //@Enumerated(EnumType.ORDINAL) // pour garder la valeur et non le nom dans la base de données
+    @Basic
+    @Column(name="domaine", length=25, nullable = true)
     private String domaine;
 
     @Basic
@@ -58,8 +61,24 @@ public class Utilisateur implements Serializable{
     private String numTelephone;
 
     @Basic
-    @Column(name="adresse", nullable=true)
+    @Column(name="adresse", nullable=true) // Rue, Ville, Pays
     private String adresse;
+
+    @Basic
+    @Column(name="ville", nullable=true) // Rue, Ville, Pays
+    private String ville;
+
+    @Basic
+    @Column(name="pays", nullable=true) // Rue, Ville, Pays
+    private String pays;
+
+    public String getPays() {
+        return pays;
+    }
+
+    public void setPays(String pays) {
+        this.pays = pays;
+    }
 
     public String getDomaine() {
         return domaine;
@@ -139,6 +158,22 @@ public class Utilisateur implements Serializable{
         return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", authority="
                 + authority + ", motDePasse=" + motDePasse + ", domaine=" + domaine + ", mesHoraires=" + mesHoraires
                 + ", duréeRdv=" + duréeRdv + ", numTelephone=" + numTelephone + ", adresse=" + adresse + "]";
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
     }
     
 }

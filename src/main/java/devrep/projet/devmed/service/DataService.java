@@ -65,13 +65,17 @@ public class DataService {
     public void modifyProfile(Etat state, Map<String, String> allParams) {
         Utilisateur user = state.getWho();
         user.setEmail(allParams.get("Email"));
-        user.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
+        // user.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
         user.setNom(allParams.get("Nom"));
         user.setPrenom(allParams.get("Prenom"));
         if (state.isPro()) {
             // mettre à jour les truc exclusifs aux pros
             // tel, rdv ...
             // ajout de la nouvelle version
+            user.setNumTelephone(allParams.get("Tel"));
+            user.setAdresse(allParams.get("Rue"));
+            user.setVille(allParams.get("Ville"));
+            user.setPays(allParams.get("Pays"));
             UtilisateurBD.save(user);
             return;
         }

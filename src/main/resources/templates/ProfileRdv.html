@@ -40,11 +40,11 @@
                             <span class="item-icon material-symbols-rounded"> logout </span>
                             <span>Vous déconnecter</span>
                         </a>
-                        <a style="float: right" href="/profile/infPerso" th:if="!etat?.isPro">
+                        <a style="float: right" href="/profile/infPerso" th:if="etat?.isPro">
                             <span class="item-icon material-symbols-rounded">account_circle</span>
                             <span>[[${'Bonjour Dr. '+etat?.who?.nom}]]</span>
                         </a>
-                        <a style="float: right" href="/profile/infPerso" th:if="etat?.isPro">
+                        <a style="float: right" href="/profile/infPerso" th:if="!etat?.isPro">
                             <span class="item-icon material-symbols-rounded">account_circle</span>
                             <span>[[${'Bonjour '+etat?.who?.prenom}]]</span>
                         </a>

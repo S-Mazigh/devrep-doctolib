@@ -54,19 +54,19 @@ public class SearchService {
                 return userRepo.findAll();
         } else {
             if (!nom.isBlank() && !prenom.isBlank()) {
-                toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndAdresseContaining(prenom, nom, "PRO", where);
-                toReturn.addAll(userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndAdresseContaining(nom, prenom, "PRO", where));
+                toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndVilleContaining(prenom, nom, "PRO", where);
+                toReturn.addAll(userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndVilleContaining(nom, prenom, "PRO", where));
                 return toReturn;
             }
                 
             if (!nom.isBlank()) {
-                toReturn = userRepo.findByNomLikeAndAuthorityAndAdresseContaining(prenom,"PRO", where);
-                toReturn.addAll(userRepo.findByPrenomLikeAndAuthorityAndAdresseContaining(prenom,"PRO", where));
+                toReturn = userRepo.findByNomLikeAndAuthorityAndVilleContaining(prenom,"PRO", where);
+                toReturn.addAll(userRepo.findByPrenomLikeAndAuthorityAndVilleContaining(prenom,"PRO", where));
                 return toReturn;
             }
                 
             else // if nom et prenom are blank
-                return userRepo.findByAuthorityAndAdresseContaining("PRO", where);
+                return userRepo.findByAuthorityAndVilleContaining("PRO", where);
         }
     }
 
@@ -76,7 +76,7 @@ public class SearchService {
         if (where.isBlank())
             return userRepo.findByDomaineLike(domaine);
         else {
-            return userRepo.findByDomaineLikeAndAdresseContaining(domaine, where);
+            return userRepo.findByDomaineLikeAndVilleContaining(domaine, where);
         }
     }
 }

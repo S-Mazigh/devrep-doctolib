@@ -18,12 +18,12 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long>{
     List<Utilisateur> findByPrenomLikeAndAuthority(String prenom, String authority);
 
     // with address
-    List<Utilisateur> findByNomLikeAndPrenomLikeAndAuthorityAndAdresseContaining(String nom, String prenom, String authority, String adresse);
-    List<Utilisateur> findByPrenomLikeAndAuthorityAndAdresseContaining(String prenom, String authority, String adresse);
-    List<Utilisateur> findByNomLikeAndAuthorityAndAdresseContaining(String nom, String authority, String adresse);
-    List<Utilisateur> findByAuthorityAndAdresseContaining(String authority, String adresse);
+    List<Utilisateur> findByNomLikeAndPrenomLikeAndAuthorityAndVilleContaining(String nom, String prenom, String authority, String Ville);
+    List<Utilisateur> findByPrenomLikeAndAuthorityAndVilleContaining(String prenom, String authority, String Ville);
+    List<Utilisateur> findByNomLikeAndAuthorityAndVilleContaining(String nom, String authority, String Ville);
+    List<Utilisateur> findByAuthorityAndVilleContaining(String authority, String Ville);
 
     // with domaine
     List<Utilisateur> findByDomaineLike(String domaine);
-    List<Utilisateur> findByDomaineLikeAndAdresseContaining(String domaine, String adresse);
+    List<Utilisateur> findByDomaineLikeAndVilleContaining(String domaine, String Ville);
 }

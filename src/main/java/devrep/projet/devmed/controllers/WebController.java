@@ -97,9 +97,21 @@ public class WebController {
             @RequestParam(name = "searchWhere", required = false) String searchWhere,
             @ModelAttribute("etat") Etat state) {
         // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
+        // on utilise le addFlash au lieu du addAttribute pour eviter d'envoyer l'attribut en le serialisant,    il vaut mieux le garder dans la flash map
         redirect.addFlashAttribute("listePro", searchService.getProByName(searchWords, searchWhere));
         redirect.addFlashAttribute("listeProDomaine", searchService.getProByDomaine(searchWords, searchWhere));
         System.err.println("Results: "+redirect.getAttribute("listePro"));
+        System.err.println("Search: "+model.getAttribute("etat"));
+        
+        return "redirect:/home";
+    }
+
+    @PostMapping(path = "/home/search/{domaine}")
+    public String getSearchDomaine(Model model, RedirectAttributes redirect, @PathVariable("domaine") String searchWords,
+            @ModelAttribute("etat") Etat state) {
+        // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
+        redirect.addFlashAttribute("listeProDomaine", searchService.getProByDomaine(searchWords, null));
+        System.err.println("Results: "+redirect.getAttribute("listeProDomaine"));
         System.err.println("Search: "+model.getAttribute("etat"));
         
         return "redirect:/home";
@@ -164,6 +176,6 @@ public class WebController {
     public String modifyProfile(Model model, @ModelAttribute("etat") Etat state,
             @RequestParam Map<String, String> allParams) {
         dataService.modifyProfile(state, allParams);
-        return "redirect:/profile";
+        return "redirect:/profile/infPerso";
     }
 }
