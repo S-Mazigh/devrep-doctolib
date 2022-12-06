@@ -63,6 +63,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  z-index: 2000;
 }
 
 p {
@@ -131,4 +132,28 @@ li a:hover {
 .oneResult:hover{
   box-shadow: 5px 5px #f5f5f5;
   border-color: #048B9A;
+}
+
+/* menu déroulant */
+
+ul li ul { 
+  display:none; /* Rend le menu déroulant caché par défaut */
+} 
+
+ul li ul li {
+  float: none;
+}
+
+ul li ul li a {
+  width: 100%;
+}
+
+ul li:hover ul { /* Affiche la dropNav au survol de la souris avec la class .drop */
+  z-index: 1000;
+  display: list-item !important;
+  position: absolute;
+}
+
+ul li:hover ul li {
+  float:none;
 }

@@ -26,12 +26,16 @@
                     <span>Accueil</span>
                 </a>
             </li>
-            <li>
+            <li class="deroulant">
                 <a href="/categories">
                     <span class="item-icon material-symbols-rounded"> medical_services </span>
                     <span>Catégories</span>
-                <!-- Menu déroulant lancant une recherche en fonction de la catégorie selectionnée -->
                 </a>
+                <ul class="sous">
+                    <li><a href="#">Médecin généraliste</a</li>
+                    <li><a href="#">Opticien</a></li>
+                    <li><a href="#">Gynécologue</a</li>
+                </ul>
             </li>
             <li>
                 <div th:switch="${etat?.connected}">
