@@ -149,8 +149,20 @@ body {
 }
 
 .login-card select {
-    font-size: 1.5rem;
-    padding: 1em 1.5em;
+    font-size: 1rem;
+    margin-left: 20px;
+    padding: 1em 1em;
+    padding-left: 2em;
+    border: 2px solid azure;
+    background-color: transparent;
+    transition: 1s;
+    /*color: azure;*/
+}
+
+.login-card select:hover, .login-card select:focus {
+    background-color: rgba(17, 17, 17, 0.1);
+    color:rgba(0, 0, 0, .5);
+    /*color: azure;*/
 }
 
 .login-card button:hover {

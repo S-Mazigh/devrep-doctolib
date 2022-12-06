@@ -149,7 +149,7 @@ ul li ul li a {
 
 ul li:hover ul { /* Affiche la dropNav au survol de la souris avec la class .drop */
   z-index: 1000;
-  display: list-item !important;
+  display: list-item /*!important*/;
   position: absolute;
 }
 

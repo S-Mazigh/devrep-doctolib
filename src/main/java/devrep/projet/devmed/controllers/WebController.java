@@ -106,11 +106,11 @@ public class WebController {
         return "redirect:/home";
     }
 
-    @PostMapping(path = "/home/search/{domaine}")
+    @GetMapping(path = "/home/search/{domaine}")
     public String getSearchDomaine(Model model, RedirectAttributes redirect, @PathVariable("domaine") String searchWords,
             @ModelAttribute("etat") Etat state) {
         // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
-        redirect.addFlashAttribute("listeProDomaine", searchService.getProByDomaine(searchWords, null));
+        redirect.addFlashAttribute("listeProDomaine", searchService.getProByDomaine(searchWords, ""));
         System.err.println("Results: "+redirect.getAttribute("listeProDomaine"));
         System.err.println("Search: "+model.getAttribute("etat"));
         
