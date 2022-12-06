@@ -28,53 +28,43 @@
             </li>
             <li>
                 <a href="/categories">
-                    <span class="item-icon material-symbols-rounded">
-                        medical_services
-                    </span>
+                    <span class="item-icon material-symbols-rounded"> medical_services </span>
                     <span>Catégories</span>
+                <!-- Menu déroulant lancant une recherche en fonction de la catégorie selectionnée -->
                 </a>
             </li>
             <li>
                 <div th:switch="${etat?.connected}">
-                    <span th:case="${false}">
-                    </span>
+                    <div th:case="${false}">
+                        <a style="float: right" href="/signup/pro">
+                            <span class="item-icon material-symbols-rounded"> verified </span>
+                            <span>Vous êtes un professionnel?</span>
+                        </a>
+                    </div>
                     <div th:case="${true}">
                         <a style="float: right" href="/logout-all">
                             <span class="item-icon material-symbols-rounded"> logout </span>
                             <span>Vous déconnecter</span>
                         </a>
-                        <a style="float: right" href="/profile">
-                            <span class="item-icon material-symbols-rounded">
-                                account_circle
-                            </span>
-                            <span>Votre profil</span>
+                        <a style="float: right" href="/profile/infPerso" th:if="!etat?.isPro">
+                            <span class="item-icon material-symbols-rounded">account_circle</span>
+                            <span>[[${'Bonjour Dr. '+etat?.who?.nom}]]</span>
+                        </a>
+                        <a style="float: right" href="/profile/infPerso" th:if="etat?.isPro">
+                            <span class="item-icon material-symbols-rounded">account_circle</span>
+                            <span>[[${'Bonjour '+etat?.who?.prenom}]]</span>
                         </a>
                     </div>
             </li>
             <li>
-                <div th:if="${!etat?.connected || !etat?.isPro}">
-                    <a style="float: right" href="/signup/pro">
-                        <span class="item-icon material-symbols-rounded"> verified </span>
-                        <span>Vous êtes un professionnel?</span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <span th:if="${etat?.connected && etat?.isPro}" th:inline="text">
-                    <p style="float: right; color: white; font-weight: bold;">[[${'Bonjour Dr.'+etat?.who?.nom}]]</p>
-                </span>
-                <span th:if="${etat?.connected && !etat?.isPro}" th:inline="text">
-                    <p style="float: right; color: white; font-weight: bold;">[[${'Bonjour '+etat?.who?.nom}]]</p>
-                </span>
                 <div th:if="${!etat?.connected}">
                     <a style="float: right" href="/login">
                         <span class="item-icon material-symbols-rounded"> login </span>
                         <span>Vous connecter</span>
                     </a>
                 </div>
-    </div>
-    </li>
-    </ul>
+            </li>
+        </ul>
     </div>
     <div class="searchCont">
         <div class="titleSearchCont">
@@ -113,5 +103,4 @@
         </div>
     </div>
 </body>
-
 </html>

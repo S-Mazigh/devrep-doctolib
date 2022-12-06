@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  background-color: #048B9A;
+}
+
+.headerbar {
+  width: 100%;
+  background-color: #333;
+}
+
+.sous-header {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    color: white;
+    flex-direction: row;
+}
+
+ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.sous-header ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    border-top: solid 1px white;
+}
+
+.sous-header li {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.sous-header a {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.sous-header a::selection {
+    background-color: black;
+}
+
+li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    height: auto;
+    float: left;
+}
+
+.item-icon {
+    padding-right: .5rem;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.info-profile {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.info-profile span {
+    margin: 15px;
+}

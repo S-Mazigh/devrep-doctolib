@@ -21,21 +21,6 @@ public class DataService {
     @Autowired
     private ApplicationSecurityConfiguration secuConfig;
 
-    /*
-    private String encrypt(String toEncrypt) {
-        String generatedPassword = null;
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(toEncrypt.getBytes());
-            byte[] encrypted = md.digest();
-            generatedPassword = new String(encrypted, "UTF-8");
-        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return generatedPassword;
-    }
-    */
-
     @Transactional
     public boolean addPatient(Map<String, String> allParams) {
         Utilisateur toAdd;
@@ -75,46 +60,6 @@ public class DataService {
         UtilisateurBD.save(toAdd);
         return true;
     }
-
-    /*
-    @Transactional
-    public Etat loginUser(String email, String password, String isPro) {
-        Etat newState = new Etat(); // init to all false and Guest.
-        Utilisateur user;
-        if (isPro.equals("pro")) {
-            user = UtilisateurBD.findByEmail(email);
-            if (user == null) {
-                newState.setBadEmail(true);
-                return newState;
-            }
-            // user exists, check if password is correct
-            if (!user.getMotDePasse().equals(encrypt(password))) {
-                newState.setWrongPass(true);
-                return newState;
-            }
-            // all is good
-            newState.setConnected(true);
-            newState.setPro(true);
-            newState.setWho(user);
-            return newState;
-        } else { // patient
-            user = UtilisateurBD.findByEmail(email);
-            if (user == null) {
-                newState.setBadEmail(true);
-                return newState;
-            }
-            // user exists, check if password is correct
-            if (!user.getMotDePasse().equals(encrypt(password))) {
-                newState.setWrongPass(true);
-                return newState;
-            }
-            // all is good
-            newState.setConnected(true);
-            newState.setWho(user);
-            return newState;
-        }
-    }
-    */
 
     @Transactional
     public void modifyProfile(Etat state, Map<String, String> allParams) {
