@@ -12,26 +12,82 @@ body {
   background-color: #048B9A;
 }
 
-.headerbar {
+/* header bar style */
+
+nav {
+  display: flex;
   width: 100%;
+  background-color: #333;
+  flex-direction: row;
+}
+
+.listes {
+  width: 100%;
+}
+
+nav div ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   background-color: #333;
 }
 
-.sous-header {
-    display: flex;
-    width: 100%;
-    height: max-content;
-    color: white;
-    flex-direction: row;
+nav div ul li{
+  background-color: #333;
+  float: left;
+  text-align: center;
+  position: relative;
+  width: fit-content;
 }
 
-ul {
-    display: block;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+nav div ul.rightElements li{
+  float: right;
+}
+
+nav a{
+  display: flex;
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid transparent;
+  padding: 14px 16px;
+}
+
+nav a:hover{
+  background-color: #111;
+}
+
+.sous {
+  display: none;
+  background-color: #333;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  padding: 0;
+}
+nav > div ul li:hover .sous{
+  display: block;
+}
+.sous li{
+  float: none;
+  width: 100%;
+  text-align: left;
+}
+.sous a{
+  padding: 10px;
+  border-bottom: none;
+}
+.sous a:hover{
+  border-bottom: none;
+  background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > a::after{
+  margin-left: 10px;
+}
+
+/* sous-header */
+
+.sous-header {
+  background-color: #333;
 }
 
 .sous-header ul {
@@ -40,6 +96,8 @@ ul {
     flex-direction: row;
     width: 100%;
     border-top: solid 1px white;
+    margin: 0;
+    padding: 0;
 }
 
 .sous-header li {
@@ -57,11 +115,15 @@ ul {
     justify-content: center;
 }
 
+.sous-header a:hover {
+  background-color: black;
+}
+
 .sous-header a::selection {
     background-color: black;
 }
 
-li a {
+.sous-header li a {
     display: flex;
     color: white;
     text-align: center;
@@ -73,11 +135,6 @@ li a {
 
 .item-icon {
     padding-right: .5rem;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
 }
 
 .info-profile {

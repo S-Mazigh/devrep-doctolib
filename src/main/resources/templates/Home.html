@@ -18,64 +18,68 @@
 </head>
 
 <body>
-    <div class="headerbar">
-        <ul>
-            <li>
-                <a href="/home">
-                    <span class="item-icon material-symbols-rounded"> home </span>
-                    <span>Accueil</span>
-                </a>
-            </li>
-            <li class="deroulant">
-                <a href="/categories">
-                    <span class="item-icon material-symbols-rounded"> medical_services </span>
-                    <span>Catégories</span>
-                </a>
-                <ul class="sous">
-                    <li><a href="/home/search/Generaliste">Généraliste</a></li>
-                    <li><a href="/home/search/Ophtalmologue">Ophtalmologue</a></li>
-                    <li><a href="/home/search/Pediatre">Pédiatre</a></li>
-                    <li><a href="/home/search/Addictologue">Addictologue</a></li>
-                    <li><a href="/home/search/Allergologue">Allergologue</a></li>
-                    <li><a href="/home/search/Dermatologue">Dermatologue</a></li>
-                    <li><a href="/home/search/Diabetologue">Diabetologue</a></li>
-                    <li><a href="/home/search/Gynecologue">Gynecologue</a></li>
-                    <li><a href="/home/search/Hematologue">Hematologue</a></li>
-                </ul>
-            </li>
-            <li>
-                <div th:switch="${etat?.connected}">
-                    <div th:case="${false}">
-                        <a style="float: right" href="/signup/pro">
-                            <span class="item-icon material-symbols-rounded"> verified </span>
-                            <span>Vous êtes un professionnel?</span>
-                        </a>
-                    </div>
-                    <div th:case="${true}">
-                        <a style="float: right" href="/logout-all">
-                            <span class="item-icon material-symbols-rounded"> logout </span>
-                            <span>Vous déconnecter</span>
-                        </a>
-                        <a style="float: right" href="/profile/infPerso" th:if="${etat?.isPro}">
-                            <span class="item-icon material-symbols-rounded">account_circle</span>
-                            <span>[[${'Bonjour Dr. '+etat?.who?.nom}]]</span>
-                        </a>
-                        <a style="float: right" href="/profile/infPerso" th:if="${!etat?.isPro}">
-                            <span class="item-icon material-symbols-rounded">account_circle</span>
-                            <span>[[${'Bonjour '+etat?.who?.prenom}]]</span>
-                        </a>
-                    </div>
-            </li>
-            <li>
-                <div th:if="${!etat?.connected}">
-                    <a style="float: right" href="/login">
-                        <span class="item-icon material-symbols-rounded"> login </span>
-                        <span>Vous connecter</span>
+    <nav>
+        <div class="listes">
+            <ul class="leftElements">
+                <li>
+                    <a href="/home">
+                        <span class="item-icon material-symbols-rounded"> home </span>
+                        <span>Accueil</span>
                     </a>
-                </div>
-            </li>
-        </ul>
-    </div>
+                </li>
+                <li class="deroulant">
+                    <a>
+                        <span class="item-icon material-symbols-rounded"> medical_services </span>
+                        <span>Catégories</span>
+                    </a>
+                    <ul class="sous">
+                        <li><a href="/home/search/Generaliste">Généraliste</a></li>
+                        <li><a href="/home/search/Ophtalmologue">Ophtalmologue</a></li>
+                        <li><a href="/home/search/Pediatre">Pédiatre</a></li>
+                        <li><a href="/home/search/Addictologue">Addictologue</a></li>
+                        <li><a href="/home/search/Allergologue">Allergologue</a></li>
+                        <li><a href="/home/search/Dermatologue">Dermatologue</a></li>
+                        <li><a href="/home/search/Diabetologue">Diabetologue</a></li>
+                        <li><a href="/home/search/Gynecologue">Gynecologue</a></li>
+                        <li><a href="/home/search/Hematologue">Hematologue</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="rightElements">
+                <li>
+                    <div th:switch="${etat?.connected}">
+                        <div th:case="${false}">
+                            <a style="float: right" href="/signup/pro">
+                                <span class="item-icon material-symbols-rounded"> verified </span>
+                                <span>Vous êtes un professionnel?</span>
+                            </a>
+                        </div>
+                        <div th:case="${true}">
+                            <a style="float: right" href="/logout-all">
+                                <span class="item-icon material-symbols-rounded"> logout </span>
+                                <span>Vous déconnecter</span>
+                            </a>
+                            <a style="float: right" href="/profile/infPerso" th:if="${etat?.isPro}">
+                                <span class="item-icon material-symbols-rounded">account_circle</span>
+                                <span>[[${'Bonjour Dr. '+etat?.who?.nom}]]</span>
+                            </a>
+                            <a style="float: right" href="/profile/infPerso" th:if="${!etat?.isPro}">
+                                <span class="item-icon material-symbols-rounded">account_circle</span>
+                                <span>[[${'Bonjour '+etat?.who?.prenom}]]</span>
+                            </a>
+                        </div>
+                </li>
+                <li>
+                    <div th:if="${!etat?.connected}">
+                        <a style="float: right" href="/login">
+                            <span class="item-icon material-symbols-rounded"> login </span>
+                            <span>Vous connecter</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="searchCont">
         <div class="titleSearchCont">
             <h1>Trouvez un rendez-vous avec un professionnel !</h1>
@@ -93,16 +97,33 @@
             </form>
         </div>
     </div>
-    <div class="searchResults">
-        <div id="byNom" th:each="r: ${listePro}">
-            <div class="oneResult" th:object="${r}">
-                <span style="font-weight:bold" th:text="'Dr '+*{nom}" />
-                <span th:text="*{prenom}" />
-                <br />
-                <span style="font-weight:bold" th:text="*{domaine}" />
-                <br />
-                <span th:text="*{adresse}" />
+    <div class="searchResults" th:each="r: ${listePro}">
+        <div class="oneResult" th:object="${r}">
+            <div class="field">
+                <span class="item-icon material-symbols-rounded">person</span>
+                <span th:text="'Dr '+*{nom}+' '+*{prenom}"></span>
             </div>
+            <div class="field">
+                <span class="item-icon material-symbols-rounded">medical_services</span>
+                <span th:text="*{domaine}"></span>
+            </div>
+            <div class="field">
+                <span class="item-icon material-symbols-rounded">location_home</span>
+                <span>Adresse</span>
+            </div>
+            <div class="field">
+                <span class="item-icon material-symbols-rounded">location_on</span>
+                <span>Ville</span>
+            </div>
+            <div class="field">
+                <span class="item-icon material-symbols-rounded">phone</span>
+                <span>NumTelephone</span>
+            </div>
+            <!--
+            <span th:text="*{adresse}"></span>
+            <span th:text="*{ville}"></span>
+            <span th:text="*{numTelephone}"></span>
+            -->
         </div>
     </div>
 </body>
