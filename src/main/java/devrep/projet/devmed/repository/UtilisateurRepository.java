@@ -13,6 +13,7 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long>{
     Utilisateur findByEmail(String email);
 
     // Lists
+    List<Utilisateur> findByAuthority(String authority);
     List<Utilisateur> findByNomLikeAndPrenomLikeAndAuthority(String nom, String prenom, String authority);
     List<Utilisateur> findByNomLikeAndAuthority(String nom, String authority);
     List<Utilisateur> findByPrenomLikeAndAuthority(String prenom, String authority);
@@ -24,6 +25,6 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long>{
     List<Utilisateur> findByAuthorityAndVilleContaining(String authority, String Ville);
 
     // with domaine
-    List<Utilisateur> findByDomaineLike(String domaine);
-    List<Utilisateur> findByDomaineLikeAndVilleContaining(String domaine, String Ville);
+    List<Utilisateur> findByDomaineLikeAndAuthority(String domaine, String authority);
+    List<Utilisateur> findByDomaineLikeAndVilleContainingAndAuthority(String domaine, String Ville, String authority);
 }

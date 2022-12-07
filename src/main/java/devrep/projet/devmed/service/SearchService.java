@@ -1,7 +1,10 @@
 package devrep.projet.devmed.service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,7 +54,7 @@ public class SearchService {
                 return toReturn;
             }
             else // if all blank
-                return userRepo.findAll();
+                return userRepo.findByAuthority("PRO");
         } else {
             if (!nom.isBlank() && !prenom.isBlank()) {
                 toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndVilleContaining(prenom, nom, "PRO", where);
@@ -74,9 +77,17 @@ public class SearchService {
     @Transactional(readOnly = true)
     public List<Utilisateur> getProByDomaine(String domaine, String where) {
         if (where.isBlank())
-            return userRepo.findByDomaineLike(domaine);
+            return userRepo.findByDomaineLikeAndAuthority(domaine, "PRO");
         else {
-            return userRepo.findByDomaineLikeAndVilleContaining(domaine, where);
+            return userRepo.findByDomaineLikeAndVilleContainingAndAuthority(domaine, where, "PRO");
         }
+    }
+
+    @Transactional(readOnly = true)
+    public List<Utilisateur> getProByDomaineOrName(String domaineOrName, String where) {
+        Set<Utilisateur> set = new HashSet<Utilisateur>(getProByDomaine(domaineOrName, where));
+        set.addAll(getProByName(domaineOrName, where));
+        System.out.println("Result SET : " + set);
+        return new ArrayList<Utilisateur>(set);
     }
 }

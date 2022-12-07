@@ -104,16 +104,6 @@
                 <span th:text="*{adresse}" />
             </div>
         </div>
-        <div id="byDomaine" th:each="r: ${listeProDomaine}">
-            <div class="oneResult" th:object="${r}">
-                <span style="font-weight:bold" th:text="'Dr '+*{nom}" />
-                <span th:text="*{prenom}" />
-                <br />
-                <span style="font-weight:bold" th:text="*{domaine}" />
-                <br />
-                <span th:text="*{adresse}" />
-            </div>
-        </div>
     </div>
 </body>
 </html>

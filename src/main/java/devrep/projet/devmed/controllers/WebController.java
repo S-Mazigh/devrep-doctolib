@@ -46,8 +46,8 @@ public class WebController {
 
     @GetMapping(path = "/home")
     public String getHome(Model model) {
-        System.err.println("Home: "+model.getAttribute("etat"));
-        System.err.println("Home: "+model.getAttribute("listePro"));
+        model.addAttribute("listePro", searchService.getProByDomaineOrName("", ""));
+        
         return "Home";
     }
 
@@ -98,8 +98,7 @@ public class WebController {
             @ModelAttribute("etat") Etat state) {
         // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
         // on utilise le addFlash au lieu du addAttribute pour eviter d'envoyer l'attribut en le serialisant,    il vaut mieux le garder dans la flash map
-        redirect.addFlashAttribute("listePro", searchService.getProByName(searchWords, searchWhere));
-        redirect.addFlashAttribute("listeProDomaine", searchService.getProByDomaine(searchWords, searchWhere));
+        redirect.addFlashAttribute("listePro", searchService.getProByDomaineOrName(searchWords, searchWhere));
         System.err.println("Results: "+redirect.getAttribute("listePro"));
         System.err.println("Search: "+model.getAttribute("etat"));
         
