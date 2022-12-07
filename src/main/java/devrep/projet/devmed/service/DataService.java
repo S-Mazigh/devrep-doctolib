@@ -1,6 +1,8 @@
 package devrep.projet.devmed.service;
 
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,9 @@ public class DataService {
 
     @Autowired
     private ApplicationSecurityConfiguration secuConfig;
+
+    @Autowired
+    private AppointmentService rdvService;
 
     @Transactional
     public boolean addPatient(Map<String, String> allParams) {
@@ -76,6 +81,12 @@ public class DataService {
             user.setAdresse(allParams.get("Rue"));
             user.setVille(allParams.get("Ville"));
             user.setPays(allParams.get("Pays"));
+            // Pour eviter de se trimbaler tous les attributs, on les filtre avant.
+            Map<String, String> filteredParams = allParams.entrySet()
+                                                          .stream()
+                                                          .filter(entry->entry.getKey().matches("Open$|Close$"))
+                                                          .collect(Collectors.toMap(Entry::getKey,Entry::getValue));
+            user.setMesHoraires(rdvService.createHoraires(filteredParams));
             UtilisateurBD.save(user);
             return;
         }

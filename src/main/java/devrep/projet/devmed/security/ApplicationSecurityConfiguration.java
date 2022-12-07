@@ -27,7 +27,7 @@ public class ApplicationSecurityConfiguration {
 
     @Autowired
     DataSource dataSource;
-    
+
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsServiceImpl();
@@ -45,41 +45,43 @@ public class ApplicationSecurityConfiguration {
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
-     
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/", "/home/**", "/js/**", "/css/**","/signup/**").permitAll()
-                                .antMatchers("/profile/public/*", "/profile", "/profile/public/getAppointment").authenticated()
-                                .antMatchers("/profile/modify/**").hasAuthority("PRO");
+        http.authorizeRequests().antMatchers("/home", "/home/**", "/js/**", "/css/**", "/signup/**").permitAll()
+                                .anyRequest().authenticated();
         http.formLogin().usernameParameter("Email").passwordParameter("Password") // c'est name des input du form
-            .loginPage("/login").permitAll()
-            .successHandler(new AuthenticationSuccessHandler() {
-                @Override
-                public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-                    MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
-                    Etat state = (Etat) request.getSession(false).getAttribute("etat");
-                    if(state!=null) // sinon NullPointerException possible
-                    {
-                        state.setConnected(true);
-                        state.setBadEmail(false);
-                        state.setWrongPass(false);
-                        state.setWho(userDetails.getUser());
-                        state.setPro(state.getWho().getAuthority().equals("PRO"));
-                        request.getSession().setAttribute("etat", state);
+                .loginPage("/login").permitAll()
+                .successHandler(new AuthenticationSuccessHandler() {
+                    @Override
+                    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+                            Authentication authentication) throws IOException, ServletException {
+                        MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+                        Etat state = (Etat) request.getSession(false).getAttribute("etat");
+                        if (state != null) // sinon NullPointerException possible
+                        {
+                            state.setConnected(true);
+                            state.setBadEmail(false);
+                            state.setWrongPass(false);
+                            state.setWho(userDetails.getUser());
+                            state.setPro(state.getWho().getAuthority().equals("PRO"));
+                            request.getSession().setAttribute("etat", state);
+                        }
+                        System.err.println("Authentication: " + state);
+                        response.sendRedirect("/home");
                     }
-                    System.err.println("Authentication: "+state);
-                    response.sendRedirect("/home");
-                }
-            })
-            .failureUrl("/login-error") //  l'exception : (AuthenticationException) session.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
-            .and()
-            .logout().logoutUrl("/logout-all").logoutSuccessUrl("/home");
+                })
+                .failureUrl("/login-error") // l'exception : (AuthenticationException)
+                                            // session.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
+                .and()
+                .logout().logoutUrl("/logout-all").logoutSuccessUrl("/home");
         // Pour pouvoir faire des post. Faut voir si c'est possible de faire autrement.
         http.cors().and().csrf().disable();
         /*
-        http.authorizeRequests().anyRequest().permitAll()
-            .and().formLogin().loginPage("/login");*/
-            
+         * http.authorizeRequests().anyRequest().permitAll()
+         * .and().formLogin().loginPage("/login");
+         */
+
         return http.build();
     }
 }
