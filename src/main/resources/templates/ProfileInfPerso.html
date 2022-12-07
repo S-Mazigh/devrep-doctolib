@@ -40,11 +40,11 @@
                             <span class="item-icon material-symbols-rounded"> logout </span>
                             <span>Vous déconnecter</span>
                         </a>
-                        <a style="float: right" href="/profile/infPerso" th:if="etat?.isPro">
+                        <a style="float: right" href="/profile/infPerso" th:if="${etat?.isPro}">
                             <span class="item-icon material-symbols-rounded">account_circle</span>
                             <span>[[${'Bonjour Dr. '+etat?.who?.nom}]]</span>
                         </a>
-                        <a style="float: right" href="/profile/infPerso" th:if="!etat?.isPro">
+                        <a style="float: right" href="/profile/infPerso" th:if="${!etat?.isPro}">
                             <span class="item-icon material-symbols-rounded">account_circle</span>
                             <span>[[${'Bonjour '+etat?.who?.prenom}]]</span>
                         </a>
@@ -83,45 +83,51 @@
         <span class="form-item-icon material-symbols-rounded">mail</span>
         <input name="Email" type="email" placeholder="Email" th:value="*{email}" id="emailForm"><br>
         <!--Pro ONLY-->
-        <div class="domaineSelect" th:if="${etat?.isPro}"></div>
-        <span class="form-item-icon material-symbols-rounded">medical_services</span>
-        <select name="domaine" id="domain-select" th:value="*{domaine}">
-            <option value="Generaliste">Généraliste</option>
-            <option value="Ophtalmologue">Ophtalmologue</option>
-            <option value="Pediatre">Pédiatre</option>
-            <option value="Addictologue">Addictologue</option>
-            <option value="Allergologue">Allergologue</option>
-            <option value="Dermatologue">Dermatologue</option>
-            <option value="Diabetologue">Diabetologue</option>
-            <option value="Gynecologue">Gynecologue</option>
-            <option value="Hematologue">Hematologue</option>
-        </select>
         <span class="form-item-icon material-symbols-rounded">phone</span>
         <input name="Tel" type="tel" placeholder="N°Telephone" th:value="*{numTelephone}" id="telForm"><br>
-        <div class="Adresse">
-            <span class="form-item-icon material-symbols-rounded">home</span>
-            <input name="Rue" type="text" placeholder="Rue" th:value="*{adresse}" id="rueForm">
-            <input name="Ville" type="text" placeholder="Ville" th:value="*{ville}" id="VilleForm">
-        </div>
-        <span class="form-item-icon material-symbols-rounded">public</span>
-        <select name="Pays" id="pays-select" th:value="*{pays}">
-            <option value="France">France</option>
-            <option value="Belgique">Belgique</option>
-        </select>
-        <p>-----------------------------------------------------------------------</p>
-        <div class="horaires">
-            <label class="labelDays" for="lundi">Lundi</label>
-            <input type="time" name="LundiOpen"> <label class="labelDays">à</label> <input type="time" name="LundiClose"><br>
-            <label class="labelDays" for="MardiOpen">Mardi</label>
-            <input type="time" name="MardiOpen"> <label class="labelDays">à</label> <input type="time" name="MardiClose"><br>
-            <label class="labelDays" for="MercrediOpen">Mercredi</label>
-            <input type="time" name="MercrediOpen"> <label class="labelDays">à</label> <input type="time" name="MercrediClose"><br>
-            <label class="labelDays" for="JeudiOpen">Jeudi</label>
-            <input type="time" name="JeudiOpen"> <label class="labelDays">à</label> <input type="time" name="JeudiClose"><br>
-            <label class="labelDays" for="lundi">Vendredi</label>
-            <input type="time" name="VendrediOpen"> <label class="labelDays">à</label> <input type="time" name="VendrediClose"><br>
-        </div>
+        <div class="domaineSelect" th:if="${etat?.isPro}">
+            <span class="form-item-icon material-symbols-rounded">medical_services</span>
+            <select name="domaine" id="domain-select" th:value="*{domaine}">
+                <option value="Generaliste">Généraliste</option>
+                <option value="Ophtalmologue">Ophtalmologue</option>
+                <option value="Pediatre">Pédiatre</option>
+                <option value="Addictologue">Addictologue</option>
+                <option value="Allergologue">Allergologue</option>
+                <option value="Dermatologue">Dermatologue</option>
+                <option value="Diabetologue">Diabetologue</option>
+                <option value="Gynecologue">Gynecologue</option>
+                <option value="Hematologue">Hematologue</option>
+            </select>
+            <div class="Adresse">
+                <span class="form-item-icon material-symbols-rounded">home</span>
+                <input name="Rue" type="text" placeholder="Rue" th:value="*{adresse}" id="rueForm">
+                <input name="Ville" type="text" placeholder="Ville" th:value="*{ville}" id="VilleForm">
+            </div>
+            <span class="form-item-icon material-symbols-rounded">public</span>
+            <select name="Pays" id="pays-select" th:value="*{pays}">
+                <option value="France">France</option>
+                <option value="Belgique">Belgique</option>
+            </select>
+            <p>-----------------------------------------------------------------------</p>
+            <div class="horaires">
+                <label class="labelDays" for="lundi">Lundi</label>
+                <input type="time" name="LundiOpen"> <label class="labelDays">à</label> <input type="time"
+                    name="LundiClose"><br>
+                <label class="labelDays" for="MardiOpen">Mardi</label>
+                <input type="time" name="MardiOpen"> <label class="labelDays">à</label> <input type="time"
+                    name="MardiClose"><br>
+                <label class="labelDays" for="MercrediOpen">Mercredi</label>
+                <input type="time" name="MercrediOpen"> <label class="labelDays">à</label> <input type="time"
+                    name="MercrediClose"><br>
+                <label class="labelDays" for="JeudiOpen">Jeudi</label>
+                <input type="time" name="JeudiOpen"> <label class="labelDays">à</label> <input type="time"
+                    name="JeudiClose"><br>
+                <label class="labelDays" for="lundi">Vendredi</label>
+                <input type="time" name="VendrediOpen"> <label class="labelDays">à</label> <input type="time"
+                    name="VendrediClose"><br>
+            </div>
 
+        </div>
         </div>
         <!--<span>Prenom : [[${etat?.who?.prenom}]]</span>
         <span>Nom : [[${etat?.who?.nom}]]</span>
