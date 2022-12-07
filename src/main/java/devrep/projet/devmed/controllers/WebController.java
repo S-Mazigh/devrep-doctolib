@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import devrep.projet.devmed.entities.Etat;
+import devrep.projet.devmed.service.AppointmentService;
 import devrep.projet.devmed.service.DataService;
 import devrep.projet.devmed.service.SearchService;
 
@@ -45,9 +46,7 @@ public class WebController {
     }
 
     @GetMapping(path = "/home")
-    public String getHome(Model model) {
-        model.addAttribute("listePro", searchService.getProByDomaineOrName("", ""));
-        
+    public String getHome() {
         return "Home";
     }
 
@@ -91,7 +90,11 @@ public class WebController {
         return "InscriptionUser";
     }
 
-    // RequestMappings
+    @GetMapping(path = {"/home/search/all", "/"}) 
+    public String getHomeAllPro(RedirectAttributes redirect) {
+        redirect.addFlashAttribute("listePro", searchService.getProByDomaineOrName("", ""));
+        return "redirect:/home";
+    }
     @PostMapping(path = "/home/search")
     public String getSearchPro(Model model, RedirectAttributes redirect, @RequestParam("searchWords") String searchWords,
             @RequestParam(name = "searchWhere", required = false) String searchWhere,
@@ -161,7 +164,10 @@ public class WebController {
 
     @GetMapping(path="/profile/infPerso")
     public String getMyProfile(Model model) {
-        System.err.println("MyProfile: "+model.getAttribute("etat"));
+        Etat current = (Etat) model.getAttribute("etat");
+        if(current != null)
+            model.addAttribute("meshoraires",AppointmentService.formatHoraires(current.getWho().getMesHoraires()));
+        System.err.println("MyProfile: "+model.getAttribute("meshoraires"));
         return "ProfileInfPerso";
     }
 

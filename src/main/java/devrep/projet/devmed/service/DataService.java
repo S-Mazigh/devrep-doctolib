@@ -1,8 +1,7 @@
 package devrep.projet.devmed.service;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,6 +59,8 @@ public class DataService {
         toAdd.setPrenom(allParams.get("Prenom"));
         toAdd.setDomaine(allParams.get("domaine"));//allParams.get("domain")));
         toAdd.setAuthority("PRO");
+        toAdd.setMesHoraires("Lundi[00:00>00:00]&Mardi[00:00>00:00]&Mercredi[00:00>00:00]&Jeudi[00:00>00:00]&Vendredi[00:00>00:00]");
+        toAdd.setDuréeRdv(1);
         // ajout des rendez vous ...
         // appel à la bd
         UtilisateurBD.save(toAdd);
@@ -82,10 +83,11 @@ public class DataService {
             user.setVille(allParams.get("Ville"));
             user.setPays(allParams.get("Pays"));
             // Pour eviter de se trimbaler tous les attributs, on les filtre avant.
-            Map<String, String> filteredParams = allParams.entrySet()
-                                                          .stream()
-                                                          .filter(entry->entry.getKey().matches("Open$|Close$"))
-                                                          .collect(Collectors.toMap(Entry::getKey,Entry::getValue));
+            Map<String, String> filteredParams = new HashMap<>();
+            for(String key: allParams.keySet()) {
+                if(key.matches("[a-zA-Z]*Close$|[a-zA-Z]*Open$"))
+                    filteredParams.put(key, allParams.get(key));
+            }
             user.setMesHoraires(rdvService.createHoraires(filteredParams));
             UtilisateurBD.save(user);
             return;

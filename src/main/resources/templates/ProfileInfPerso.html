@@ -15,7 +15,7 @@
         <div class="listes">
             <ul class="leftElements">
                 <li>
-                    <a href="/home">
+                    <a href="/home/search/all">
                         <span class="item-icon material-symbols-rounded"> home </span>
                         <span>Accueil</span>
                     </a>
@@ -94,6 +94,7 @@
         <input name="Prenom" type="text" placeholder="Prenom" th:value="*{prenom}" id="prenomForm"><br>
         <span class="form-item-icon material-symbols-rounded">mail</span>
         <input name="Email" type="email" placeholder="Email" th:value="*{email}" id="emailForm"><br>
+
         <!--Pro ONLY-->
         <span class="form-item-icon material-symbols-rounded">phone</span>
         <input name="Tel" type="tel" placeholder="N°Telephone" th:value="*{numTelephone}" id="telForm"><br>
@@ -121,22 +122,22 @@
                 <option value="Belgique">Belgique</option>
             </select>
             <p>-----------------------------------------------------------------------</p>
-            <div class="horaires">
+            <div class="horaires" th:object="${meshoraires}">
                 <label class="labelDays" for="lundi">Lundi</label>
-                <input type="time" name="LundiOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="LundiClose"><br>
+                <input type="time" name="LundiOpen" th:value="*{get(0)[0]}"> <label class="labelDays">à</label> <input type="time"
+                    name="LundiClose" th:value="*{get(0)[1]}"><br>
                 <label class="labelDays" for="MardiOpen">Mardi</label>
-                <input type="time" name="MardiOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="MardiClose"><br>
+                <input type="time" name="MardiOpen" th:value="*{get(1)[0]}"> <label class="labelDays">à</label> <input type="time"
+                    name="MardiClose" th:value="*{get(1)[1]}"><br>
                 <label class="labelDays" for="MercrediOpen">Mercredi</label>
-                <input type="time" name="MercrediOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="MercrediClose"><br>
+                <input type="time" name="MercrediOpen" th:value="*{get(2)[0]}"> <label class="labelDays">à</label> <input type="time"
+                    name="MercrediClose" th:value="*{get(2)[1]}"><br>
                 <label class="labelDays" for="JeudiOpen">Jeudi</label>
-                <input type="time" name="JeudiOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="JeudiClose"><br>
-                <label class="labelDays" for="lundi">Vendredi</label>
-                <input type="time" name="VendrediOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="VendrediClose"><br>
+                <input type="time" name="JeudiOpen" th:value="*{get(3)[0]}"> <label class="labelDays">à</label> <input type="time"
+                    name="JeudiClose" th:value="*{get(3)[1]}"><br>
+                <label class="labelDays" for="VendrediOpen">Vendredi</label>
+                <input type="time" name="VendrediOpen" th:value="*{get(4)[0]}"> <label class="labelDays">à</label> <input type="time"
+                    name="VendrediClose" th:value="*{get(4)[1]}"><br>
             </div>
 
         </div>

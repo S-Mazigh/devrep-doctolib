@@ -22,7 +22,7 @@
         <div class="listes">
             <ul class="leftElements">
                 <li>
-                    <a href="/home">
+                    <a href="/home/search/all">
                         <span class="item-icon material-symbols-rounded"> home </span>
                         <span>Accueil</span>
                     </a>
@@ -109,21 +109,20 @@
             </div>
             <div class="field">
                 <span class="item-icon material-symbols-rounded">location_home</span>
-                <span>Adresse</span>
+                <span th:text="*{adresse}"></span>
             </div>
             <div class="field">
                 <span class="item-icon material-symbols-rounded">location_on</span>
-                <span>Ville</span>
+                <span th:text="*{ville}"></span>
             </div>
             <div class="field">
                 <span class="item-icon material-symbols-rounded">phone</span>
-                <span>NumTelephone</span>
+                <span th:text="*{numTelephone}"></span>
             </div>
-            <!--
-            <span th:text="*{adresse}"></span>
-            <span th:text="*{ville}"></span>
-            <span th:text="*{numTelephone}"></span>
-            -->
+            <div class="field">
+                <span class="item-icon material-symbols-rounded">email</span>
+                <span th:text="*{email}"></span>
+            </div>
         </div>
     </div>
 </body>
