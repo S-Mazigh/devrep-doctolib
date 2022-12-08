@@ -112,8 +112,8 @@ public class WebController {
     public String getSearchDomaine(Model model, RedirectAttributes redirect, @PathVariable("domaine") String searchWords,
             @ModelAttribute("etat") Etat state) {
         // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
-        redirect.addFlashAttribute("listeProDomaine", searchService.getProByDomaine(searchWords, ""));
-        System.err.println("Results: "+redirect.getAttribute("listeProDomaine"));
+        redirect.addFlashAttribute("listePro", searchService.getProByDomaine(searchWords, ""));
+        System.err.println("Results: "+redirect.getAttribute("listePro"));
         System.err.println("Search: "+model.getAttribute("etat"));
         
         return "redirect:/home";

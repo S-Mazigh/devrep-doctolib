@@ -182,3 +182,16 @@ nav > div ul li:hover .sous{
   flex-direction: row;
   justify-content: center;
 }
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+.hidden {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
