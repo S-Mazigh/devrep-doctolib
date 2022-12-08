@@ -88,19 +88,12 @@
         </ul>
     </div>
     <form action="/profile/modify" method="post" accept-charset="utf-8" class="info-profile" th:object="${etat?.who}">
-        <p>---------------------------- Vos informations ----------------------------</p>
-        <div class="item-profile">
-            <span class="form-item-icon material-symbols-rounded">person</span>
-            <input name="Nom" type="text" placeholder="Nom" th:value="*{nom}" id="nomForm">
-        </div>
-        <div class="item-profile">
-            <span class="form-item-icon material-symbols-rounded">group</span>
-            <input name="Prenom" type="text" placeholder="Prenom" th:value="*{prenom}" id="prenomForm">
-        </div>
-        <div class="item-profile">
-            <span class="form-item-icon material-symbols-rounded">mail</span>
-            <input name="Email" type="email" placeholder="Email" th:value="*{email}" id="emailForm">
-        </div>
+        <span class="form-item-icon material-symbols-rounded">person</span>
+        <input name="Nom" type="text" placeholder="Nom" th:value="*{nom}" id="nomForm"><br>
+        <span class="form-item-icon material-symbols-rounded">group</span>
+        <input name="Prenom" type="text" placeholder="Prenom" th:value="*{prenom}" id="prenomForm"><br>
+        <span class="form-item-icon material-symbols-rounded">mail</span>
+        <input name="Email" type="email" placeholder="Email" th:value="*{email}" id="emailForm"><br>
         <!--Pro ONLY-->
         <div class="pro-part" th:if="${etat?.isPro}">
             <div class="item-profile">
@@ -126,29 +119,27 @@
                 <input name="Rue" type="text" placeholder="Rue" th:value="*{adresse}" id="rueForm">
                 <input name="Ville" type="text" placeholder="Ville" th:value="*{ville}" id="VilleForm">
             </div>
-            <div class="item-profile">
-                <span class="form-item-icon material-symbols-rounded">public</span>
-                <select name="Pays" id="pays-select" th:value="*{pays}">
-                    <option value="France">France</option>
-                    <option value="Belgique">Belgique</option>
-                </select>
-            </div>
-            <p>--------------------------- Horaires d'ouverture ---------------------------</p>
+            <span class="form-item-icon material-symbols-rounded">public</span>
+            <select name="Pays" id="pays-select" th:value="*{pays}">
+                <option value="France">France</option>
+                <option value="Belgique">Belgique</option>
+            </select>
+            <p>-----------------------------------------------------------------------</p>
             <div class="horaires">
-                <span class="labelDays" for="lundi">Lundi : De </span>
-                <input type="time" name="LundiOpen"> <span class="labelDays">à</span> <input type="time"
+                <label class="labelDays" for="lundi">Lundi</label>
+                <input type="time" name="LundiOpen"> <label class="labelDays">à</label> <input type="time"
                     name="LundiClose"><br>
-                <span class="labelDays" for="MardiOpen">Mardi : De </span>
-                <input type="time" name="MardiOpen"> <span class="labelDays">à</span> <input type="time"
+                <label class="labelDays" for="MardiOpen">Mardi</label>
+                <input type="time" name="MardiOpen"> <label class="labelDays">à</label> <input type="time"
                     name="MardiClose"><br>
-                <span class="labelDays" for="MercrediOpen">Mercredi : De </span>
-                <input type="time" name="MercrediOpen"> <span class="labelDays">à</span> <input type="time"
+                <label class="labelDays" for="MercrediOpen">Mercredi</label>
+                <input type="time" name="MercrediOpen"> <label class="labelDays">à</label> <input type="time"
                     name="MercrediClose"><br>
-                <span class="labelDays" for="JeudiOpen">Jeudi : De </span>
-                <input type="time" name="JeudiOpen"> <span class="labelDays">à</span> <input type="time"
+                <label class="labelDays" for="JeudiOpen">Jeudi</label>
+                <input type="time" name="JeudiOpen"> <label class="labelDays">à</label> <input type="time"
                     name="JeudiClose"><br>
-                <span class="labelDays" for="lundi">Vendredi : De </span>
-                <input type="time" name="VendrediOpen"> <span class="labelDays">à</span> <input type="time"
+                <label class="labelDays" for="lundi">Vendredi</label>
+                <input type="time" name="VendrediOpen"> <label class="labelDays">à</label> <input type="time"
                     name="VendrediClose"><br>
             </div>
         </div>
