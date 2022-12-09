@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -125,7 +126,7 @@ public class AppointmentService {
         int i = 0; // pour la liste des horaires
         System.out.println("Day keys: " + nextFiveDays.keySet());
         for (int day : nextFiveDays.keySet()) {
-            disponibilitiesInADay = new HashMap<>();
+            disponibilitiesInADay = new LinkedHashMap<>();
             // borner avec les horaires
             // Je parse la date "dd/MM/yyyy"+" "+"HeureOuverture"
             /*openTime = Date.from(LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[0], dateFormat)
@@ -139,6 +140,7 @@ public class AppointmentService {
                 // Malheuresement Date doit être utilisée pour la recherche
                 //System.out.println("open=" + openTime + ", d="+d+", close=" + closeTime);
                 disponibilitiesInADay.put(vueFormat.format(d), !RdvBD.findByDaterdv(Date.from(d.toInstant(getZoneOffset()))).isEmpty());
+                System.out.println("date:"+d+" loop dispo: "+disponibilitiesInADay);
             }
             disponibilitiesForFiveDays.add(disponibilitiesInADay);
             i++;

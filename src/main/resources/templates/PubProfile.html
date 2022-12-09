@@ -108,9 +108,14 @@
         </div>
         <h2>Disponibilités</h2>
         <div class="Disponibilities">
+            <!--List<Map<String,Boolean>-->
             <div class="perDay" th:each="d: ${disponibilities}">
-                <div class="perHour" th:each="t: ${d?.keySet()}">
-                    <p th:text="${t}">
+                <!--d is of type Map<String,Boolean>-->
+                <div th:each="t, status: ${d?.keySet()}">
+                    <!--t is of type String-->
+                    <p class="theDay" th:if="${status.first}" th:text="${#strings.arraySplit(t,' ')[0]}+' '+${#strings.arraySplit(t,' ')[1]}"></p>
+                    <div class="perHour" >
+                        <span th:text="${#strings.arraySplit(t,' ')[2]}"></span>
                         <div th:switch="${!d.get(t)}">
                             <!--Tester si rendez pris ou non-->
                             <form th:case="${true}" action="/appointment/take" method="post">
@@ -120,7 +125,7 @@
                             </form>
                             <span th:case="${false}">Pris!</span>
                         </div>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>

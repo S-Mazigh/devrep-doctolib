@@ -2,169 +2,190 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    width: 100%;
-    background-color: #048B9A;
-  }
-  
-  /* header bar style */
-  nav {
-    display: flex;
-    width: 100%;
-    background-color: #333;
-    flex-direction: row;
-  }
-  
-  .listes {
-    width: 100%;
-  }
-  
-  nav div ul{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    background-color: #333;
-  }
-  
-  nav div ul li{
-    background-color: #333;
-    float: left;
-    text-align: center;
-    position: relative;
-    width: fit-content;
-  }
-  
-  nav div ul.rightElements li{
-    float: right;
-  }
-  
-  nav a{
-    display: flex;
-    text-decoration: none;
-    color: white;
-    border-bottom: 2px solid transparent;
-    padding: 14px 16px;
-  }
-  
-  nav a:hover{
-    background-color: RGBa(200,200,200,0.1);
-  }
-  
-  .sous {
-    display: none;
-    background-color: #333;
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
-    padding: 0;
-  }
-  nav > div ul li:hover .sous{
-    display: block;
-  }
-  .sous li{
-    float: none;
-    width: 100%;
-    text-align: left;
-  }
-  .sous a{
-    padding: 10px;
-    border-bottom: none;
-  }
-  .sous a:hover{
-    border-bottom: none;
-    background-color: RGBa(200,200,200,0.1);
-  }
-  .deroulant > a::after{
-    margin-left: 10px;
-  }
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  background-color: #048B9A;
+}
 
-  .item-icon {
-    padding-right: .5rem;
+/* header bar style */
+nav {
+  display: flex;
+  width: 100%;
+  background-color: #333;
+  flex-direction: row;
+}
+
+.listes {
+  width: 100%;
+}
+
+nav div ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: #333;
+}
+
+nav div ul li {
+  background-color: #333;
+  float: left;
+  text-align: center;
+  position: relative;
+  width: fit-content;
+}
+
+nav div ul.rightElements li {
+  float: right;
+}
+
+nav a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid transparent;
+  padding: 14px 16px;
+}
+
+nav a:hover {
+  background-color: RGBa(200, 200, 200, 0.1);
+}
+
+.sous {
+  display: none;
+  background-color: #333;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  padding: 0;
+}
+
+nav>div ul li:hover .sous {
+  display: block;
+}
+
+.sous li {
+  float: none;
+  width: 100%;
+  text-align: left;
+}
+
+.sous a {
+  padding: 10px;
+  border-bottom: none;
+}
+
+.sous a:hover {
+  border-bottom: none;
+  background-color: RGBa(200, 200, 200, 0.1);
+}
+
+.deroulant>a::after {
+  margin-left: 10px;
+}
+
+.item-icon {
+  padding-right: .5rem;
 }
 
 /* container principal */
 
 .main-cont {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
 }
 
 /* info perso */
 
 .info-profile {
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-    color: white;
-    align-items: center;
-    text-align: center;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    border: solid 3px white;
-    border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  color: white;
+  align-items: center;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: solid 3px white;
+  border-radius: 15px;
 }
 
 .field {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 1% 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1% 1%;
 }
 
 /* rendez vous */
 
 .Disponibilities {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    text-align: center;
-    margin: 0px 3%;
-    width: 80%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  text-align: center;
+  margin: 0px 3%;
+  width: 80%;
 }
 
 .perDay {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    border: solid 3px white;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: solid 3px white;
+  border-radius: 10px;
+}
+
+.perDay > div { /* le div contenant le perHour */
+  display: flex;
+  height: 120px;
+  width: 25%;
+  border-right: 2px solid white;
+}
+
+.perDay>div:last-child {
+  border: none;
+}
+
+.theDay {
+  display: block;
+  font-weight: bolder;
+  padding: 2em 0;
+  margin: 0;
+  border-right: 3px double white;
 }
 
 .perHour {
-    width: 20%;
-    height: 120px;
-    border-right: solid 2px white;
-}
-
-.perHour:last-child {
-    border: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .perHour button {
-    background: white;
-    color: #333;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    text-align: center;
-    text-transform: uppercase;
+  background: white;
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .perHour button:hover {
-    background-color: whitesmoke;
-    color: #333;
-    cursor: pointer;
+  background-color: whitesmoke;
+  color: #333;
+  cursor: pointer;
 }
-  

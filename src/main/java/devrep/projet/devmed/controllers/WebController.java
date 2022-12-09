@@ -1,6 +1,9 @@
 package devrep.projet.devmed.controllers;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -165,6 +168,8 @@ public class WebController {
         if(!theOther.equals(null)) {
             model.addAttribute("theOther", theOther);
             model.addAttribute("disponibilities", rdvService.getDisponibilities(theOther.getMesHoraires()));
+            // to call group we must first call .matches
+            model.addAttribute("dateTimeRegex", Pattern.compile("(?<date>\\w+ \\d{2}/\\d{2}/\\d{4}) (?<hour>\\d{2}:\\d{2})")); // group 1 Jour dd/MM/yyyy, group 2 HH:mm
         }
         System.err.println("MyProfile: "+model.getAttribute("etat"));
         return "PubProfile";
