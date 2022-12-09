@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import devrep.projet.devmed.entities.Etat;
+import devrep.projet.devmed.entities.Utilisateur;
 import devrep.projet.devmed.service.AppointmentService;
 import devrep.projet.devmed.service.DataService;
 import devrep.projet.devmed.service.SearchService;
@@ -34,6 +35,9 @@ public class WebController {
 
     @Autowired
     private DataService dataService;
+
+    @Autowired
+    private AppointmentService rdvService;
 
     /*
      * va toujours être appelé avant les requestmapping (get, post...)
@@ -157,7 +161,11 @@ public class WebController {
     @GetMapping(path="/profile/public/{id}")
     public String getAProfile(Model model, @PathVariable(name="id") Long id) {
         // Le Not found est gére par thymeleaf avec un if.
-        model.addAttribute("theOther", searchService.getById(id));
+        Utilisateur theOther = searchService.getById(id);
+        if(!theOther.equals(null)) {
+            model.addAttribute("theOther", theOther);
+            model.addAttribute("disponibilities", rdvService.getDisponibilities(theOther.getMesHoraires()));
+        }
         System.err.println("MyProfile: "+model.getAttribute("etat"));
         return "PubProfile";
     }
@@ -167,7 +175,6 @@ public class WebController {
         Etat current = (Etat) model.getAttribute("etat");
         if(current != null)
             model.addAttribute("meshoraires",AppointmentService.formatHoraires(current.getWho().getMesHoraires()));
-        System.err.println("MyProfile: "+model.getAttribute("meshoraires"));
         return "ProfileInfPerso";
     }
 

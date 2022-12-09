@@ -22,9 +22,6 @@ public class DataService {
     @Autowired
     private ApplicationSecurityConfiguration secuConfig;
 
-    @Autowired
-    private AppointmentService rdvService;
-
     @Transactional
     public boolean addPatient(Map<String, String> allParams) {
         Utilisateur toAdd;
@@ -88,7 +85,7 @@ public class DataService {
                 if(key.matches("[a-zA-Z]*Close$|[a-zA-Z]*Open$"))
                     filteredParams.put(key, allParams.get(key));
             }
-            user.setMesHoraires(rdvService.createHoraires(filteredParams));
+            user.setMesHoraires(AppointmentService.createHoraires(filteredParams));
             UtilisateurBD.save(user);
             return;
         }

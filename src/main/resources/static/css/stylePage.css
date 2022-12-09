@@ -164,6 +164,8 @@ nav > div ul li:hover .sous{
 }
 
 .oneResult {
+  text-decoration: none;
+  color: #111;
   display: flex;
   flex-direction: row;
   border-radius: 10px;

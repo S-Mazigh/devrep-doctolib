@@ -24,6 +24,7 @@ public class RendezVous {
     @ManyToOne
     private Utilisateur pro;
 
+    // date format: JOUR:dd/MM/yyyy HH:mm
     @Temporal(TemporalType.TIMESTAMP)
     private Date daterdv;
 
@@ -41,7 +42,7 @@ public class RendezVous {
         return patient;
     }
 
-    public void setPatientId(Utilisateur patient) {
+    public void setPatient(Utilisateur patient) {
         this.patient = patient;
     }
 
@@ -59,5 +60,10 @@ public class RendezVous {
 
     public void setDaterdv(Date daterdv) {
         this.daterdv = daterdv;
+    }
+
+    @Override
+    public String toString() {
+        return "RendezVous [Id=" + Id + ", patient=" + patient + ", pro=" + pro + ", daterdv=" + daterdv + "]";
     }
 }

@@ -81,50 +81,40 @@
             </ul>
         </div>
     </nav>
-    <div class="searchCont">
-        <div class="titleSearchCont">
-            <h1>Trouvez un rendez-vous avec un professionnel !</h1>
+
+    <div th:object="${theOther}">
+        <div class="field">
+            <span class="item-icon material-symbols-rounded">person</span>
+            <span th:text="'Dr '+*{nom}+' '+*{prenom}"></span>
         </div>
-        <div class="formSearchCont">
-            <form class="search-card-form" action="/home/search" method="post" accept-charset="utf-8">
-                <div class="form-item">
-                    <span class="item-icon material-symbols-rounded">search</span>
-                    <input type="text" name="searchWords" placeholder="Professionnel, Spécialité" id="searchForm"
-                        autofocus required />
-                    <span class="item-icon material-symbols-rounded">where_to_vote</span>
-                    <input type="text" name="searchWhere" placeholder="Où ?" id="searchForm" autofocus />
-                    <input type="submit" hidden />
-                </div>
-            </form>
+        <div class="field">
+            <span class="item-icon material-symbols-rounded">medical_services</span>
+            <span th:text="*{domaine}"></span>
+        </div>
+        <div class="field">
+            <span class="item-icon material-symbols-rounded">location_home</span>
+            <span th:text="*{adresse}"></span>
+        </div>
+        <div class="field">
+            <span class="item-icon material-symbols-rounded">location_on</span>
+            <span th:text="*{ville}"></span>
+        </div>
+        <div class="field">
+            <span class="item-icon material-symbols-rounded">phone</span>
+            <span th:text="*{numTelephone}"></span>
+        </div>
+        <div class="field">
+            <span class="item-icon material-symbols-rounded">email</span>
+            <span th:text="*{email}"></span>
         </div>
     </div>
-    <div class="searchResults" th:each="r: ${listePro}">
-        <a class="oneResult" th:object="${r}" th:href="'/profile/public/'+${r.id}">
-            <div class="field">
-                <span class="item-icon material-symbols-rounded">person</span>
-                <span th:text="'Dr '+*{nom}+' '+*{prenom}"></span>
-            </div>
-            <div class="field">
-                <span class="item-icon material-symbols-rounded">medical_services</span>
-                <span th:text="*{domaine}"></span>
-            </div>
-            <div class="field">
-                <span class="item-icon material-symbols-rounded">location_home</span>
-                <span th:text="*{adresse}"></span>
-            </div>
-            <div class="field">
-                <span class="item-icon material-symbols-rounded">location_on</span>
-                <span th:text="*{ville}"></span>
-            </div>
-            <div class="field">
-                <span class="item-icon material-symbols-rounded">phone</span>
-                <span th:text="*{numTelephone}"></span>
-            </div>
-            <div class="field">
-                <span class="item-icon material-symbols-rounded">email</span>
-                <span th:text="*{email}"></span>
-            </div>
-        </a>
+    <div class="Disponibilities">
+        <ul th:each="d: ${disponibilities}">
+            <ul th:each="t: ${d?.keySet()}">
+                <li th:text="${t}+': '+${d.get(t)}"></li>
+            </ul>
+        </ul>
     </div>
+
 </body>
 </html>
