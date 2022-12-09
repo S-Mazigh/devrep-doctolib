@@ -34,14 +34,13 @@ public class AppointmentService {
 
     @Transactional
     public void addRdv(Long idPatient, Long idPro, String date) {
-        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("E MMM dd HH:mm:ss z yyyy");
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("E dd/MM/yyyy HH:mm");
         RendezVous toAdd = new RendezVous();
-        if (idPatient == null || idPro == null || date == null)
+        if (idPatient == null || idPro == null || date == null) // ne rien faire si un est null (l'authentification spring bug des fois, la session n'est pas tout a fait cloturée)
             return;
         toAdd.setPatient(UtilisateurBD.getReferenceById(idPatient));
         toAdd.setPro(UtilisateurBD.getReferenceById(idPro));
         // format string before
-
         toAdd.setDaterdv(Date.from(LocalDateTime.parse(date, dateFormat).toInstant(getZoneOffset())));
         System.out.println("Appointement to add: " + toAdd);
         RdvBD.save(toAdd);
@@ -83,24 +82,28 @@ public class AppointmentService {
     }
 
     // Pour récupérer les dates des prochains jours ouvrables
-    public static Map<String, String> getThisWeek() {
-        // get today date
+    public static Map<Integer, String> getThisWeek() {
+        // Recuperer le temps actuelle avec la zone geographique du serveur !!
         Calendar now = Calendar.getInstance();
-        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
-        SimpleDateFormat day = new SimpleDateFormat("E");
-        Map<String, String> thisweek = new HashMap<>();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        // SimpleDateFormat day = new SimpleDateFormat("E");
+        Map<Integer, String> thisweek = new HashMap<>();
         Date next;
+        int jour, date;
         for (int i = 0; i < 7; i++) { // le but est d'avoir les 5 prochains jours ouvrables.
-            if (now.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY
-                    && now.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY) {
+        jour = now.get(Calendar.DAY_OF_WEEK); // recupérer la journée 
+        date = now.get(Calendar.DAY_OF_MONTH);
+            if (jour != Calendar.SUNDAY && jour != Calendar.SATURDAY) { // que les jours ouverables
                 next = now.getTime();
-                thisweek.put(day.format(next), date.format(next));
+                thisweek.put(date, dateFormat.format(next)); // utiliser la date du jour dans le mois pour avoir un ordre croissant.
             }
-            now.add(Calendar.DAY_OF_WEEK, 1);
+            now.add(Calendar.DAY_OF_WEEK, 1); // passe  au jour suivant
         }
         return thisweek;
     }
 
+    // L'entité rendez vous ne peut prendre qu'un Date ou Calendar comme attribut, du coup il faut convertir le LocalDateTime en Date
+    // Sachez que Date à plus d'information que le LocalDateTime; Date ou calendar comprennent la zone geographique.
     // Pour calculer le zoneOffset du systeme
     public ZoneOffset getZoneOffset() {
         ZoneId myZone = ZoneId.of("Europe/Paris");
@@ -109,39 +112,38 @@ public class AppointmentService {
 
     // Pour récupérer les disponibilités pour les cinq prochain jours ouvrables et
     // les afficher avec thymeleaf
-    public List<Map<Date, Boolean>> getDisponibilities(String horaires) {
-        Map<String, String> nextFiveDays = getThisWeek();
+    public List<Map<String, Boolean>> getDisponibilities(String horaires) {
+        Map<Integer, String> nextFiveDays = getThisWeek();
         List<String[]> mesHoraires = formatHoraires(horaires);
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter vueFormat = DateTimeFormatter.ofPattern("E dd/MM/yyyy HH:mm");
 
-        Map<Date, Boolean> disponibilitiesInADay;
-        List<Map<Date, Boolean>> disponibilitiesForFiveDays = new ArrayList<>();
+        Map<String, Boolean> disponibilitiesInADay;
+        List<Map<String, Boolean>> disponibilitiesForFiveDays = new ArrayList<>();
 
-        Date openTime, closeTime;
-        long rdvDuration = (3600 * 1000); // une heure pour tous pour l'instant
+        LocalDateTime openTime, closeTime;
         int i = 0; // pour la liste des horaires
-        String[] weekDays = new String[] { "lun.", "mar.", "mer.", "jeu.", "ven." };
         System.out.println("Day keys: " + nextFiveDays.keySet());
-        for (String day : weekDays) {
+        for (int day : nextFiveDays.keySet()) {
+            disponibilitiesInADay = new HashMap<>();
             // borner avec les horaires
             // Je parse la date "dd/MM/yyyy"+" "+"HeureOuverture"
-            disponibilitiesInADay = new HashMap<>();
-            openTime = Date.from(LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[0], dateFormat)
+            /*openTime = Date.from(LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[0], dateFormat)
                     .toInstant(getZoneOffset()));
             closeTime = Date.from(LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[1], dateFormat)
-                    .toInstant(getZoneOffset()));
+                    .toInstant(getZoneOffset()));*/
+            openTime = LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[0], dateFormat);
+            closeTime = LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[1], dateFormat);
             System.out.println("open=" + openTime + ", close=" + closeTime);
-            for (Date d = openTime; !d.equals(closeTime); d = new Date(d.getTime() + rdvDuration)) {
-                disponibilitiesInADay.put(d, !RdvBD.findByDaterdv(d).isEmpty());
+            for (LocalDateTime d = openTime; !d.equals(closeTime); d = d.plusHours(1)) { // une heure pour tous pour l'instant
+                // Malheuresement Date doit être utilisée pour la recherche
+                //System.out.println("open=" + openTime + ", d="+d+", close=" + closeTime);
+                disponibilitiesInADay.put(vueFormat.format(d), !RdvBD.findByDaterdv(Date.from(d.toInstant(getZoneOffset()))).isEmpty());
             }
-            // System.out.println("Disponibilités pour " + day + ": " +
-            // disponibilitiesInADay);
             disponibilitiesForFiveDays.add(disponibilitiesInADay);
             i++;
         }
         System.out.println("dispo : " + disponibilitiesForFiveDays);
         return disponibilitiesForFiveDays;
     }
-
-    // Liste de rendezvous par heure avec un boolean si pris
 }
