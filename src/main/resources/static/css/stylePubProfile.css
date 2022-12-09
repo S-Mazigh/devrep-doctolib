@@ -128,12 +128,14 @@ body {
     color: white;
     align-items: center;
     text-align: center;
-    margin: 0px 5%;
+    margin: 0px 3%;
+    width: 80%;
 }
 
 .perDay {
     display: flex;
     flex-direction: row;
+    width: 100%;
     margin-top: 1%;
     margin-bottom: 1%;
     border: solid 3px white;
@@ -141,6 +143,8 @@ body {
 }
 
 .perHour {
+    width: 20%;
+    height: 120px;
     border-right: solid 2px white;
 }
 
