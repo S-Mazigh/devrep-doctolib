@@ -137,7 +137,6 @@ nav > div ul li:hover .sous{
 }
 
 .info-profile {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     color: white;
@@ -145,8 +144,7 @@ nav > div ul li:hover .sous{
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
-    margin-right: 350px;
-    margin-left: 350px;
+    margin: 30px 350px;
     background-color:#048b9a48;
     border: solid 3px white;
     border-radius: 15px;

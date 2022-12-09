@@ -190,4 +190,12 @@ public class WebController {
         dataService.modifyProfile(state, allParams);
         return "redirect:/profile/infPerso";
     }
+
+    @PostMapping(path ="/appointment/take")
+    public String takeRdv(Model model, @RequestParam("pro") Long pro, @RequestParam("dateRdv") String date) {
+        Etat current = (Etat) model.getAttribute("etat");
+        if(current != null)
+            rdvService.addRdv(current.getWho().getId(),pro,date);
+        return "redirect:/profile/public/"+pro;
+    }
 }

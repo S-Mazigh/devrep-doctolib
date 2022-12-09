@@ -17,7 +17,7 @@
     <title>DevrepDocto</title>
 </head>
 
-<body>
+<body style="color:white;">
     <!--<script src="/js/header.js"></script>-->
     <nav>
         <div class="listes">
@@ -83,6 +83,7 @@
     </nav>
 
     <div th:object="${theOther}">
+        <div class="Info" style="margin: auto;">
         <div class="field">
             <span class="item-icon material-symbols-rounded">person</span>
             <span th:text="'Dr '+*{nom}+' '+*{prenom}"></span>
@@ -108,13 +109,26 @@
             <span th:text="*{email}"></span>
         </div>
     </div>
-    <div class="Disponibilities">
-        <ul th:each="d: ${disponibilities}">
-            <ul th:each="t: ${d?.keySet()}">
-                <li th:text="${t}+': '+${d.get(t)}"></li>
-            </ul>
-        </ul>
+        <div class="Disponibilities" style="display: flex;">
+            <div class="perDay" th:each="d: ${disponibilities}" style="border: 2px solid white;">
+                <div class="perHour" th:each="t: ${d?.keySet()}" style="border: 1px solid white; text-align: center;">
+                    <p th:text="${t}">
+                        <div th:switch="${!d.get(t)}">
+                            <!--Tester si rendez pris ou non-->
+                            <form th:case="${true}" action="/appointment/take" method="post">
+                                <input type="number" name="pro" th:value="*{getId()}" hidden> <!-- Attention à ne pas le sortir du div qui a son th:object-->
+                                <input type="text" name="dateRdv" th:value="${t}" hidden>
+                                <button type="submit">Prendre</button>
+                            </form>
+                            <span th:case="${false}">Pris!</span>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
+
 </body>
+
 </html>
