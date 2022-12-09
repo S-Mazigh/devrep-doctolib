@@ -90,13 +90,16 @@
                 <div class="form-item">
                     <span class="item-icon material-symbols-rounded">search</span>
                     <input type="text" name="searchWords" placeholder="Professionnel, Spécialité" id="searchForm"
-                        autofocus required />
+                        autofocus/>
                     <span class="item-icon material-symbols-rounded">where_to_vote</span>
                     <input type="text" name="searchWhere" placeholder="Où ?" id="searchForm" autofocus />
-                    <input type="submit" hidden />
+                    <button class="hidden" type="submit"></button>
                 </div>
             </form>
         </div>
+    </div>
+    <div th:if="${listePro == null || listePro.isEmpty()}">
+        <h2>Personne ici... Utilisez notre recherche pour trouver votre spécialiste !</h2>
     </div>
     <div class="searchResults" th:each="r: ${listePro}">
         <a class="oneResult" th:object="${r}" th:href="'/profile/public/'+${r.id}">
@@ -119,10 +122,6 @@
             <div class="field">
                 <span class="item-icon material-symbols-rounded">phone</span>
                 <span th:text="*{numTelephone}"></span>
-            </div>
-            <div class="field">
-                <span class="item-icon material-symbols-rounded">email</span>
-                <span th:text="*{email}"></span>
             </div>
         </a>
     </div>

@@ -88,12 +88,19 @@
         </ul>
     </div>
     <form action="/profile/modify" method="post" accept-charset="utf-8" class="info-profile" th:object="${etat?.who}">
-        <span class="form-item-icon material-symbols-rounded">person</span>
-        <input name="Nom" type="text" placeholder="Nom" th:value="*{nom}" id="nomForm"><br>
-        <span class="form-item-icon material-symbols-rounded">group</span>
-        <input name="Prenom" type="text" placeholder="Prenom" th:value="*{prenom}" id="prenomForm"><br>
-        <span class="form-item-icon material-symbols-rounded">mail</span>
-        <input name="Email" type="email" placeholder="Email" th:value="*{email}" id="emailForm"><br>
+        <h2>Coordonnées</h2>
+        <div class="item-profile">
+            <span class="form-item-icon material-symbols-rounded">person</span>
+            <input name="Nom" type="text" placeholder="Nom" th:value="*{nom}" id="nomForm">
+        </div>
+        <div class="item-profile">
+            <span class="form-item-icon material-symbols-rounded">group</span>
+            <input name="Prenom" type="text" placeholder="Prenom" th:value="*{prenom}" id="prenomForm">
+        </div>
+        <div class="item-profile">
+            <span class="form-item-icon material-symbols-rounded">mail</span>
+            <input name="Email" type="email" placeholder="Email" th:value="*{email}" id="emailForm">
+        </div>
         <!--Pro ONLY-->
         <div class="pro-part" th:if="${etat?.isPro}">
             <div class="item-profile">
@@ -102,7 +109,8 @@
             </div>
             <div class="item-profile">
                 <span class="form-item-icon material-symbols-rounded">medical_services</span>
-                <select name="domaine" id="domain-select" th:value="*{domaine}">
+                <select name="Domaine" id="domain-select" th:value="*{domaine}">
+                    <option th:text="*{domaine}"></option>
                     <option value="Generaliste">Généraliste</option>
                     <option value="Ophtalmologue">Ophtalmologue</option>
                     <option value="Pediatre">Pédiatre</option>
@@ -118,29 +126,42 @@
                 <span class="form-item-icon material-symbols-rounded">home</span>
                 <input name="Rue" type="text" placeholder="Rue" th:value="*{adresse}" id="rueForm">
                 <input name="Ville" type="text" placeholder="Ville" th:value="*{ville}" id="VilleForm">
+            </div> 
+            <div class="item-profile">
+                <span class="form-item-icon material-symbols-rounded">public</span>
+                <select name="Pays" id="pays-select" th:value="*{pays}">
+                    <option value="France">France</option>
+                    <option value="Belgique">Belgique</option>
+                </select>
             </div>
-            <span class="form-item-icon material-symbols-rounded">public</span>
-            <select name="Pays" id="pays-select" th:value="*{pays}">
-                <option value="France">France</option>
-                <option value="Belgique">Belgique</option>
-            </select>
-            <p>-----------------------------------------------------------------------</p>
-            <div class="horaires">
-                <label class="labelDays" for="lundi">Lundi</label>
-                <input type="time" name="LundiOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="LundiClose"><br>
-                <label class="labelDays" for="MardiOpen">Mardi</label>
-                <input type="time" name="MardiOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="MardiClose"><br>
-                <label class="labelDays" for="MercrediOpen">Mercredi</label>
-                <input type="time" name="MercrediOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="MercrediClose"><br>
-                <label class="labelDays" for="JeudiOpen">Jeudi</label>
-                <input type="time" name="JeudiOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="JeudiClose"><br>
-                <label class="labelDays" for="lundi">Vendredi</label>
-                <input type="time" name="VendrediOpen"> <label class="labelDays">à</label> <input type="time"
-                    name="VendrediClose"><br>
+            <h2>Horaires d'ouverture</h2>
+            <div class="horaires" th:object="${meshoraires}">
+                <div class="item-profile">
+                    <span class="jour" for="lundi">Lundi de</span>
+                    <input type="time" name="LundiOpen" th:value="*{get(0)[0]}"><span class="to">à</span> <input type="time"
+                        name="LundiClose" th:value="*{get(0)[1]}">
+                </div>
+                <div class="item-profile">
+                    <span class="jour" for="MardiOpen">Mardi de</span>
+                    <input type="time" name="MardiOpen" th:value="*{get(1)[0]}"><span class="to">à</span><input type="time"
+                        name="MardiClose" th:value="*{get(1)[1]}">
+                </div>
+                <div class="item-profile">
+                    <span class="jour" for="MercrediOpen">Mercredi de</span>
+                    <input type="time" name="MercrediOpen"  th:value="*{get(2)[0]}"><span class="to">à</span> <input type="time"
+                    name="MercrediClose" th:value="*{get(2)[1]}">
+                </div>
+                <div class="item-profile">
+                    <span class="jour" for="JeudiOpen">Jeudi de</span>
+                    <input type="time" name="JeudiOpen" th:value="*{get(3)[0]}"><span class="to">à</span> <input type="time"
+                        name="JeudiClose" th:value="*{get(3)[1]}">
+                    
+                </div>
+                <div class="item-profile">
+                    <span class="jour" for="VendrediOpen">Vendredi de</span>
+                    <input type="time" name="VendrediOpen" th:value="*{get(4)[0]}"><span class="to">à</span> <input type="time"
+                        name="VendrediClose" th:value="*{get(4)[1]}">
+                </div>
             </div>
         </div>
         <button type="submit">Modifier</button>

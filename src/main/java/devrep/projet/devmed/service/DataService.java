@@ -54,7 +54,7 @@ public class DataService {
         toAdd.setMotDePasse(secuConfig.passwordEncoder().encode(allParams.get("Password")));
         toAdd.setNom(allParams.get("Nom"));
         toAdd.setPrenom(allParams.get("Prenom"));
-        toAdd.setDomaine(allParams.get("domaine"));//allParams.get("domain")));
+        toAdd.setDomaine(allParams.get("Domaine"));//allParams.get("domain")));
         toAdd.setAuthority("PRO");
         toAdd.setMesHoraires("Lundi[00:00>00:00]&Mardi[00:00>00:00]&Mercredi[00:00>00:00]&Jeudi[00:00>00:00]&Vendredi[00:00>00:00]");
         toAdd.setDuréeRdv(1);
@@ -76,6 +76,7 @@ public class DataService {
             // tel, rdv ...
             // ajout de la nouvelle version
             user.setNumTelephone(allParams.get("Tel"));
+            user.setDomaine(allParams.get("Domaine"));
             user.setAdresse(allParams.get("Rue"));
             user.setVille(allParams.get("Ville"));
             user.setPays(allParams.get("Pays"));

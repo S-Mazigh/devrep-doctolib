@@ -143,6 +143,13 @@ nav > div ul li:hover .sous{
     color: white;
     align-items: center;
     text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-right: 350px;
+    margin-left: 350px;
+    background-color:#048b9a48;
+    border: solid 3px white;
+    border-radius: 15px;
 }
 
 .info-profile span {
@@ -161,22 +168,56 @@ nav > div ul li:hover .sous{
   align-items: center;
 }
 
+.horaires {
+  display: block;
+  width: 65%;
+}
+
+.horaires .jour {
+  width: 55%;
+}
+
+.horaires .to {
+  width: 15%;
+}
+
+.horaires input[type="time"] {
+  display: block;
+  width: 30%;
+  text-align: center;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  cursor:text;
+}
+
+.horaires button {
+  margin-top: 20px;
+  background: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 100px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 button {
     margin-top: 20px;
-    background: #333;
-    color: white;
+    background: white;
+    color: #333;
     padding: 10px;
-    border-radius: 100px;
+    border: none;
+    border-radius: 15px;
     text-align: center;
     text-transform: uppercase;
 }
 
 button:hover {
-    background-color: #111;
+    background-color: whitesmoke;
+    color: #333;
     cursor: pointer;
 }
 
-input, select {
+input {
   margin: 5px;
   padding: 10px;
   font-size: 1rem;
@@ -185,6 +226,18 @@ input, select {
   outline: none;
   border: 0;
   border-radius: 5px;
+}
+
+select {
+  height: 35px;
+  width: 220px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  outline: none;
+  border: 0;
 }
 
 .info-profile input::placeholder {
@@ -196,19 +249,7 @@ input, select {
   opacity: 0.6;
 }
 
-.info-profile input:focus::placeholder {
-  opacity: 0.6;
-}
-
 .horaires input{
   margin-left: -5px;
   margin-right: -5px;
-}
-
-label.labelDays {
-  padding: 8px;
-  font-size: 1rem;
-  border-radius: 5px;
-  background-color:rgb(193, 233, 229);
-  color: #333;
 }
