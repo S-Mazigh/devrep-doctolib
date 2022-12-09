@@ -1,8 +1,6 @@
 package devrep.projet.devmed.controllers;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Map;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
@@ -52,9 +50,39 @@ public class WebController {
         return state;
     }
 
-    @GetMapping(path = "/home")
-    public String getHome() {
+    @GetMapping(path = {"/home"}) 
+    public String getHomeAllPro(Model model) {
+        model.addAttribute("listePro", searchService.getProByDomaineOrName("", ""));
         return "Home";
+    }
+
+    @GetMapping(path = "home/search")
+    public String getHomeSearch(Model model) {
+        return "Home";
+    }
+
+    @PostMapping(path = "/home/search")
+    public String getSearchPro(Model model, RedirectAttributes redirect, @RequestParam("searchWords") String searchWords,
+            @RequestParam(name = "searchWhere", required = false) String searchWhere,
+            @ModelAttribute("etat") Etat state) {
+        // il faut les ajouté au redirect vu qu'on les affiche dans le get 
+        // on utilise le addFlash au lieu du addAttribute pour eviter d'envoyer l'attribut en le serialisant, il vaut mieux le garder dans la flash map
+        redirect.addFlashAttribute("listePro", searchService.getProByDomaineOrName(searchWords, searchWhere));
+        //System.err.println("Results: "+redirect.getAttribute("listePro"));
+        //System.err.println("Search: "+model.getAttribute("etat"));
+        
+        return "redirect:/home/search";
+    }
+
+    @GetMapping(path = "/home/search/{domaine}")
+    public String getSearchDomaine(Model model, RedirectAttributes redirect, @PathVariable("domaine") String searchWords,
+            @ModelAttribute("etat") Etat state) {
+        // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
+        redirect.addFlashAttribute("listePro", searchService.getProByDomaine(searchWords, ""));
+        System.err.println("Results: "+redirect.getAttribute("listePro"));
+        System.err.println("Search: "+model.getAttribute("etat"));
+        
+        return "redirect:/home/search";
     }
 
     @GetMapping(path ="/categories")
@@ -95,35 +123,6 @@ public class WebController {
     public String getSignUpPatient(Model model) {
         System.err.println("Inscription patient: "+model.getAttribute("etat"));
         return "InscriptionUser";
-    }
-
-    @GetMapping(path = {"/home/search/all", "/"}) 
-    public String getHomeAllPro(RedirectAttributes redirect) {
-        redirect.addFlashAttribute("listePro", searchService.getProByDomaineOrName("", ""));
-        return "redirect:/home";
-    }
-    @PostMapping(path = "/home/search")
-    public String getSearchPro(Model model, RedirectAttributes redirect, @RequestParam("searchWords") String searchWords,
-            @RequestParam(name = "searchWhere", required = false) String searchWhere,
-            @ModelAttribute("etat") Etat state) {
-        // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
-        // on utilise le addFlash au lieu du addAttribute pour eviter d'envoyer l'attribut en le serialisant,    il vaut mieux le garder dans la flash map
-        redirect.addFlashAttribute("listePro", searchService.getProByDomaineOrName(searchWords, searchWhere));
-        System.err.println("Results: "+redirect.getAttribute("listePro"));
-        System.err.println("Search: "+model.getAttribute("etat"));
-        
-        return "redirect:/home";
-    }
-
-    @GetMapping(path = "/home/search/{domaine}")
-    public String getSearchDomaine(Model model, RedirectAttributes redirect, @PathVariable("domaine") String searchWords,
-            @ModelAttribute("etat") Etat state) {
-        // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
-        redirect.addFlashAttribute("listePro", searchService.getProByDomaine(searchWords, ""));
-        System.err.println("Results: "+redirect.getAttribute("listePro"));
-        System.err.println("Search: "+model.getAttribute("etat"));
-        
-        return "redirect:/home";
     }
 
     @PostMapping(path = "/signup/patient")

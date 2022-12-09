@@ -68,13 +68,13 @@ public class ApplicationSecurityConfiguration {
                             request.getSession().setAttribute("etat", state);
                         }
                         System.err.println("Authentication: " + state);
-                        response.sendRedirect("/home/search/all");
+                        response.sendRedirect("/home");
                     }
                 })
                 .failureUrl("/login-error") // l'exception : (AuthenticationException)
                                             // session.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
                 .and()
-                .logout().logoutUrl("/logout-all").logoutSuccessUrl("/home/search/all");
+                .logout().logoutUrl("/logout-all").logoutSuccessUrl("/home");
         // Pour pouvoir faire des post. Faut voir si c'est possible de faire autrement.
         http.cors().and().csrf().disable();
         /*
