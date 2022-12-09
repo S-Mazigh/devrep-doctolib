@@ -137,7 +137,7 @@
             <h2>Horaires d'ouverture</h2>
             <div class="horaires" th:object="${meshoraires}">
                 <div class="item-profile">
-                    <span class="jour" for="lundi">Lundi de</span>
+                    <span class="jour" for="LundiOpen">Lundi de</span>
                     <input type="time" name="LundiOpen" th:value="*{get(0)[0]}"><span class="to">à</span> <input type="time"
                         name="LundiClose" th:value="*{get(0)[1]}">
                 </div>

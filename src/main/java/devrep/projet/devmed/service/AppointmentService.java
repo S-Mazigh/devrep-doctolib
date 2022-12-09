@@ -120,7 +120,7 @@ public class AppointmentService {
         Date openTime, closeTime;
         long rdvDuration = (3600 * 1000); // une heure pour tous pour l'instant
         int i = 0; // pour la liste des horaires
-        String[] weekDays = new String[] { "Mon", "Tue", "Wed", "Thu", "Fri" };
+        String[] weekDays = new String[] { "lun.", "mar.", "mer.", "jeu.", "ven." };
         System.out.println("Day keys: " + nextFiveDays.keySet());
         for (String day : weekDays) {
             // borner avec les horaires
@@ -130,14 +130,16 @@ public class AppointmentService {
                     .toInstant(getZoneOffset()));
             closeTime = Date.from(LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[1], dateFormat)
                     .toInstant(getZoneOffset()));
-            // System.out.println("open=" + openTime + ", close=" + closeTime);
+            System.out.println("open=" + openTime + ", close=" + closeTime);
             for (Date d = openTime; !d.equals(closeTime); d = new Date(d.getTime() + rdvDuration)) {
                 disponibilitiesInADay.put(d, !RdvBD.findByDaterdv(d).isEmpty());
             }
             // System.out.println("Disponibilités pour " + day + ": " +
             // disponibilitiesInADay);
             disponibilitiesForFiveDays.add(disponibilitiesInADay);
+            i++;
         }
+        System.out.println("dispo : " + disponibilitiesForFiveDays);
         return disponibilitiesForFiveDays;
     }
 
