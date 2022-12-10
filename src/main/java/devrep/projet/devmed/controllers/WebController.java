@@ -145,21 +145,6 @@ public class WebController {
         return "redirect:/signup/pro";
     }
 
-    /*
-     * @PostMapping(path = "/login")
-     * public String loginPro(Model model, @ModelAttribute("etat") Etat
-     * state, @RequestParam("Email") String email,
-     * 
-     * @RequestParam("Password") String mdp, @RequestParam("pro") String isPro) {
-     * Etat newState = dataService.loginUser(email, mdp, isPro);
-     * state = newState;
-     * if(!state.isConnected() || state.isWrongPass() || state.isBadEmail())
-     * return "Connexion";
-     * else
-     * return "Home";
-     * }
-     */
-
     @GetMapping(path="/profile/public/{id}")
     public String getAProfile(Model model, @PathVariable(name="id") Long id) {
         // Le Not found est gére par thymeleaf avec un if.
@@ -184,6 +169,9 @@ public class WebController {
 
     @GetMapping(path="/profile/rdv")
     public String getMyRdv(Model model) {
+        Etat current = (Etat) model.getAttribute("etat");
+        if (current != null)
+            model.addAttribute("rdv", rdvService.getRdv(current.isPro(), current.getWho()));
         System.err.println("MyProfile: "+model.getAttribute("etat"));
         return "ProfileRdv";
     }

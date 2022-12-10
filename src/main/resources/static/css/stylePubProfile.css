@@ -139,31 +139,28 @@ nav>div ul li:hover .sous {
 
 .perDay {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-top: 1%;
   margin-bottom: 1%;
-  border: solid 3px white;
-  border-radius: 10px;
-}
-
-.perDay > div { /* le div contenant le perHour */
-  display: flex;
-  height: 120px;
-  width: 25%;
-  border-right: 2px solid white;
-}
-
-.perDay>div:last-child {
-  border: none;
 }
 
 .theDay {
   display: block;
   font-weight: bolder;
-  padding: 2em 0;
   margin: 0;
-  border-right: 3px double white;
+}
+
+.hours {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: solid 2px white;
+  border-radius: 10px;
 }
 
 .perHour {
@@ -172,6 +169,11 @@ nav>div ul li:hover .sous {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-right: solid 2px white;
+}
+
+.perHour:last-child {
+  border: none;
 }
 
 .perHour button {

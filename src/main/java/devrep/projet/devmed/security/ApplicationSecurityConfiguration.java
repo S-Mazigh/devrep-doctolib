@@ -74,7 +74,7 @@ public class ApplicationSecurityConfiguration {
                 .failureUrl("/login-error") // l'exception : (AuthenticationException)
                                             // session.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
                 .and()
-                .logout().logoutUrl("/logout-all").logoutSuccessUrl("/home");
+                .logout().logoutUrl("/logout-all").logoutSuccessUrl("/login");
         // Pour pouvoir faire des post. Faut voir si c'est possible de faire autrement.
         http.cors().and().csrf().disable();
         /*

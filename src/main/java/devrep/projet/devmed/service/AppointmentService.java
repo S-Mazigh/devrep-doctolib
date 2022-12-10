@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -18,9 +19,11 @@ import java.util.regex.Pattern;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
 import devrep.projet.devmed.entities.RendezVous;
+import devrep.projet.devmed.entities.Utilisateur;
 import devrep.projet.devmed.repository.AppointmentRepository;
 import devrep.projet.devmed.repository.UtilisateurRepository;
 
@@ -45,6 +48,33 @@ public class AppointmentService {
         toAdd.setDaterdv(Date.from(LocalDateTime.parse(date, dateFormat).toInstant(getZoneOffset())));
         System.out.println("Appointement to add: " + toAdd);
         RdvBD.save(toAdd);
+    }
+
+    @Transactional
+    public List<Pair<Utilisateur, Date>> getRdv(Boolean isPro, Utilisateur user) {
+        List<Pair<Utilisateur, Date>> res = new ArrayList<>();
+        Date now = new Date();
+        if (isPro) {
+            List<RendezVous> list = RdvBD.findByPro(user);
+            System.out.println("list Pro : " + list);
+            for (RendezVous rdv : list) {
+                // si le rdv est deja passé on ne l'affiche pas
+                if (now.compareTo(rdv.getDaterdv()) >= 0)
+                    res.add(Pair.of(rdv.getPatient(), rdv.getDaterdv()));
+            }
+            System.out.println("Resultat : " +res);
+            return res;
+        }
+        List<RendezVous> list = RdvBD.findByPatient(user);
+        for (RendezVous rdv : list) {
+            System.out.println("Compare " + now.compareTo(rdv.getDaterdv()));
+            // si le rdv est deja passé on ne l'affiche pas
+            // < 0 = now apres rdv.getDaterdv()
+            if (now.compareTo(rdv.getDaterdv()) >= 0)
+                res.add(Pair.of(rdv.getPro(), rdv.getDaterdv()));
+        }
+        System.out.println("Resultat : " +res);
+        return res;
     }
 
     // Pratiquement que des statiques qui sert à la manipulation des dates pour la
@@ -128,11 +158,6 @@ public class AppointmentService {
         for (int day : nextFiveDays.keySet()) {
             disponibilitiesInADay = new LinkedHashMap<>();
             // borner avec les horaires
-            // Je parse la date "dd/MM/yyyy"+" "+"HeureOuverture"
-            /*openTime = Date.from(LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[0], dateFormat)
-                    .toInstant(getZoneOffset()));
-            closeTime = Date.from(LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[1], dateFormat)
-                    .toInstant(getZoneOffset()));*/
             openTime = LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[0], dateFormat);
             closeTime = LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[1], dateFormat);
             System.out.println("open=" + openTime + ", close=" + closeTime);
@@ -146,6 +171,7 @@ public class AppointmentService {
             i++;
         }
         System.out.println("dispo : " + disponibilitiesForFiveDays);
+        System.out.println("Set : " + disponibilitiesForFiveDays.get(0).keySet().toArray()[0]);
         return disponibilitiesForFiveDays;
     }
 }

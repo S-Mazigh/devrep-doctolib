@@ -251,3 +251,25 @@ select {
   margin-left: -5px;
   margin-right: -5px;
 }
+
+/* Rendez vous */
+
+.container-rdv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin: 2% 20%;
+}
+
+.myrdv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  color: white;
+  margin: 1% 1%;
+  padding: 1% 10%;
+  border: 2px solid white;
+  border-radius: 5px;
+}

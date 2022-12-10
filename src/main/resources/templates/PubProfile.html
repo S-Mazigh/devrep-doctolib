@@ -111,10 +111,11 @@
             <!--List<Map<String,Boolean>-->
             <div class="perDay" th:each="d: ${disponibilities}">
                 <!--d is of type Map<String,Boolean>-->
-                <div th:each="t, status: ${d?.keySet()}">
-                    <!--t is of type String-->
-                    <p class="theDay" th:if="${status.first}" th:text="${#strings.arraySplit(t,' ')[0]}+' '+${#strings.arraySplit(t,' ')[1]}"></p>
-                    <div class="perHour" >
+                <h3 class="theDay" th:text="${#strings.arraySplit(d?.keySet().toArray()[0], ' ')[0] + ' ' +
+                                              #strings.arraySplit(d?.keySet().toArray()[0], ' ')[1]}"></h3>
+                <!--t is of type String-->
+                <div class="hours">
+                    <div class="perHour"  th:each="t, status: ${d?.keySet()}">
                         <span th:text="${#strings.arraySplit(t,' ')[2]}"></span>
                         <div th:switch="${!d.get(t)}">
                             <!--Tester si rendez pris ou non-->
