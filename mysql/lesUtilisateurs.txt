@@ -1,0 +1,13 @@
+Les patients:
+- mazigh.saoudi@patient.com
+- polit.titouan@patient.com
+
+Les Professionnels:
+- mazigh.saoudi@pro.com
+- ronald@pro.com
+- jesuisleplusfort@pro.com
+- handgod@pro.com
+- ziyech@pro.com
+- polit@pro.fr
+
+Mot de passe pour tout le monde : password

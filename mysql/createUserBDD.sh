@@ -1,0 +1,2 @@
+sudo mysql -u root -Bse "CREATE USER 'user'@'localhost' IDENTIFIED BY 'My%password2';GRANT ALL PRIVILEGES ON * . * TO 'user'@'localhost';FLUSH PRIVILEGES;CREATE DATABASE devrepDoctolib;"
+mysql -u user -pMy%password2 devrepDoctolib < ./dbexport.sql
