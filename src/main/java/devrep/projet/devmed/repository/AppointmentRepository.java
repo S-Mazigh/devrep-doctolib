@@ -13,4 +13,5 @@ public interface AppointmentRepository extends JpaRepository<RendezVous, Long> {
     public List<RendezVous> findByPatient(Utilisateur patient);
     public List<RendezVous> findByPro(Utilisateur pro);
     public List<RendezVous> findByDaterdv(Date d);
+    public List<RendezVous> findByDaterdvAndPro(Date d, Utilisateur pro);
 }

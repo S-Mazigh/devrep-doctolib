@@ -150,7 +150,7 @@ public class WebController {
         Utilisateur theOther = searchService.getById(id);
         if(!theOther.equals(null)) {
             model.addAttribute("theOther", theOther);
-            model.addAttribute("disponibilities", rdvService.getDisponibilities(theOther.getMesHoraires()));
+            model.addAttribute("disponibilities", rdvService.getDisponibilities(theOther.getMesHoraires(), theOther));
             // to call group we must first call .matches
             // model.addAttribute("dateTimeRegex", Pattern.compile("(?<date>\\w+ \\d{2}/\\d{2}/\\d{4}) (?<hour>\\d{2}:\\d{2})")); // group 1 Jour dd/MM/yyyy, group 2 HH:mm
         }

@@ -48,7 +48,7 @@ public class ApplicationSecurityConfiguration {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/home", "/home/**", "/js/**", "/css/**", "/signup/**").permitAll()
+        http.authorizeRequests().antMatchers( "/home", "/profile/public/*", "/home/**", "/js/**", "/css/**", "/signup/**").permitAll()
                                 .anyRequest().authenticated();
         http.formLogin().usernameParameter("Email").passwordParameter("Password") // c'est name des input du form
                 .loginPage("/login").permitAll()

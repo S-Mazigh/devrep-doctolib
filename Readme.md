@@ -1,8 +1,8 @@
 # Projet Devrep
 
 ## Auteurs
-    - Mazigh Saoudi
-    - Titouan Polit
+- Mazigh Saoudi
+- Titouan Polit
 
 ## Utilisation
 - Merci de bien changer le fichier `application.properties` avec:
