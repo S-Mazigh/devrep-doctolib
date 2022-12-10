@@ -4,13 +4,13 @@ public class Etat {
     private boolean connected;
     private boolean badEmail; // can be used in signup
     private boolean isPro; // true: professionnel
-    private boolean wrongPass;
+    // private boolean wrongPass;
     private Utilisateur who;
     
     public Etat() {
         this.badEmail = false;
         this.connected = false;
-        this.wrongPass = false;
+        // this.wrongPass = false;
         this.who = new Utilisateur();
         this.who.setNom("Guest");
         //this.who.setAuthority("GUEST");
@@ -18,7 +18,7 @@ public class Etat {
     }
     public Etat(Etat otherState) {
         this.badEmail = otherState.badEmail;
-        this.wrongPass = otherState.wrongPass;
+        // this.wrongPass = otherState.wrongPass;
         this.connected = otherState.connected;
         this.isPro = otherState.isPro;
         this.who = otherState.who;
@@ -42,12 +42,12 @@ public class Etat {
     public void setBadEmail(boolean badEmail) {
         this.badEmail = badEmail;
     }
-    public boolean isWrongPass() {
+    /* public boolean isWrongPass() {
         return wrongPass;
     }
     public void setWrongPass(boolean wrongPass) {
         this.wrongPass = wrongPass;
-    }
+    }*/
     public boolean isPro() {
         return isPro;
     }
@@ -56,8 +56,7 @@ public class Etat {
     }
     @Override
     public String toString() {
-        return "Etat [connected=" + connected + ", badEmail=" + badEmail + ", isPro=" + isPro + ", wrongPass="
-                + wrongPass + ", who=" + who + "]";
+        return "Etat [connected=" + connected + ", badEmail=" + badEmail + ", isPro=" + isPro + ", who=" + who + "]";
     }
     
 }

@@ -6,11 +6,11 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -62,23 +62,22 @@ public class AppointmentService {
                 if (now.compareTo(rdv.getDaterdv()) >= 0)
                     res.add(Pair.of(rdv.getPatient(), rdv.getDaterdv()));
             }
-            System.out.println("Resultat : " +res);
+            //System.out.println("Resultat : " +res);
             return res;
         }
         List<RendezVous> list = RdvBD.findByPatient(user);
         for (RendezVous rdv : list) {
-            System.out.println("Compare " + now.compareTo(rdv.getDaterdv()));
+            //System.out.println("Compare " + now.compareTo(rdv.getDaterdv()));
             // si le rdv est deja passé on ne l'affiche pas
-            // < 0 = now apres rdv.getDaterdv()
+            //  1 => now apres rdv.getDaterdv()
             if (now.compareTo(rdv.getDaterdv()) >= 0)
                 res.add(Pair.of(rdv.getPro(), rdv.getDaterdv()));
         }
-        System.out.println("Resultat : " +res);
+        // System.out.println("Resultat : " +res);
         return res;
     }
 
-    // Pratiquement que des statiques qui sert à la manipulation des dates pour la
-    // vue et la sauvegarde.
+    // Pratiquement que des statiques qui sert à la manipulation des dates pour la vue et la sauvegarde.
 
     // Crée la string à stoqué
     public static String createHoraires(Map<String, String> params) {
@@ -113,20 +112,21 @@ public class AppointmentService {
     }
 
     // Pour récupérer les dates des prochains jours ouvrables
-    public static Map<Integer, String> getThisWeek() {
+    public static Map<Long, String> getThisWeek() {
         // Recuperer le temps actuelle avec la zone geographique du serveur !!
         Calendar now = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         // SimpleDateFormat day = new SimpleDateFormat("E");
-        Map<Integer, String> thisweek = new HashMap<>();
+        Map<Long, String> thisweek = new HashMap<>();
         Date next;
-        int jour, date;
+        int jour;
+        long key;
         for (int i = 0; i < 7; i++) { // le but est d'avoir les 5 prochains jours ouvrables.
         jour = now.get(Calendar.DAY_OF_WEEK); // recupérer la journée 
-        date = now.get(Calendar.DAY_OF_MONTH);
+        key = now.get(Calendar.DAY_OF_MONTH)+now.get(Calendar.MONTH)+now.get(Calendar.YEAR); // une clé pour ordonné la date de facon croissantes
             if (jour != Calendar.SUNDAY && jour != Calendar.SATURDAY) { // que les jours ouverables
                 next = now.getTime();
-                thisweek.put(date, dateFormat.format(next)); // utiliser la date du jour dans le mois pour avoir un ordre croissant.
+                thisweek.put(key, dateFormat.format(next)); // utiliser la date du jour dans le mois pour avoir un ordre croissant.
             }
             now.add(Calendar.DAY_OF_WEEK, 1); // passe  au jour suivant
         }
@@ -144,7 +144,7 @@ public class AppointmentService {
     // Pour récupérer les disponibilités pour les cinq prochain jours ouvrables et
     // les afficher avec thymeleaf
     public List<Map<String, Boolean>> getDisponibilities(String horaires) {
-        Map<Integer, String> nextFiveDays = getThisWeek();
+        Map<Long, String> nextFiveDays = getThisWeek();
         List<String[]> mesHoraires = formatHoraires(horaires);
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         DateTimeFormatter vueFormat = DateTimeFormatter.ofPattern("E dd/MM/yyyy HH:mm");
@@ -154,24 +154,26 @@ public class AppointmentService {
 
         LocalDateTime openTime, closeTime;
         int i = 0; // pour la liste des horaires
-        System.out.println("Day keys: " + nextFiveDays.keySet());
-        for (int day : nextFiveDays.keySet()) {
+        // Pour afficher en ordre croissant.
+        Long[] keys = new Long[nextFiveDays.keySet().size()];
+        System.arraycopy(nextFiveDays.keySet().toArray(), 0, keys, 0, keys.length);
+        Arrays.sort(keys);
+        for (Long day : keys) {
             disponibilitiesInADay = new LinkedHashMap<>();
             // borner avec les horaires
             openTime = LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[0], dateFormat);
             closeTime = LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[1], dateFormat);
-            System.out.println("open=" + openTime + ", close=" + closeTime);
+            //System.out.println("open=" + openTime + ", close=" + closeTime+"\n");
             for (LocalDateTime d = openTime; !d.equals(closeTime); d = d.plusHours(1)) { // une heure pour tous pour l'instant
                 // Malheuresement Date doit être utilisée pour la recherche
                 //System.out.println("open=" + openTime + ", d="+d+", close=" + closeTime);
                 disponibilitiesInADay.put(vueFormat.format(d), !RdvBD.findByDaterdv(Date.from(d.toInstant(getZoneOffset()))).isEmpty());
-                System.out.println("date:"+d+" loop dispo: "+disponibilitiesInADay);
+                //System.out.println("date:"+d+" loop dispo: "+disponibilitiesInADay);
             }
             disponibilitiesForFiveDays.add(disponibilitiesInADay);
             i++;
         }
-        System.out.println("dispo : " + disponibilitiesForFiveDays);
-        System.out.println("Set : " + disponibilitiesForFiveDays.get(0).keySet().toArray()[0]);
+        //System.out.println("dispo : " + disponibilitiesForFiveDays);
         return disponibilitiesForFiveDays;
     }
 }

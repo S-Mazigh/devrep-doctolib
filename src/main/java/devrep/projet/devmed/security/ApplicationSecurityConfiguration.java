@@ -62,7 +62,7 @@ public class ApplicationSecurityConfiguration {
                         {
                             state.setConnected(true);
                             state.setBadEmail(false);
-                            state.setWrongPass(false);
+                            // state.setWrongPass(false);
                             state.setWho(userDetails.getUser());
                             state.setPro(state.getWho().getAuthority().equals("PRO"));
                             request.getSession().setAttribute("etat", state);

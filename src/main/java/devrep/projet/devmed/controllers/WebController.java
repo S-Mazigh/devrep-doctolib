@@ -1,7 +1,6 @@
 package devrep.projet.devmed.controllers;
 
 import java.util.Map;
-import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -79,21 +78,21 @@ public class WebController {
             @ModelAttribute("etat") Etat state) {
         // il faut les ajouté au redirect vu qu'on les affiche dans home et non dans home/search
         redirect.addFlashAttribute("listePro", searchService.getProByDomaine(searchWords, ""));
-        System.err.println("Results: "+redirect.getAttribute("listePro"));
-        System.err.println("Search: "+model.getAttribute("etat"));
+        //System.err.println("Results: "+redirect.getAttribute("listePro"));
+        //System.err.println("Search: "+model.getAttribute("etat"));
         
         return "redirect:/home/search";
     }
 
     @GetMapping(path ="/categories")
     public String getCategories(Model model) {
-        System.err.println("Categories: "+model.getAttribute("etat"));
+        //System.err.println("Categories: "+model.getAttribute("etat"));
         return "Categories";
     }
 
     @GetMapping(path = "/login")
     public String getLogin(Model model) {
-        System.err.println("Connexion: "+model.getAttribute("etat"));
+        //System.err.println("Connexion: "+model.getAttribute("etat"));
         return "Connexion";
     }
 
@@ -115,13 +114,13 @@ public class WebController {
 
     @GetMapping(path = "/signup/pro")
     public String getSignUpPro(Model model) {
-        System.err.println("Inscription pro: "+model.getAttribute("etat"));
+        //System.err.println("Inscription pro: "+model.getAttribute("etat"));
         return "InscriptionPro";
     }
 
     @GetMapping(path = "/signup/patient")
     public String getSignUpPatient(Model model) {
-        System.err.println("Inscription patient: "+model.getAttribute("etat"));
+        //System.err.println("Inscription patient: "+model.getAttribute("etat"));
         return "InscriptionUser";
     }
 
@@ -153,9 +152,9 @@ public class WebController {
             model.addAttribute("theOther", theOther);
             model.addAttribute("disponibilities", rdvService.getDisponibilities(theOther.getMesHoraires()));
             // to call group we must first call .matches
-            model.addAttribute("dateTimeRegex", Pattern.compile("(?<date>\\w+ \\d{2}/\\d{2}/\\d{4}) (?<hour>\\d{2}:\\d{2})")); // group 1 Jour dd/MM/yyyy, group 2 HH:mm
+            // model.addAttribute("dateTimeRegex", Pattern.compile("(?<date>\\w+ \\d{2}/\\d{2}/\\d{4}) (?<hour>\\d{2}:\\d{2})")); // group 1 Jour dd/MM/yyyy, group 2 HH:mm
         }
-        System.err.println("MyProfile: "+model.getAttribute("etat"));
+        //System.err.println("MyProfile: "+model.getAttribute("etat"));
         return "PubProfile";
     }
 
@@ -172,7 +171,7 @@ public class WebController {
         Etat current = (Etat) model.getAttribute("etat");
         if (current != null)
             model.addAttribute("rdv", rdvService.getRdv(current.isPro(), current.getWho()));
-        System.err.println("MyProfile: "+model.getAttribute("etat"));
+        // System.err.println("MyProfile: "+model.getAttribute("etat"));
         return "ProfileRdv";
     }
 
