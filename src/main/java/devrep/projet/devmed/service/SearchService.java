@@ -87,7 +87,7 @@ public class SearchService {
     public List<Utilisateur> getProByDomaineOrName(String domaineOrName, String where) {
         Set<Utilisateur> set = new HashSet<Utilisateur>(getProByDomaine(domaineOrName, where));
         set.addAll(getProByName(domaineOrName, where));
-        System.out.println("Result SET : " + set);
+        // System.out.println("Result SET : " + set);
         return new ArrayList<Utilisateur>(set);
     }
 }

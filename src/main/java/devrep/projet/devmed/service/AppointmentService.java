@@ -46,7 +46,7 @@ public class AppointmentService {
         toAdd.setPro(UtilisateurBD.getReferenceById(idPro));
         // format string before
         toAdd.setDaterdv(Date.from(LocalDateTime.parse(date, dateFormat).toInstant(getZoneOffset())));
-        System.out.println("Appointement to add: " + toAdd);
+        // System.out.println("Appointement to add: " + toAdd);
         RdvBD.save(toAdd);
     }
 
@@ -56,7 +56,7 @@ public class AppointmentService {
         Date now = new Date();
         if (isPro) {
             List<RendezVous> list = RdvBD.findByPro(user);
-            System.out.println("list Pro : " + list);
+            // System.out.println("list Pro : " + list);
             for (RendezVous rdv : list) {
                 // si le rdv est deja passé on ne l'affiche pas
                 if (now.compareTo(rdv.getDaterdv()) >= 0)
@@ -89,7 +89,7 @@ public class AppointmentService {
             else
                 horaires.append(d + "[" + params.get(d + "Open") + ">" + params.get(d + "Close") + "]");
         }
-        System.out.println(params + " => " + horaires);
+        // System.out.println(params + " => " + horaires);
         return horaires.toString(); // JOUR[Open>Close]&JOUR[Open>Close]&....
     }
 
