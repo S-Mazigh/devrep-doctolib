@@ -91,9 +91,12 @@
     <div class="container-rdv">
         <h2>Mes rendez-vous</h2>
         <div class="myrdv" th:each="r: ${rdv}">
-            <span style="font-weight: bold;" th:if="${r.getFirst().getAuthority().equals('PRO')}" th:text="${'Dr. ' + r.getFirst().getNom() + ' ' + r.getFirst().getPrenom()}"></span>
-            <span style="font-weight: bold;" th:if="${r.getFirst().getAuthority().equals('PATIENT')}" th:text="${r.getFirst().getNom() + ' ' + r.getFirst().getPrenom()}"></span>
-            <span th:text="${#strings.arraySplit(r.getSecond(), ':')[0] + ':' + #strings.arraySplit(r.getSecond(), ':')[1]}"></span>
+            <span style="font-weight: bold;" th:if="${r.getValue0().getAuthority().equals('PRO')}" th:text="${'Dr. ' + r.getValue0().getNom() + ' ' + r.getValue0().getPrenom()}"></span>
+            <span style="font-weight: bold;" th:if="${r.getValue0().getAuthority().equals('PATIENT')}" th:text="${r.getValue0().getNom() + ' ' + r.getValue0().getPrenom()}"></span>
+            <span th:text="${#strings.arraySplit(r.getValue1(), ':')[0] + ':' + #strings.arraySplit(r.getValue1(), ':')[1]}"></span>
+            <form th:action="${'/profile/rdv/delete/'+r.getValue2()}" method="post">
+                <button type="submit" class="del" name="deleteRdv" value="yes">Annuler</button>
+            </form>
         </div>
     </div>
 </body>

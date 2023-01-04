@@ -1,5 +1,6 @@
 package devrep.projet.devmed.controllers;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import devrep.projet.devmed.entities.Etat;
+import devrep.projet.devmed.entities.RendezVous;
 import devrep.projet.devmed.entities.Utilisateur;
 import devrep.projet.devmed.service.AppointmentService;
 import devrep.projet.devmed.service.DataService;
@@ -51,6 +53,7 @@ public class WebController {
 
     @GetMapping(path = {"/home"}) 
     public String getHomeAllPro(Model model) {
+        //System.err.println("Connexion: "+model.getAttribute("etat"));
         model.addAttribute("listePro", searchService.getProByDomaineOrName("", ""));
         return "Home";
     }
@@ -84,11 +87,11 @@ public class WebController {
         return "redirect:/home/search";
     }
 
-    @GetMapping(path ="/categories")
+    /*@GetMapping(path ="/categories")
     public String getCategories(Model model) {
         //System.err.println("Categories: "+model.getAttribute("etat"));
         return "Categories";
-    }
+    }*/
 
     @GetMapping(path = "/login")
     public String getLogin(Model model) {
@@ -161,23 +164,61 @@ public class WebController {
     @GetMapping(path="/profile/infPerso")
     public String getMyProfile(Model model) {
         Etat current = (Etat) model.getAttribute("etat");
-        if(current != null)
+        if(current != null){
+            if(!current.isConnected())
+                return "redirect:/login";
             model.addAttribute("meshoraires",AppointmentService.formatHoraires(current.getWho().getMesHoraires()));
+        }
         return "ProfileInfPerso";
+    }
+
+    @GetMapping(path="/profile/infPerso/delete")
+    public String delMyProfile(Model model) {
+        Etat current = (Etat) model.getAttribute("etat");
+        System.out.println("Suppression Methode");
+        if(current != null){
+            if(!current.isConnected())
+                return "redirect:/login";
+            // del tous les rdv pris par cette utilisateur ou prévu pour ce pro
+            System.out.println("Suppression Initiée!!!");
+            List<RendezVous> toDelete = rdvService.getRdvByUser(current.getWho());
+            rdvService.delAllRdv(toDelete);
+            dataService.deleteProfile(current.getWho());
+        }
+        return "redirect:/logout-all";
     }
 
     @GetMapping(path="/profile/rdv")
     public String getMyRdv(Model model) {
         Etat current = (Etat) model.getAttribute("etat");
-        if (current != null)
+        if (current != null){
+            if(!current.isConnected())
+                return "redirect:/login";
             model.addAttribute("rdv", rdvService.getRdv(current.isPro(), current.getWho()));
+        }
+            
         // System.err.println("MyProfile: "+model.getAttribute("etat"));
         return "ProfileRdv";
     }
 
+    @PostMapping(path = "/profile/rdv/delete/{id}")
+    public String delAnRdv(Model model, @PathVariable(name="id") long rdvId) {
+        rdvService.delRdv(rdvId);
+        return "redirect:/profile/rdv";
+    }
+
     @PostMapping(path = "/profile/modify") // à voir si doit séparer patient et pro
     public String modifyProfile(Model model, @ModelAttribute("etat") Etat state,
-            @RequestParam Map<String, String> allParams) {
+            @RequestParam Map<String, String> allParams, RedirectAttributes redirect) {
+        Etat current = (Etat) model.getAttribute("etat");
+        if(current!=null && !current.isConnected())
+        {
+            return "redirect:/login";
+        }
+        if(allParams.get("delete").equals("yes")) {
+            redirect.addFlashAttribute(current);
+            return "redirect:/profile/infPerso/delete";
+        }
         dataService.modifyProfile(state, allParams);
         return "redirect:/profile/infPerso";
     }
@@ -185,8 +226,11 @@ public class WebController {
     @PostMapping(path ="/appointment/take")
     public String takeRdv(Model model, @RequestParam("pro") Long pro, @RequestParam("dateRdv") String date) {
         Etat current = (Etat) model.getAttribute("etat");
-        if(current != null)
+        if(current != null){
+            if(!current.isConnected())
+                return "redirect:/login";
             rdvService.addRdv(current.getWho().getId(),pro,date);
+        }
         return "redirect:/profile/public/"+pro;
     }
 }

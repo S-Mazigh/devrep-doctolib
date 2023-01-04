@@ -210,9 +210,24 @@ button {
 }
 
 button:hover {
-    background-color: whitesmoke;
-    color: #333;
-    cursor: pointer;
+  background-color: whitesmoke;
+  color: #333;
+  cursor: pointer;
+}
+
+button.del {
+  margin-top: 1px;
+}
+
+button.delProfile {
+  display: flex;
+  align-items: center;
+  background-color: rgb(146, 54, 54);
+  color: white;
+}
+
+button.delProfile:hover {
+  background-color: rgb(176, 84, 84);
 }
 
 input {

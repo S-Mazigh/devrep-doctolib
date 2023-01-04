@@ -98,4 +98,9 @@ public class DataService {
          */
         UtilisateurBD.save((Utilisateur) user);
     }
+
+    @Transactional
+    public void deleteProfile(Utilisateur user) {
+        UtilisateurBD.delete(user);;
+    }
 }

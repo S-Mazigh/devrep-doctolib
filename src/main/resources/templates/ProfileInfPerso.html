@@ -87,7 +87,7 @@
             </li>
         </ul>
     </div>
-    <form action="/profile/modify" method="post" accept-charset="utf-8" class="info-profile" th:object="${etat?.who}">
+    <form action="/profile/modify" method="post" id="modifyForm" accept-charset="utf-8" class="info-profile" th:object="${etat?.who}">
         <h2>Coordonnées</h2>
         <div class="item-profile">
             <span class="form-item-icon material-symbols-rounded">person</span>
@@ -164,8 +164,10 @@
                 </div>
             </div>
         </div>
-        <button type="submit">Modifier</button>
+        <button form="modifyForm" type="submit" name="modify" value="yes">Modifier</button>
+        <button type="submit" class="delProfile" form="modifyForm" name="delete" value="yes"><span class="item-icon material-symbols-rounded"> warning </span>Supprimer Mon Profile!</button>
     </form>
+    
 </body>
 
 </html>

@@ -18,8 +18,8 @@ import java.util.regex.Pattern;
 
 import javax.transaction.Transactional;
 
+import org.javatuples.Triplet;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
 import devrep.projet.devmed.entities.RendezVous;
@@ -53,8 +53,19 @@ public class AppointmentService {
     }
 
     @Transactional
-    public List<Pair<Utilisateur, Date>> getRdv(Boolean isPro, Utilisateur user) {
-        List<Pair<Utilisateur, Date>> res = new ArrayList<>();
+    public void delRdv(Long idRdv) {
+        RdvBD.deleteById(idRdv);
+    }
+
+    @Transactional
+    public void delAllRdv(List<RendezVous> listRdv) {
+        for(RendezVous rdv: listRdv)
+            RdvBD.delete(rdv);
+    }
+
+    @Transactional
+    public List<Triplet<Utilisateur, Date, Long>> getRdv(Boolean isPro, Utilisateur user) {
+        List<Triplet<Utilisateur, Date, Long>> res = new ArrayList<>();
         Date now = new Date();
         if(user.getNom() == "Guest")
             return res;
@@ -64,7 +75,7 @@ public class AppointmentService {
             for (RendezVous rdv : list) {
                 // si le rdv est deja passé on ne l'affiche pas
                 if (now.compareTo(rdv.getDaterdv()) <= 0)
-                    res.add(Pair.of(rdv.getPatient(), rdv.getDaterdv()));
+                    res.add(Triplet.with(rdv.getPatient(), rdv.getDaterdv(), rdv.getId()));
             }
             // System.out.println("Resultat : " +res);
             return res;
@@ -76,10 +87,17 @@ public class AppointmentService {
             // si le rdv est deja passé on ne l'affiche pas
             // 1 => now apres rdv.getDaterdv()
             if (now.compareTo(rdv.getDaterdv()) <= 0)
-                res.add(Pair.of(rdv.getPro(), rdv.getDaterdv()));
+                res.add(Triplet.with(rdv.getPro(), rdv.getDaterdv(), rdv.getId()));
         }
         // System.out.println("Resultat : " +res);
         return res;
+    }
+
+    @Transactional
+    public List<RendezVous> getRdvByUser(Utilisateur user) {
+        List<RendezVous> rdvToRet = RdvBD.findByPatient(user);
+        rdvToRet.addAll(RdvBD.findByPro(user));
+        return  rdvToRet;
     }
 
     // Pratiquement que des statiques qui sert à la manipulation des dates pour la
