@@ -161,7 +161,7 @@ public class AppointmentService {
         return thisweek;
     }
 
-    // L'entité rendez vous ne peut prendre qu'un Date ou Calendar comme attribut,
+    // L'entité rendez vous ne peut prendre qu'une Date ou Calendar comme attribut,
     // du coup il faut convertir le LocalDateTime en Date
     // Sachez que Date à plus d'information que le LocalDateTime; Date ou calendar
     // comprennent la zone geographique.
@@ -183,6 +183,7 @@ public class AppointmentService {
         List<Map<String, Boolean>> disponibilitiesForFiveDays = new ArrayList<>();
 
         LocalDateTime openTime, closeTime;
+        LocalDateTime now = LocalDateTime.now(); // now pour eviter d'afficher les rendezVous plus tot dans la journée
         int i = 0; // pour la liste des horaires
         // Pour afficher en ordre croissant.
         Long[] keys = new Long[nextFiveDays.keySet().size()];
@@ -193,14 +194,16 @@ public class AppointmentService {
             // borner avec les horaires
             openTime = LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[0], dateFormat);
             closeTime = LocalDateTime.parse(nextFiveDays.get(day) + " " + mesHoraires.get(i)[1], dateFormat);
-            //System.out.println("open=" + openTime + ", close=" + closeTime+"\n");
+
+            if(openTime.isBefore(now)) // ainsi on ne vas pas afficher les rendez vous plus tôt d'aujourd'hui
+                openTime = openTime.withHour(now.getHour()); // faire en sorte de passer que l'heure sinon on aura des heures de rendez vous incorrectes.
+            System.out.println("open=" + openTime + ", close=" + closeTime+"\n");
             if (!openTime.isEqual(closeTime) && openTime.isBefore(closeTime)) { // pour eviter une map vide ou une boucle infinie
                 for (LocalDateTime d = openTime; !d.equals(closeTime); d = d.plusHours(1)) { // une heure pour tous pour
                                                                                              // l'instant
                     // Malheuresement Date doit être utilisée pour la recherche
                     // System.out.println("open=" + openTime + ", d="+d+", close=" + closeTime);
-                    disponibilitiesInADay.put(vueFormat.format(d),
-                            !RdvBD.findByDaterdvAndPro(Date.from(d.toInstant(getZoneOffset())), pro).isEmpty());
+                    disponibilitiesInADay.put(vueFormat.format(d), !RdvBD.findByDaterdvAndPro(Date.from(d.toInstant(getZoneOffset())), pro).isEmpty());
                     // System.out.println("date:"+d+" loop dispo: "+disponibilitiesInADay);
                 }
                 disponibilitiesForFiveDays.add(disponibilitiesInADay);
