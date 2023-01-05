@@ -39,37 +39,40 @@ public class SearchService {
             nom = fullName[1];
         if(fullName.length!=0)
         prenom = fullName[0];
+        System.out.println(nom+", "+prenom);
         List<Utilisateur> toReturn = null;
         // Faire attention si l'utilisateur a inverser le nom et prénom ou s'il a donné
         // qu'un nom ou prénom
         if (where.isBlank()) {
+            System.out.println("where blank");
             if (!nom.isBlank() && !prenom.isBlank()){
-                toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthority(prenom, nom, "PRO");
-                toReturn.addAll(userRepo.findByNomLikeAndPrenomLikeAndAuthority(nom, prenom, "PRO"));
+                toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthorityOrderByNomAsc(prenom, nom, "PRO");
+                toReturn.addAll(userRepo.findByNomLikeAndPrenomLikeAndAuthorityOrderByNomAsc(nom, prenom, "PRO"));
                 return toReturn;
             }
-            if (!nom.isBlank()) {
-                toReturn = userRepo.findByNomLikeAndAuthority(prenom, "PRO");
-                toReturn.addAll(userRepo.findByPrenomLikeAndAuthority(prenom, "PRO"));
+            if (!prenom.isBlank()) {
+                toReturn = userRepo.findByNomLikeAndAuthorityOrderByNomAsc(prenom, "PRO");
+                toReturn.addAll(userRepo.findByPrenomLikeAndAuthorityOrderByNomAsc(prenom, "PRO"));
                 return toReturn;
             }
-            else // if all blank
-                return userRepo.findByAuthority("PRO");
+            else {// if all blank
+                return userRepo.findByAuthorityOrderByNomAsc("PRO");
+            }
         } else {
             if (!nom.isBlank() && !prenom.isBlank()) {
-                toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndVilleContaining(prenom, nom, "PRO", where);
-                toReturn.addAll(userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndVilleContaining(nom, prenom, "PRO", where));
+                toReturn = userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndVilleContainingOrderByNomAsc(prenom, nom, "PRO", where);
+                toReturn.addAll(userRepo.findByNomLikeAndPrenomLikeAndAuthorityAndVilleContainingOrderByNomAsc(nom, prenom, "PRO", where));
                 return toReturn;
             }
                 
             if (!nom.isBlank()) {
-                toReturn = userRepo.findByNomLikeAndAuthorityAndVilleContaining(prenom,"PRO", where);
-                toReturn.addAll(userRepo.findByPrenomLikeAndAuthorityAndVilleContaining(prenom,"PRO", where));
+                toReturn = userRepo.findByNomLikeAndAuthorityAndVilleContainingOrderByNomAsc(prenom,"PRO", where);
+                toReturn.addAll(userRepo.findByPrenomLikeAndAuthorityAndVilleContainingOrderByNomAsc(prenom,"PRO", where));
                 return toReturn;
             }
                 
             else // if nom et prenom are blank
-                return userRepo.findByAuthorityAndVilleContaining("PRO", where);
+                return userRepo.findByAuthorityAndVilleContainingOrderByNomAsc("PRO", where);
         }
     }
 
@@ -77,17 +80,17 @@ public class SearchService {
     @Transactional(readOnly = true)
     public List<Utilisateur> getProByDomaine(String domaine, String where) {
         if (where.isBlank())
-            return userRepo.findByDomaineLikeAndAuthority(domaine, "PRO");
+            return userRepo.findByDomaineLikeAndAuthorityOrderByNomAsc(domaine, "PRO");
         else {
-            return userRepo.findByDomaineLikeAndVilleContainingAndAuthority(domaine, where, "PRO");
+            return userRepo.findByDomaineLikeAndVilleContainingAndAuthorityOrderByNomAsc(domaine, where, "PRO");
         }
     }
 
     @Transactional(readOnly = true)
     public List<Utilisateur> getProByDomaineOrName(String domaineOrName, String where) {
-        Set<Utilisateur> set = new HashSet<Utilisateur>(getProByDomaine(domaineOrName, where));
-        set.addAll(getProByName(domaineOrName, where));
-        // System.out.println("Result SET : " + set);
+        Set<Utilisateur> set = new HashSet<Utilisateur>(getProByName(domaineOrName, where));
+        set.addAll(getProByDomaine(domaineOrName, where));
+        //System.out.println("Result SET : " + set);
         return new ArrayList<Utilisateur>(set);
     }
 }

@@ -13,18 +13,18 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long>{
     Utilisateur findByEmail(String email);
 
     // Lists
-    List<Utilisateur> findByAuthority(String authority);
-    List<Utilisateur> findByNomLikeAndPrenomLikeAndAuthority(String nom, String prenom, String authority);
-    List<Utilisateur> findByNomLikeAndAuthority(String nom, String authority);
-    List<Utilisateur> findByPrenomLikeAndAuthority(String prenom, String authority);
+    List<Utilisateur> findByAuthorityOrderByNomAsc(String authority);
+    List<Utilisateur> findByNomLikeAndPrenomLikeAndAuthorityOrderByNomAsc(String nom, String prenom, String authority);
+    List<Utilisateur> findByNomLikeAndAuthorityOrderByNomAsc(String nom, String authority);
+    List<Utilisateur> findByPrenomLikeAndAuthorityOrderByNomAsc(String prenom, String authority);
 
     // with address
-    List<Utilisateur> findByNomLikeAndPrenomLikeAndAuthorityAndVilleContaining(String nom, String prenom, String authority, String Ville);
-    List<Utilisateur> findByPrenomLikeAndAuthorityAndVilleContaining(String prenom, String authority, String Ville);
-    List<Utilisateur> findByNomLikeAndAuthorityAndVilleContaining(String nom, String authority, String Ville);
-    List<Utilisateur> findByAuthorityAndVilleContaining(String authority, String Ville);
+    List<Utilisateur> findByNomLikeAndPrenomLikeAndAuthorityAndVilleContainingOrderByNomAsc(String nom, String prenom, String authority, String Ville);
+    List<Utilisateur> findByPrenomLikeAndAuthorityAndVilleContainingOrderByNomAsc(String prenom, String authority, String Ville);
+    List<Utilisateur> findByNomLikeAndAuthorityAndVilleContainingOrderByNomAsc(String nom, String authority, String Ville);
+    List<Utilisateur> findByAuthorityAndVilleContainingOrderByNomAsc(String authority, String Ville);
 
     // with domaine
-    List<Utilisateur> findByDomaineLikeAndAuthority(String domaine, String authority);
-    List<Utilisateur> findByDomaineLikeAndVilleContainingAndAuthority(String domaine, String Ville, String authority);
+    List<Utilisateur> findByDomaineLikeAndAuthorityOrderByNomAsc(String domaine, String authority);
+    List<Utilisateur> findByDomaineLikeAndVilleContainingAndAuthorityOrderByNomAsc(String domaine, String Ville, String authority);
 }
