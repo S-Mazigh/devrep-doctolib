@@ -1,0 +1,785 @@
+{
+    "rangeSeeds": [
+        {
+            "file": "src/main/java/devrep/projet/devmed/service/AppointmentService.java",
+            "seeds": [
+                {
+                    "id": "9412ec57-163a-4665-83e1-5ec85e8f86e7",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "endLine": 52,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "39ed632f-4989-4164-9b52-920b8e046707",
+                    "featureKey": "c72ecc86-3bf0-4a97-92ea-a1138ec0a6d8",
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "endLine": 57,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "a5a2d546-04f0-4f7c-a512-ec58daa0c76d",
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "endLine": 63,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "89b237fd-84f7-40db-ba3c-e5804141e9ae",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "endLine": 93,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "93c181c2-20b7-4448-a26f-d1299d4d694c",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 95,
+                    "startColumn": 4,
+                    "endLine": 100,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "b1926764-7f9a-448c-8b49-4de674dfa54a",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 138,
+                    "startColumn": 4,
+                    "endLine": 161,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "d472361a-3f47-4c04-b3c5-2179a628b6c0",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 168,
+                    "startColumn": 4,
+                    "endLine": 171,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/java/devrep/projet/devmed/service/SearchService.java",
+            "seeds": [
+                {
+                    "id": "0d2af70f-7f75-4cb0-ad92-29faf4e2c358",
+                    "featureKey": "2bcd7985-4346-4712-afc9-f949f2f18a3d",
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "endLine": 76,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "fcbb224c-24d6-4f43-a40a-219691ec69a5",
+                    "featureKey": "3f1144a6-1ceb-4df4-80d9-0e47dd654fe4",
+                    "startLine": 33,
+                    "startColumn": 57,
+                    "endLine": 33,
+                    "endColumn": 71,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "b8bfc3a4-ed9a-4832-ac1e-46306515317a",
+                    "featureKey": "3f1144a6-1ceb-4df4-80d9-0e47dd654fe4",
+                    "startLine": 60,
+                    "startColumn": 10,
+                    "endLine": 75,
+                    "endColumn": 9,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "774ca46f-fd35-466d-bc12-c57467650feb",
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "startLine": 79,
+                    "startColumn": 4,
+                    "endLine": 86,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "64a25fbc-4b03-4f8d-a57b-e6b1131625d2",
+                    "featureKey": "2bcd7985-4346-4712-afc9-f949f2f18a3d",
+                    "startLine": 91,
+                    "startColumn": 8,
+                    "endLine": 91,
+                    "endColumn": 55,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/java/devrep/projet/devmed/controllers/WebController.java",
+            "seeds": [
+                {
+                    "id": "7fc34279-8e2b-4277-bb2e-b243f4f27d61",
+                    "featureKey": "db18960d-44c3-447a-85a5-7d904e024539",
+                    "startLine": 57,
+                    "startColumn": 8,
+                    "endLine": 57,
+                    "endColumn": 84,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "34c1116d-f214-4047-a666-037147ef1d10",
+                    "featureKey": "db18960d-44c3-447a-85a5-7d904e024539",
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "endLine": 79,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "f487deba-ced4-48a6-92b9-7d3ec41efa94",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 102,
+                    "startColumn": 4,
+                    "endLine": 126,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "67e8d955-26f8-4100-8d11-0ae0da95ea21",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 128,
+                    "startColumn": 4,
+                    "endLine": 162,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "2a12ce13-e0da-437b-968f-80f3f14048c4",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 182,
+                    "startColumn": 4,
+                    "endLine": 191,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "1154fd05-1cb9-4fe2-a9d9-5bde887fb6ad",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 193,
+                    "startColumn": 4,
+                    "endLine": 207,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "9d322bb2-518d-4911-b29a-ca6394190daa",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 202,
+                    "startColumn": 0,
+                    "endLine": 203,
+                    "endColumn": 0,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "5ce3b5c0-1694-4438-b784-6ecb66deaaee",
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "startLine": 202,
+                    "startColumn": 12,
+                    "endLine": 204,
+                    "endColumn": 56,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "50e68adf-79f6-4c9c-977a-e462d03804f7",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 209,
+                    "startColumn": 4,
+                    "endLine": 220,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "0715eeed-a110-4ecd-9ad9-add31cda92eb",
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "startLine": 234,
+                    "startColumn": 8,
+                    "endLine": 237,
+                    "endColumn": 9,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "ee89f150-d240-4a86-a018-4c05155de821",
+                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
+                    "startLine": 238,
+                    "startColumn": 8,
+                    "endLine": 238,
+                    "endColumn": 52,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/java/devrep/projet/devmed/service/DataService.java",
+            "seeds": [
+                {
+                    "id": "1244cc6f-0341-462f-91d6-bf987567d335",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "endLine": 41,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "19f93b1a-8a86-4db0-ae18-4673608069d4",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "endLine": 64,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "22c3c306-554b-4b47-97b4-1fc5950a06ec",
+                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "endLine": 99,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "78bc5fa8-363e-4a7e-a6ff-a2ef0fef2d10",
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "startLine": 101,
+                    "startColumn": 4,
+                    "endLine": 104,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/ProfileInfPerso.html",
+            "seeds": [
+                {
+                    "id": "ccd09a24-3d4f-4cb9-af3c-096aa6cba650",
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "startLine": 22,
+                    "startColumn": 16,
+                    "endLine": 39,
+                    "endColumn": 21,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "fec7543c-1678-469f-a3d7-654dd11ac850",
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "startLine": 28,
+                    "startColumn": 24,
+                    "endLine": 28,
+                    "endColumn": 83,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "d9b96570-fe67-4356-a3bf-13d1879a7dc0",
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "startLine": 29,
+                    "startColumn": 24,
+                    "endLine": 36,
+                    "endColumn": 83,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "c1f25af8-57af-4ce9-ae7e-f0e5894865fb",
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "startLine": 37,
+                    "startColumn": 24,
+                    "endLine": 37,
+                    "endColumn": 99,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "d214002d-861b-415f-8b81-6f5ac8589634",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 45,
+                    "startColumn": 28,
+                    "endLine": 48,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "deccaf61-4e8c-452c-9a3c-b5aa19b4e2ed",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 51,
+                    "startColumn": 28,
+                    "endLine": 54,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "4480206e-0179-4ab4-92fa-658bff3eb127",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 55,
+                    "startColumn": 28,
+                    "endLine": 62,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "a50c7820-94a1-4b65-ba79-74c0e2442ac2",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 66,
+                    "startColumn": 20,
+                    "endLine": 71,
+                    "endColumn": 26,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "e29e667a-9d1b-4277-8376-4ea23115b0c7",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 78,
+                    "startColumn": 12,
+                    "endLine": 82,
+                    "endColumn": 17,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "aa8b3b85-643e-44ce-9feb-75cb43934f66",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 83,
+                    "startColumn": 12,
+                    "endLine": 87,
+                    "endColumn": 17,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "32cc9ef1-40ac-4353-a374-8552808e7c4f",
+                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
+                    "startLine": 168,
+                    "startColumn": 8,
+                    "endLine": 168,
+                    "endColumn": 91,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "ceca4fb1-4727-45d8-8568-bf4202f41722",
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "startLine": 169,
+                    "startColumn": 8,
+                    "endLine": 169,
+                    "endColumn": 189,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/ProfileRdv.html",
+            "seeds": [
+                {
+                    "id": "47eb2c41-abb7-4b14-aa71-ae35832d6209",
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "startLine": 23,
+                    "startColumn": 16,
+                    "endLine": 40,
+                    "endColumn": 21,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "c5c7af39-e88f-4b6b-912a-4b58467be3b1",
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "startLine": 29,
+                    "startColumn": 24,
+                    "endLine": 29,
+                    "endColumn": 83,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "6152ff9f-17e1-4a14-9d8e-62137181a8f3",
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "startLine": 30,
+                    "startColumn": 24,
+                    "endLine": 37,
+                    "endColumn": 83,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "d016db6a-d92f-4076-b368-59631f0eedfb",
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "startLine": 38,
+                    "startColumn": 24,
+                    "endLine": 38,
+                    "endColumn": 99,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "d8d2c210-c998-4255-a3b9-399d29e7731b",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 46,
+                    "startColumn": 28,
+                    "endLine": 49,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "e786ba98-6b3d-4687-8f33-2ce7296399cd",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 52,
+                    "startColumn": 28,
+                    "endLine": 55,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "b754dfbb-22c9-445a-9b15-d86f687b6259",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 56,
+                    "startColumn": 28,
+                    "endLine": 63,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "9eb98efa-3c69-4e82-9d48-07b5c957b43f",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 67,
+                    "startColumn": 19,
+                    "endLine": 72,
+                    "endColumn": 26,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "64cf8848-8d64-4eaf-abfc-b2e202d7cd71",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 79,
+                    "startColumn": 12,
+                    "endLine": 83,
+                    "endColumn": 17,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "e235cb65-3ab8-45f5-8c9d-5ad6624fc653",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 84,
+                    "startColumn": 12,
+                    "endLine": 88,
+                    "endColumn": 17,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "7d95134f-99e0-4ac7-84bc-c9a722195be7",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 91,
+                    "startColumn": 4,
+                    "endLine": 101,
+                    "endColumn": 10,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/PubProfile.html",
+            "seeds": [
+                {
+                    "id": "285dfe02-c0e7-4599-8b62-c04bb866dc44",
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "startLine": 30,
+                    "startColumn": 16,
+                    "endLine": 48,
+                    "endColumn": 21,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "1539abff-bf3b-49c2-8224-00298bb9e974",
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "startLine": 36,
+                    "startColumn": 24,
+                    "endLine": 36,
+                    "endColumn": 83,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "4c724a1e-e35a-4b9e-bcb5-cf5d94186265",
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "startLine": 37,
+                    "startColumn": 24,
+                    "endLine": 44,
+                    "endColumn": 83,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "e795e039-c3c1-44fc-ab52-9a567b7a263f",
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "startLine": 45,
+                    "startColumn": 24,
+                    "endLine": 45,
+                    "endColumn": 99,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "50b53dd6-359d-4656-a443-e80b7cb423c2",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 54,
+                    "startColumn": 28,
+                    "endLine": 57,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "040b924c-3612-4182-80ed-035d8926dfea",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 60,
+                    "startColumn": 28,
+                    "endLine": 63,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "3f557524-36fa-4f0d-841e-0b6f167be9cf",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 64,
+                    "startColumn": 28,
+                    "endLine": 71,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "a518ad85-a2bd-4580-b896-424428d8e0fb",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 76,
+                    "startColumn": 24,
+                    "endLine": 79,
+                    "endColumn": 28,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "aae7b431-e7e7-4238-bccb-e681b8dbaa5c",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "startLine": 111,
+                    "startColumn": 8,
+                    "endLine": 134,
+                    "endColumn": 14,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/Home.html",
+            "seeds": [
+                {
+                    "id": "feca622f-3b1e-4e4d-81d4-da432824109b",
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "startLine": 35,
+                    "startColumn": 20,
+                    "endLine": 46,
+                    "endColumn": 25,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "7bf55b12-a404-4751-8769-54a21c884866",
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "startLine": 36,
+                    "startColumn": 24,
+                    "endLine": 36,
+                    "endColumn": 83,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "ff96791c-5297-4882-a193-40f9fc476f7b",
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "startLine": 37,
+                    "startColumn": 24,
+                    "endLine": 44,
+                    "endColumn": 83,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "66fe0b3c-3a01-4294-a85d-2b782e21d464",
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "startLine": 45,
+                    "startColumn": 24,
+                    "endLine": 45,
+                    "endColumn": 99,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "77aa1498-719c-4514-b0e9-84212e311d04",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 53,
+                    "startColumn": 28,
+                    "endLine": 56,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "6f84b82f-3443-4db0-8038-fd8eab3a0e32",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 59,
+                    "startColumn": 28,
+                    "endLine": 62,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "28443281-8989-46d7-ba6e-2d6f9af441ed",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 63,
+                    "startColumn": 28,
+                    "endLine": 70,
+                    "endColumn": 32,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "0d9d091a-7579-42d1-a70e-f4e5011a7a47",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 75,
+                    "startColumn": 24,
+                    "endLine": 78,
+                    "endColumn": 28,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "f2cbcc58-196a-4e96-a11b-9dd820c63e43",
+                    "featureKey": "db18960d-44c3-447a-85a5-7d904e024539",
+                    "startLine": 84,
+                    "startColumn": 4,
+                    "endLine": 127,
+                    "endColumn": 10,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/InscriptionPro.html",
+            "seeds": [
+                {
+                    "id": "366b17c8-ba9d-435d-a34f-bef097befb54",
+                    "featureKey": "9b714186-fed2-4cee-a103-3b362c9f2ef9",
+                    "startLine": 43,
+                    "startColumn": 20,
+                    "endLine": 58,
+                    "endColumn": 26,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "f76a6a1a-e489-4d60-b15e-aa1ff9dfe087",
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "startLine": 47,
+                    "startColumn": 28,
+                    "endLine": 47,
+                    "endColumn": 76,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "9b50aa32-b6e3-4300-bf20-323cd6dae726",
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "startLine": 48,
+                    "startColumn": 28,
+                    "endLine": 55,
+                    "endColumn": 76,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "1a044825-7e54-48fb-8520-0bd90415a981",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 59,
+                    "startColumn": 20,
+                    "endLine": 59,
+                    "endColumn": 89,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        }
+    ],
+    "fileSeeds": [
+        {
+            "id": "ae5325ec-e0bf-4721-8550-95bfd5550e79",
+            "file": "src/main/resources/templates/Connexion.html",
+            "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+            "isValidated": true,
+            "contentAnalysis": true
+        },
+        {
+            "id": "c5ab3a6d-2028-402e-989c-c5f0d4cced35",
+            "file": "src/main/resources/templates/InscriptionUser.html",
+            "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+            "isValidated": true,
+            "contentAnalysis": false
+        }
+    ]
+}

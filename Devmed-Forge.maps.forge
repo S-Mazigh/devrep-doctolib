@@ -1,0 +1,1240 @@
+{
+    "deletionPropagations": [
+        {
+            "file": "src/main/java/devrep/projet/devmed/controllers/WebController.java",
+            "propagations": [
+                {
+                    "featureKey": "c72ecc86-3bf0-4a97-92ea-a1138ec0a6d8",
+                    "ranges": [
+                        {
+                            "propagationId": "d564bfd8-4e05-4def-a67a-2df3d3c9adec",
+                            "sourceId": "39ed632f-4989-4164-9b52-920b8e046707",
+                            "startLine": 222,
+                            "startColumn": 4,
+                            "endLine": 226,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
+                    "ranges": [
+                        {
+                            "propagationId": "ee89f150-d240-4a86-a018-4c05155de821",
+                            "sourceId": "ee89f150-d240-4a86-a018-4c05155de821",
+                            "startLine": 238,
+                            "startColumn": 8,
+                            "endLine": 238,
+                            "endColumn": 52,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "f487deba-ced4-48a6-92b9-7d3ec41efa94",
+                            "sourceId": "f487deba-ced4-48a6-92b9-7d3ec41efa94",
+                            "startLine": 102,
+                            "startColumn": 4,
+                            "endLine": 126,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "ranges": [
+                        {
+                            "propagationId": "67e8d955-26f8-4100-8d11-0ae0da95ea21",
+                            "sourceId": "67e8d955-26f8-4100-8d11-0ae0da95ea21",
+                            "startLine": 128,
+                            "startColumn": 4,
+                            "endLine": 162,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "ranges": [
+                        {
+                            "propagationId": "1154fd05-1cb9-4fe2-a9d9-5bde887fb6ad",
+                            "sourceId": "1154fd05-1cb9-4fe2-a9d9-5bde887fb6ad",
+                            "startLine": 193,
+                            "startColumn": 4,
+                            "endLine": 207,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "50e68adf-79f6-4c9c-977a-e462d03804f7",
+                            "sourceId": "50e68adf-79f6-4c9c-977a-e462d03804f7",
+                            "startLine": 209,
+                            "startColumn": 4,
+                            "endLine": 220,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "2a12ce13-e0da-437b-968f-80f3f14048c4",
+                            "sourceId": "2a12ce13-e0da-437b-968f-80f3f14048c4",
+                            "startLine": 182,
+                            "startColumn": 4,
+                            "endLine": 191,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "db18960d-44c3-447a-85a5-7d904e024539",
+                    "ranges": [
+                        {
+                            "propagationId": "34c1116d-f214-4047-a666-037147ef1d10",
+                            "sourceId": "34c1116d-f214-4047-a666-037147ef1d10",
+                            "startLine": 61,
+                            "startColumn": 4,
+                            "endLine": 79,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "7fc34279-8e2b-4277-bb2e-b243f4f27d61",
+                            "sourceId": "7fc34279-8e2b-4277-bb2e-b243f4f27d61",
+                            "startLine": 57,
+                            "startColumn": 8,
+                            "endLine": 57,
+                            "endColumn": 84,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "ranges": [
+                        {
+                            "propagationId": "9d322bb2-518d-4911-b29a-ca6394190daa",
+                            "sourceId": "9d322bb2-518d-4911-b29a-ca6394190daa",
+                            "startLine": 202,
+                            "startColumn": 0,
+                            "endLine": 202,
+                            "endColumn": 12,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "4adc403c-feec-4274-a233-f895a8420563",
+                            "sourceId": "9412ec57-163a-4665-83e1-5ec85e8f86e7",
+                            "startLine": 246,
+                            "startColumn": 8,
+                            "endLine": 246,
+                            "endColumn": 61,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        },
+                        {
+                            "propagationId": "7829f3a6-262d-46b3-b377-80d5d324423d",
+                            "sourceId": "89b237fd-84f7-40db-ba3c-e5804141e9ae",
+                            "startLine": 215,
+                            "startColumn": 12,
+                            "endLine": 215,
+                            "endColumn": 92,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        },
+                        {
+                            "propagationId": "c256c21c-11cb-4ac2-b041-66576e1d70a4",
+                            "sourceId": "ff9f0ab1-31d0-47a7-80de-96d3448793af",
+                            "startLine": 170,
+                            "startColumn": 12,
+                            "endLine": 170,
+                            "endColumn": 118,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        },
+                        {
+                            "propagationId": "94086d50-59e5-4687-bf02-f0ad993e1897",
+                            "sourceId": "9d322bb2-518d-4911-b29a-ca6394190daa",
+                            "startLine": 202,
+                            "startColumn": 12,
+                            "endLine": 203,
+                            "endColumn": 0,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "ranges": [
+                        {
+                            "propagationId": "5ce3b5c0-1694-4438-b784-6ecb66deaaee",
+                            "sourceId": "5ce3b5c0-1694-4438-b784-6ecb66deaaee",
+                            "startLine": 203,
+                            "startColumn": 0,
+                            "endLine": 204,
+                            "endColumn": 56,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "0715eeed-a110-4ecd-9ad9-add31cda92eb",
+                            "sourceId": "0715eeed-a110-4ecd-9ad9-add31cda92eb",
+                            "startLine": 234,
+                            "startColumn": 8,
+                            "endLine": 237,
+                            "endColumn": 9,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "f922fc71-e1ff-442a-8190-e043db5c3408",
+                            "sourceId": "5ce3b5c0-1694-4438-b784-6ecb66deaaee",
+                            "startLine": 202,
+                            "startColumn": 12,
+                            "endLine": 203,
+                            "endColumn": 0,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "ranges": [
+                        {
+                            "propagationId": "b1a6e1ec-abe7-40e9-87f6-01492e7a927e",
+                            "sourceId": "774ca46f-fd35-466d-bc12-c57467650feb",
+                            "startLine": 87,
+                            "startColumn": 8,
+                            "endLine": 87,
+                            "endColumn": 95,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/java/devrep/projet/devmed/service/AppointmentService.java",
+            "propagations": [
+                {
+                    "featureKey": "c72ecc86-3bf0-4a97-92ea-a1138ec0a6d8",
+                    "ranges": [
+                        {
+                            "propagationId": "39ed632f-4989-4164-9b52-920b8e046707",
+                            "sourceId": "39ed632f-4989-4164-9b52-920b8e046707",
+                            "startLine": 54,
+                            "startColumn": 4,
+                            "endLine": 57,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "ranges": [
+                        {
+                            "propagationId": "a5a2d546-04f0-4f7c-a512-ec58daa0c76d",
+                            "sourceId": "a5a2d546-04f0-4f7c-a512-ec58daa0c76d",
+                            "startLine": 59,
+                            "startColumn": 4,
+                            "endLine": 63,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "ranges": [
+                        {
+                            "propagationId": "9412ec57-163a-4665-83e1-5ec85e8f86e7",
+                            "sourceId": "9412ec57-163a-4665-83e1-5ec85e8f86e7",
+                            "startLine": 38,
+                            "startColumn": 4,
+                            "endLine": 52,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "89b237fd-84f7-40db-ba3c-e5804141e9ae",
+                            "sourceId": "89b237fd-84f7-40db-ba3c-e5804141e9ae",
+                            "startLine": 65,
+                            "startColumn": 4,
+                            "endLine": 93,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "93c181c2-20b7-4448-a26f-d1299d4d694c",
+                            "sourceId": "93c181c2-20b7-4448-a26f-d1299d4d694c",
+                            "startLine": 95,
+                            "startColumn": 4,
+                            "endLine": 100,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "b1926764-7f9a-448c-8b49-4de674dfa54a",
+                            "sourceId": "b1926764-7f9a-448c-8b49-4de674dfa54a",
+                            "startLine": 138,
+                            "startColumn": 4,
+                            "endLine": 161,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "d472361a-3f47-4c04-b3c5-2179a628b6c0",
+                            "sourceId": "d472361a-3f47-4c04-b3c5-2179a628b6c0",
+                            "startLine": 168,
+                            "startColumn": 4,
+                            "endLine": 171,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "ff9f0ab1-31d0-47a7-80de-96d3448793af",
+                            "sourceId": "b1926764-7f9a-448c-8b49-4de674dfa54a",
+                            "startLine": 175,
+                            "startColumn": 4,
+                            "endLine": 214,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        },
+                        {
+                            "propagationId": "97d052e9-8446-4248-9d9f-34e3f418c7a2",
+                            "sourceId": "d472361a-3f47-4c04-b3c5-2179a628b6c0",
+                            "startLine": 205,
+                            "startColumn": 116,
+                            "endLine": 205,
+                            "endColumn": 131,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/java/devrep/projet/devmed/service/DataService.java",
+            "propagations": [
+                {
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "ranges": [
+                        {
+                            "propagationId": "1244cc6f-0341-462f-91d6-bf987567d335",
+                            "sourceId": "1244cc6f-0341-462f-91d6-bf987567d335",
+                            "startLine": 24,
+                            "startColumn": 4,
+                            "endLine": 41,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "19f93b1a-8a86-4db0-ae18-4673608069d4",
+                            "sourceId": "19f93b1a-8a86-4db0-ae18-4673608069d4",
+                            "startLine": 43,
+                            "startColumn": 4,
+                            "endLine": 64,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
+                    "ranges": [
+                        {
+                            "propagationId": "22c3c306-554b-4b47-97b4-1fc5950a06ec",
+                            "sourceId": "22c3c306-554b-4b47-97b4-1fc5950a06ec",
+                            "startLine": 66,
+                            "startColumn": 4,
+                            "endLine": 99,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "ranges": [
+                        {
+                            "propagationId": "78bc5fa8-363e-4a7e-a6ff-a2ef0fef2d10",
+                            "sourceId": "78bc5fa8-363e-4a7e-a6ff-a2ef0fef2d10",
+                            "startLine": 101,
+                            "startColumn": 4,
+                            "endLine": 104,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/java/devrep/projet/devmed/service/SearchService.java",
+            "propagations": [
+                {
+                    "featureKey": "2bcd7985-4346-4712-afc9-f949f2f18a3d",
+                    "ranges": [
+                        {
+                            "propagationId": "64a25fbc-4b03-4f8d-a57b-e6b1131625d2",
+                            "sourceId": "64a25fbc-4b03-4f8d-a57b-e6b1131625d2",
+                            "startLine": 91,
+                            "startColumn": 8,
+                            "endLine": 91,
+                            "endColumn": 55,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "0d2af70f-7f75-4cb0-ad92-29faf4e2c358",
+                            "sourceId": "0d2af70f-7f75-4cb0-ad92-29faf4e2c358",
+                            "startLine": 32,
+                            "startColumn": 4,
+                            "endLine": 76,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "3f1144a6-1ceb-4df4-80d9-0e47dd654fe4",
+                    "ranges": [
+                        {
+                            "propagationId": "fcbb224c-24d6-4f43-a40a-219691ec69a5",
+                            "sourceId": "fcbb224c-24d6-4f43-a40a-219691ec69a5",
+                            "startLine": 33,
+                            "startColumn": 57,
+                            "endLine": 33,
+                            "endColumn": 71,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "56dabc7c-4730-42c0-a8d7-32fa6a74c362",
+                            "sourceId": "fcbb224c-24d6-4f43-a40a-219691ec69a5",
+                            "startLine": 68,
+                            "startColumn": 105,
+                            "endLine": 68,
+                            "endColumn": 112,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        },
+                        {
+                            "propagationId": "770c5d31-ad90-494f-b46d-a692ccf9ceb5",
+                            "sourceId": "fcbb224c-24d6-4f43-a40a-219691ec69a5",
+                            "startLine": 69,
+                            "startColumn": 113,
+                            "endLine": 69,
+                            "endColumn": 120,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        },
+                        {
+                            "propagationId": "564a2a56-4449-4718-8b60-f2fb7a2babe1",
+                            "sourceId": "fcbb224c-24d6-4f43-a40a-219691ec69a5",
+                            "startLine": 74,
+                            "startColumn": 84,
+                            "endLine": 74,
+                            "endColumn": 91,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        },
+                        {
+                            "propagationId": "b8bfc3a4-ed9a-4832-ac1e-46306515317a",
+                            "sourceId": "b8bfc3a4-ed9a-4832-ac1e-46306515317a",
+                            "startLine": 60,
+                            "startColumn": 10,
+                            "endLine": 75,
+                            "endColumn": 9,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "ffe3d3c1-8fca-400b-8133-2f19bd1b01ab",
+                            "sourceId": "fcbb224c-24d6-4f43-a40a-219691ec69a5",
+                            "startLine": 45,
+                            "startColumn": 8,
+                            "endLine": 45,
+                            "endColumn": 28,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "ranges": [
+                        {
+                            "propagationId": "774ca46f-fd35-466d-bc12-c57467650feb",
+                            "sourceId": "774ca46f-fd35-466d-bc12-c57467650feb",
+                            "startLine": 79,
+                            "startColumn": 4,
+                            "endLine": 86,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "4668347f-0f06-46d8-a046-ede3035cca33",
+                            "sourceId": "774ca46f-fd35-466d-bc12-c57467650feb",
+                            "startLine": 92,
+                            "startColumn": 8,
+                            "endLine": 92,
+                            "endColumn": 58,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/Connexion.html",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "e24d60a7-712d-4e3a-8f61-e3c4841dc171",
+                            "sourceId": "ae5325ec-e0bf-4721-8550-95bfd5550e79",
+                            "startLine": 0,
+                            "startColumn": 0,
+                            "endLine": 69,
+                            "endColumn": 0,
+                            "isValidated": true,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/ProfileInfPerso.html",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "a50c7820-94a1-4b65-ba79-74c0e2442ac2",
+                            "sourceId": "a50c7820-94a1-4b65-ba79-74c0e2442ac2",
+                            "startLine": 66,
+                            "startColumn": 20,
+                            "endLine": 71,
+                            "endColumn": 26,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "deccaf61-4e8c-452c-9a3c-b5aa19b4e2ed",
+                            "sourceId": "deccaf61-4e8c-452c-9a3c-b5aa19b4e2ed",
+                            "startLine": 51,
+                            "startColumn": 28,
+                            "endLine": 54,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "ranges": [
+                        {
+                            "propagationId": "d214002d-861b-415f-8b81-6f5ac8589634",
+                            "sourceId": "d214002d-861b-415f-8b81-6f5ac8589634",
+                            "startLine": 45,
+                            "startColumn": 28,
+                            "endLine": 48,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "ranges": [
+                        {
+                            "propagationId": "4480206e-0179-4ab4-92fa-658bff3eb127",
+                            "sourceId": "4480206e-0179-4ab4-92fa-658bff3eb127",
+                            "startLine": 55,
+                            "startColumn": 28,
+                            "endLine": 62,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "e29e667a-9d1b-4277-8376-4ea23115b0c7",
+                            "sourceId": "e29e667a-9d1b-4277-8376-4ea23115b0c7",
+                            "startLine": 78,
+                            "startColumn": 12,
+                            "endLine": 82,
+                            "endColumn": 17,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "ranges": [
+                        {
+                            "propagationId": "aa8b3b85-643e-44ce-9feb-75cb43934f66",
+                            "sourceId": "aa8b3b85-643e-44ce-9feb-75cb43934f66",
+                            "startLine": 83,
+                            "startColumn": 12,
+                            "endLine": 87,
+                            "endColumn": 17,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
+                    "ranges": [
+                        {
+                            "propagationId": "32cc9ef1-40ac-4353-a374-8552808e7c4f",
+                            "sourceId": "32cc9ef1-40ac-4353-a374-8552808e7c4f",
+                            "startLine": 168,
+                            "startColumn": 8,
+                            "endLine": 168,
+                            "endColumn": 91,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "ranges": [
+                        {
+                            "propagationId": "ceca4fb1-4727-45d8-8568-bf4202f41722",
+                            "sourceId": "ceca4fb1-4727-45d8-8568-bf4202f41722",
+                            "startLine": 169,
+                            "startColumn": 8,
+                            "endLine": 169,
+                            "endColumn": 189,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "ranges": [
+                        {
+                            "propagationId": "fec7543c-1678-469f-a3d7-654dd11ac850",
+                            "sourceId": "fec7543c-1678-469f-a3d7-654dd11ac850",
+                            "startLine": 28,
+                            "startColumn": 24,
+                            "endLine": 28,
+                            "endColumn": 83,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "ranges": [
+                        {
+                            "propagationId": "c1f25af8-57af-4ce9-ae7e-f0e5894865fb",
+                            "sourceId": "c1f25af8-57af-4ce9-ae7e-f0e5894865fb",
+                            "startLine": 37,
+                            "startColumn": 24,
+                            "endLine": 37,
+                            "endColumn": 99,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "ranges": [
+                        {
+                            "propagationId": "d9b96570-fe67-4356-a3bf-13d1879a7dc0",
+                            "sourceId": "d9b96570-fe67-4356-a3bf-13d1879a7dc0",
+                            "startLine": 29,
+                            "startColumn": 24,
+                            "endLine": 36,
+                            "endColumn": 83,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "ranges": [
+                        {
+                            "propagationId": "ccd09a24-3d4f-4cb9-af3c-096aa6cba650",
+                            "sourceId": "ccd09a24-3d4f-4cb9-af3c-096aa6cba650",
+                            "startLine": 22,
+                            "startColumn": 16,
+                            "endLine": 39,
+                            "endColumn": 21,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/ProfileRdv.html",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "e786ba98-6b3d-4687-8f33-2ce7296399cd",
+                            "sourceId": "e786ba98-6b3d-4687-8f33-2ce7296399cd",
+                            "startLine": 52,
+                            "startColumn": 28,
+                            "endLine": 55,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "9eb98efa-3c69-4e82-9d48-07b5c957b43f",
+                            "sourceId": "9eb98efa-3c69-4e82-9d48-07b5c957b43f",
+                            "startLine": 67,
+                            "startColumn": 19,
+                            "endLine": 72,
+                            "endColumn": 26,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "ranges": [
+                        {
+                            "propagationId": "d8d2c210-c998-4255-a3b9-399d29e7731b",
+                            "sourceId": "d8d2c210-c998-4255-a3b9-399d29e7731b",
+                            "startLine": 46,
+                            "startColumn": 28,
+                            "endLine": 49,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "ranges": [
+                        {
+                            "propagationId": "b754dfbb-22c9-445a-9b15-d86f687b6259",
+                            "sourceId": "b754dfbb-22c9-445a-9b15-d86f687b6259",
+                            "startLine": 56,
+                            "startColumn": 28,
+                            "endLine": 63,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "64cf8848-8d64-4eaf-abfc-b2e202d7cd71",
+                            "sourceId": "64cf8848-8d64-4eaf-abfc-b2e202d7cd71",
+                            "startLine": 79,
+                            "startColumn": 12,
+                            "endLine": 83,
+                            "endColumn": 17,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "ranges": [
+                        {
+                            "propagationId": "e235cb65-3ab8-45f5-8c9d-5ad6624fc653",
+                            "sourceId": "e235cb65-3ab8-45f5-8c9d-5ad6624fc653",
+                            "startLine": 84,
+                            "startColumn": 12,
+                            "endLine": 88,
+                            "endColumn": 17,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "7d95134f-99e0-4ac7-84bc-c9a722195be7",
+                            "sourceId": "7d95134f-99e0-4ac7-84bc-c9a722195be7",
+                            "startLine": 91,
+                            "startColumn": 4,
+                            "endLine": 101,
+                            "endColumn": 10,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "ranges": [
+                        {
+                            "propagationId": "c5c7af39-e88f-4b6b-912a-4b58467be3b1",
+                            "sourceId": "c5c7af39-e88f-4b6b-912a-4b58467be3b1",
+                            "startLine": 29,
+                            "startColumn": 24,
+                            "endLine": 29,
+                            "endColumn": 83,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "ranges": [
+                        {
+                            "propagationId": "d016db6a-d92f-4076-b368-59631f0eedfb",
+                            "sourceId": "d016db6a-d92f-4076-b368-59631f0eedfb",
+                            "startLine": 38,
+                            "startColumn": 24,
+                            "endLine": 38,
+                            "endColumn": 99,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "ranges": [
+                        {
+                            "propagationId": "6152ff9f-17e1-4a14-9d8e-62137181a8f3",
+                            "sourceId": "6152ff9f-17e1-4a14-9d8e-62137181a8f3",
+                            "startLine": 30,
+                            "startColumn": 24,
+                            "endLine": 37,
+                            "endColumn": 83,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "ranges": [
+                        {
+                            "propagationId": "47eb2c41-abb7-4b14-aa71-ae35832d6209",
+                            "sourceId": "47eb2c41-abb7-4b14-aa71-ae35832d6209",
+                            "startLine": 23,
+                            "startColumn": 16,
+                            "endLine": 40,
+                            "endColumn": 21,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/PubProfile.html",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "040b924c-3612-4182-80ed-035d8926dfea",
+                            "sourceId": "040b924c-3612-4182-80ed-035d8926dfea",
+                            "startLine": 60,
+                            "startColumn": 28,
+                            "endLine": 63,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "a518ad85-a2bd-4580-b896-424428d8e0fb",
+                            "sourceId": "a518ad85-a2bd-4580-b896-424428d8e0fb",
+                            "startLine": 76,
+                            "startColumn": 24,
+                            "endLine": 79,
+                            "endColumn": 28,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "ranges": [
+                        {
+                            "propagationId": "50b53dd6-359d-4656-a443-e80b7cb423c2",
+                            "sourceId": "50b53dd6-359d-4656-a443-e80b7cb423c2",
+                            "startLine": 54,
+                            "startColumn": 28,
+                            "endLine": 57,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "ranges": [
+                        {
+                            "propagationId": "3f557524-36fa-4f0d-841e-0b6f167be9cf",
+                            "sourceId": "3f557524-36fa-4f0d-841e-0b6f167be9cf",
+                            "startLine": 64,
+                            "startColumn": 28,
+                            "endLine": 71,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+                    "ranges": [
+                        {
+                            "propagationId": "aae7b431-e7e7-4238-bccb-e681b8dbaa5c",
+                            "sourceId": "aae7b431-e7e7-4238-bccb-e681b8dbaa5c",
+                            "startLine": 111,
+                            "startColumn": 8,
+                            "endLine": 134,
+                            "endColumn": 14,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "ranges": [
+                        {
+                            "propagationId": "1539abff-bf3b-49c2-8224-00298bb9e974",
+                            "sourceId": "1539abff-bf3b-49c2-8224-00298bb9e974",
+                            "startLine": 36,
+                            "startColumn": 24,
+                            "endLine": 36,
+                            "endColumn": 83,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "ranges": [
+                        {
+                            "propagationId": "e795e039-c3c1-44fc-ab52-9a567b7a263f",
+                            "sourceId": "e795e039-c3c1-44fc-ab52-9a567b7a263f",
+                            "startLine": 45,
+                            "startColumn": 24,
+                            "endLine": 45,
+                            "endColumn": 99,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "ranges": [
+                        {
+                            "propagationId": "4c724a1e-e35a-4b9e-bcb5-cf5d94186265",
+                            "sourceId": "4c724a1e-e35a-4b9e-bcb5-cf5d94186265",
+                            "startLine": 37,
+                            "startColumn": 24,
+                            "endLine": 44,
+                            "endColumn": 83,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "ranges": [
+                        {
+                            "propagationId": "285dfe02-c0e7-4599-8b62-c04bb866dc44",
+                            "sourceId": "285dfe02-c0e7-4599-8b62-c04bb866dc44",
+                            "startLine": 30,
+                            "startColumn": 16,
+                            "endLine": 48,
+                            "endColumn": 21,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/Home.html",
+            "propagations": [
+                {
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "ranges": [
+                        {
+                            "propagationId": "66fe0b3c-3a01-4294-a85d-2b782e21d464",
+                            "sourceId": "66fe0b3c-3a01-4294-a85d-2b782e21d464",
+                            "startLine": 45,
+                            "startColumn": 24,
+                            "endLine": 45,
+                            "endColumn": 99,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "6f84b82f-3443-4db0-8038-fd8eab3a0e32",
+                            "sourceId": "6f84b82f-3443-4db0-8038-fd8eab3a0e32",
+                            "startLine": 59,
+                            "startColumn": 28,
+                            "endLine": 62,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        },
+                        {
+                            "propagationId": "0d9d091a-7579-42d1-a70e-f4e5011a7a47",
+                            "sourceId": "0d9d091a-7579-42d1-a70e-f4e5011a7a47",
+                            "startLine": 75,
+                            "startColumn": 24,
+                            "endLine": 78,
+                            "endColumn": 28,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "ranges": [
+                        {
+                            "propagationId": "77aa1498-719c-4514-b0e9-84212e311d04",
+                            "sourceId": "77aa1498-719c-4514-b0e9-84212e311d04",
+                            "startLine": 53,
+                            "startColumn": 28,
+                            "endLine": 56,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "ranges": [
+                        {
+                            "propagationId": "28443281-8989-46d7-ba6e-2d6f9af441ed",
+                            "sourceId": "28443281-8989-46d7-ba6e-2d6f9af441ed",
+                            "startLine": 63,
+                            "startColumn": 28,
+                            "endLine": 70,
+                            "endColumn": 32,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "db18960d-44c3-447a-85a5-7d904e024539",
+                    "ranges": [
+                        {
+                            "propagationId": "f2cbcc58-196a-4e96-a11b-9dd820c63e43",
+                            "sourceId": "f2cbcc58-196a-4e96-a11b-9dd820c63e43",
+                            "startLine": 84,
+                            "startColumn": 4,
+                            "endLine": 127,
+                            "endColumn": 10,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "ranges": [
+                        {
+                            "propagationId": "7bf55b12-a404-4751-8769-54a21c884866",
+                            "sourceId": "7bf55b12-a404-4751-8769-54a21c884866",
+                            "startLine": 36,
+                            "startColumn": 24,
+                            "endLine": 36,
+                            "endColumn": 83,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "ranges": [
+                        {
+                            "propagationId": "ff96791c-5297-4882-a193-40f9fc476f7b",
+                            "sourceId": "ff96791c-5297-4882-a193-40f9fc476f7b",
+                            "startLine": 37,
+                            "startColumn": 24,
+                            "endLine": 44,
+                            "endColumn": 83,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+                    "ranges": [
+                        {
+                            "propagationId": "feca622f-3b1e-4e4d-81d4-da432824109b",
+                            "sourceId": "feca622f-3b1e-4e4d-81d4-da432824109b",
+                            "startLine": 35,
+                            "startColumn": 20,
+                            "endLine": 46,
+                            "endColumn": 25,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/InscriptionPro.html",
+            "propagations": [
+                {
+                    "featureKey": "9b714186-fed2-4cee-a103-3b362c9f2ef9",
+                    "ranges": [
+                        {
+                            "propagationId": "366b17c8-ba9d-435d-a34f-bef097befb54",
+                            "sourceId": "366b17c8-ba9d-435d-a34f-bef097befb54",
+                            "startLine": 43,
+                            "startColumn": 20,
+                            "endLine": 58,
+                            "endColumn": 26,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "ranges": [
+                        {
+                            "propagationId": "1a044825-7e54-48fb-8520-0bd90415a981",
+                            "sourceId": "1a044825-7e54-48fb-8520-0bd90415a981",
+                            "startLine": 59,
+                            "startColumn": 20,
+                            "endLine": 59,
+                            "endColumn": 89,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
+                    "ranges": [
+                        {
+                            "propagationId": "f76a6a1a-e489-4d60-b15e-aa1ff9dfe087",
+                            "sourceId": "f76a6a1a-e489-4d60-b15e-aa1ff9dfe087",
+                            "startLine": 47,
+                            "startColumn": 28,
+                            "endLine": 47,
+                            "endColumn": 76,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                },
+                {
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a",
+                    "ranges": [
+                        {
+                            "propagationId": "9b50aa32-b6e3-4300-bf20-323cd6dae726",
+                            "sourceId": "9b50aa32-b6e3-4300-bf20-323cd6dae726",
+                            "startLine": 48,
+                            "startColumn": 28,
+                            "endLine": 55,
+                            "endColumn": 76,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "replacementPropagations": [],
+    "resourcePropagations": [],
+    "pathPropagations": [
+        {
+            "propagationId": "ae5325ec-e0bf-4721-8550-95bfd5550e79",
+            "sourceId": "ae5325ec-e0bf-4721-8550-95bfd5550e79",
+            "propagatedPath": "src/main/resources/templates/Connexion.html",
+            "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+            "isValidated": true,
+            "isFromMarker": true,
+            "contentAnalysis": true
+        },
+        {
+            "propagationId": "c5ab3a6d-2028-402e-989c-c5f0d4cced35",
+            "sourceId": "c5ab3a6d-2028-402e-989c-c5f0d4cced35",
+            "propagatedPath": "src/main/resources/templates/InscriptionUser.html",
+            "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+            "isValidated": true,
+            "isFromMarker": true,
+            "contentAnalysis": false
+        },
+        {
+            "propagationId": "e51a76ab-4725-4070-96f2-2600496edfd8",
+            "sourceId": "e24d60a7-712d-4e3a-8f61-e3c4841dc171",
+            "propagatedPath": "../../../../../..",
+            "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+            "isValidated": true,
+            "isFromMarker": false,
+            "contentAnalysis": false
+        }
+    ]
+}

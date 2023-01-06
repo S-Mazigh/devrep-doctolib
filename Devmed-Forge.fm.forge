@@ -67,7 +67,7 @@
         },
         {
             "key": "dce0e42b-6827-4f7e-8918-a4707e60a759",
-            "name": "Profile",
+            "name": "Profile Privé",
             "type": "Functionality feature",
             "parent": "e376d73c-9994-4f37-adc7-dff200df8bd5",
             "parentRelation": "Normal",
@@ -80,7 +80,7 @@
         },
         {
             "key": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
-            "name": "Suppression",
+            "name": "Suppression De Profile",
             "type": "Functionality feature",
             "parent": "dce0e42b-6827-4f7e-8918-a4707e60a759",
             "parentRelation": "Normal",
@@ -93,7 +93,7 @@
         },
         {
             "key": "2019b9eb-faea-4979-a03a-8685c7351be6",
-            "name": "Modification",
+            "name": "Modification de Profile",
             "type": "Functionality feature",
             "parent": "dce0e42b-6827-4f7e-8918-a4707e60a759",
             "parentRelation": "Normal",
@@ -119,7 +119,7 @@
         },
         {
             "key": "c72ecc86-3bf0-4a97-92ea-a1138ec0a6d8",
-            "name": "Annulation",
+            "name": "Annulation de rendez-vous",
             "type": "Functionality feature",
             "parent": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
             "parentRelation": "Normal",
@@ -131,15 +131,93 @@
             "nodeWeight": -1
         },
         {
-            "key": "4be0b437-f28d-4fd7-9660-5cec9b4adc1e",
-            "name": "Interdire au pro",
+            "key": "db18960d-44c3-447a-85a5-7d904e024539",
+            "name": "Recherche",
             "type": "Functionality feature",
-            "parent": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
+            "parent": "e376d73c-9994-4f37-adc7-dff200df8bd5",
             "parentRelation": "Normal",
             "presence": "Optional",
             "lgFile": "",
             "role": "",
-            "hexColor": "#37ea85",
+            "hexColor": "#2edddb",
+            "help": "",
+            "nodeWeight": -1
+        },
+        {
+            "key": "2bcd7985-4346-4712-afc9-f949f2f18a3d",
+            "name": "Par Nom",
+            "type": "Functionality feature",
+            "parent": "db18960d-44c3-447a-85a5-7d904e024539",
+            "parentRelation": "Normal",
+            "presence": "Optional",
+            "lgFile": "",
+            "role": "",
+            "hexColor": "#d88f9e",
+            "help": "",
+            "nodeWeight": -1
+        },
+        {
+            "key": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
+            "name": "Par Catégorie",
+            "type": "Functionality feature",
+            "parent": "db18960d-44c3-447a-85a5-7d904e024539",
+            "parentRelation": "Normal",
+            "presence": "Optional",
+            "lgFile": "",
+            "role": "",
+            "hexColor": "#979500",
+            "help": "",
+            "nodeWeight": -1
+        },
+        {
+            "key": "3f1144a6-1ceb-4df4-80d9-0e47dd654fe4",
+            "name": "Par ViIle",
+            "type": "Functionality feature",
+            "parent": "db18960d-44c3-447a-85a5-7d904e024539",
+            "parentRelation": "Normal",
+            "presence": "Optional",
+            "lgFile": "",
+            "role": "",
+            "hexColor": "#41f18b",
+            "help": "",
+            "nodeWeight": -1
+        },
+        {
+            "key": "15a815f2-0c76-46a5-b573-02368738bbdd",
+            "name": "Connexion",
+            "type": "Functionality feature",
+            "parent": "e376d73c-9994-4f37-adc7-dff200df8bd5",
+            "parentRelation": "Normal",
+            "presence": "Optional",
+            "lgFile": "",
+            "role": "",
+            "hexColor": "#abdedb",
+            "help": "",
+            "nodeWeight": -1
+        },
+        {
+            "key": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+            "name": "Inscription",
+            "type": "Functionality feature",
+            "parent": "e376d73c-9994-4f37-adc7-dff200df8bd5",
+            "parentRelation": "Normal",
+            "presence": "Optional",
+            "lgFile": "",
+            "role": "",
+            "hexColor": "#71cf2b",
+            "help": "",
+            "nodeWeight": -1
+        },
+        {
+            "key": "c7620969-9ee1-4a93-9c6e-7608fad84d0a",
+            "name": "Thème Vert",
+            "type": "Functionality feature",
+            "parent": "e376d73c-9994-4f37-adc7-dff200df8bd5",
+            "parentRelation": "Normal",
+            "presence": "Optional",
+            "lgFile": "",
+            "role": "",
+            "hexColor": "#184b11",
             "help": "",
             "nodeWeight": -1
         }
@@ -149,5 +227,108 @@
     "smartAppAssetResources": [],
     "colorResources": [],
     "referencedModels": [],
-    "constraints": []
+    "constraints": [
+        {
+            "type": "⇒",
+            "left": {
+                "type": "feature",
+                "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d"
+            },
+            "right": {
+                "type": "feature",
+                "featureKey": "9b714186-fed2-4cee-a103-3b362c9f2ef9"
+            }
+        },
+        {
+            "type": "⇒",
+            "left": {
+                "type": "feature",
+                "featureKey": "3f1144a6-1ceb-4df4-80d9-0e47dd654fe4"
+            },
+            "right": {
+                "type": "feature",
+                "featureKey": "2bcd7985-4346-4712-afc9-f949f2f18a3d"
+            }
+        },
+        {
+            "type": "⇒",
+            "left": {
+                "type": "feature",
+                "featureKey": "c72ecc86-3bf0-4a97-92ea-a1138ec0a6d8"
+            },
+            "right": {
+                "type": "feature",
+                "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f"
+            }
+        },
+        {
+            "type": "⇒",
+            "left": {
+                "type": "feature",
+                "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd"
+            },
+            "right": {
+                "type": "feature",
+                "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759"
+            }
+        },
+        {
+            "type": "⇒",
+            "left": {
+                "type": "feature",
+                "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759"
+            },
+            "right": {
+                "type": "feature",
+                "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd"
+            }
+        },
+        {
+            "type": "⇒",
+            "left": {
+                "type": "feature",
+                "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f"
+            },
+            "right": {
+                "type": "feature",
+                "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759"
+            }
+        },
+        {
+            "type": "⇒",
+            "left": {
+                "type": "feature",
+                "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be"
+            },
+            "right": {
+                "type": "feature",
+                "featureKey": "c72ecc86-3bf0-4a97-92ea-a1138ec0a6d8"
+            }
+        },
+        {
+            "type": "⇒",
+            "left": {
+                "type": "∨",
+                "left": {
+                    "type": "feature",
+                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b"
+                },
+                "right": {
+                    "type": "∨",
+                    "left": {
+                        "type": "feature",
+                        "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a"
+                    },
+                    "right": {
+                        "type": "feature",
+                        "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4"
+                    }
+                }
+            },
+            "right": {
+                "type": "feature",
+                "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d"
+            }
+        }
+    ]
 }

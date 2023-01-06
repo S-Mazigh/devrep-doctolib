@@ -1,5 +1,6 @@
 package devrep.projet.devmed.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -165,13 +166,15 @@ public class WebController {
     public String getAProfile(Model model, @PathVariable(name = "id") Long id) {
         // Le Not found est gére par thymeleaf avec un if.
         Utilisateur theOther = searchService.getById(id);
-        if (!theOther.equals(null)) {
+        if (!theOther.equals(null) && theOther.getAuthority().equals("PRO")) {
             model.addAttribute("theOther", theOther);
             model.addAttribute("disponibilities", rdvService.getDisponibilities(theOther.getMesHoraires(), theOther));
             // to call group we must first call .matches
             // model.addAttribute("dateTimeRegex", Pattern.compile("(?<date>\\w+
             // \\d{2}/\\d{2}/\\d{4}) (?<hour>\\d{2}:\\d{2})")); // group 1 Jour dd/MM/yyyy,
             // group 2 HH:mm
+        } else {
+            return "redirect:/home";
         }
         // System.err.println("MyProfile: "+model.getAttribute("etat"));
         return "PubProfile";
@@ -191,13 +194,13 @@ public class WebController {
     @GetMapping(path = "/profile/infPerso/delete")
     public String delMyProfile(Model model) {
         Etat current = (Etat) model.getAttribute("etat");
-        System.out.println("Suppression Methode");
         if (current != null) {
             if (!current.isConnected())
                 return "redirect:/login";
             // del tous les rdv pris par cette utilisateur ou prévu pour ce pro
-            System.out.println("Suppression Initiée!!!");
-            List<RendezVous> toDelete = rdvService.getRdvByUser(current.getWho());
+            //System.out.println("Suppression Initiée!!!");
+            List<RendezVous> toDelete = new ArrayList<>();
+            toDelete = rdvService.getRdvByUser(current.getWho());
             rdvService.delAllRdv(toDelete);
             dataService.deleteProfile(current.getWho());
         }
@@ -226,12 +229,11 @@ public class WebController {
     @PostMapping(path = "/profile/modify") // à voir si doit séparer patient et pro
     public String modifyProfile(Model model, @ModelAttribute("etat") Etat state,
             @RequestParam Map<String, String> allParams, RedirectAttributes redirect) {
-        Etat current = (Etat) model.getAttribute("etat");
-        if (current != null && !current.isConnected()) {
+        if (state.isConnected()) {
             return "redirect:/login";
         }
         if (allParams.get("delete")!=null && allParams.get("delete").equals("yes")) {
-            redirect.addFlashAttribute(current);
+            redirect.addFlashAttribute(state);
             return "redirect:/profile/infPerso/delete";
         }
         dataService.modifyProfile(state, allParams);

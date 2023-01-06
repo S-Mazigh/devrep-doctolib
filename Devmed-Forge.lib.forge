@@ -1,0 +1,9 @@
+{
+    "replacements": [
+        {
+            "id": "-Without-Rendez-Vous",
+            "content": "List<RendezVous> toDelete = new ArrayList<>();",
+            "editorExtension": ".java"
+        }
+    ]
+}
