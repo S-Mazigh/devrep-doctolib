@@ -192,29 +192,23 @@ public class WebController {
     }
 
     @GetMapping(path = "/profile/infPerso/delete")
-    public String delMyProfile(Model model) {
-        Etat current = (Etat) model.getAttribute("etat");
-        if (current != null) {
-            if (!current.isConnected())
-                return "redirect:/login";
-            // del tous les rdv pris par cette utilisateur ou prévu pour ce pro
-            //System.out.println("Suppression Initiée!!!");
-            List<RendezVous> toDelete = new ArrayList<>();
-            toDelete = rdvService.getRdvByUser(current.getWho());
-            rdvService.delAllRdv(toDelete);
-            dataService.deleteProfile(current.getWho());
-        }
+    public String delMyProfile(Model model, @ModelAttribute("etat") Etat state) {
+        if (!state.isConnected())
+            return "redirect:/login";
+        // del tous les rdv pris par cette utilisateur ou prévu pour ce pro
+        // System.out.println("Suppression Initiée!!!");
+        List<RendezVous> toDelete = new ArrayList<>();
+        toDelete = rdvService.getRdvByUser(state.getWho());
+        rdvService.delAllRdv(toDelete);
+        dataService.deleteProfile(state.getWho());
         return "redirect:/logout-all";
     }
 
     @GetMapping(path = "/profile/rdv")
-    public String getMyRdv(Model model) {
-        Etat current = (Etat) model.getAttribute("etat");
-        if (current != null) {
-            if (!current.isConnected())
-                return "redirect:/login";
-            model.addAttribute("rdv", rdvService.getRdv(current.isPro(), current.getWho()));
-        }
+    public String getMyRdv(Model model, @ModelAttribute("etat") Etat state) {
+        if (!state.isConnected())
+            return "redirect:/login";
+        model.addAttribute("rdv", rdvService.getRdv(state.isPro(), state.getWho()));
 
         // System.err.println("MyProfile: "+model.getAttribute("etat"));
         return "ProfileRdv";
@@ -232,7 +226,7 @@ public class WebController {
         if (state.isConnected()) {
             return "redirect:/login";
         }
-        if (allParams.get("delete")!=null && allParams.get("delete").equals("yes")) {
+        if (allParams.get("delete") != null && allParams.get("delete").equals("yes")) {
             redirect.addFlashAttribute(state);
             return "redirect:/profile/infPerso/delete";
         }
@@ -241,7 +235,8 @@ public class WebController {
     }
 
     @PostMapping(path = "/appointment/take")
-    public String takeRdv(Model model, @RequestParam("pro") Long pro, @RequestParam("dateRdv") String date, @ModelAttribute("etat") Etat state) {
+    public String takeRdv(Model model, @RequestParam("pro") Long pro, @RequestParam("dateRdv") String date,
+            @ModelAttribute("etat") Etat state) {
         if (!state.isConnected())
             return "redirect:/login";
         rdvService.addRdv(state.getWho().getId(), pro, date);
