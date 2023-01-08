@@ -1194,6 +1194,136 @@
                     ]
                 }
             ]
+        },
+        {
+            "file": "src/main/java/devrep/projet/devmed/security/ApplicationSecurityConfiguration.java",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                            "sourceId": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                            "startLine": 48,
+                            "startColumn": 4,
+                            "endLine": 85,
+                            "endColumn": 5,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "../../../../../../../spring-security-web-5.7.4.jar/org.springframework.security.web.authentication.preauth/AbstractPreAuthenticatedProcessingFilter.class",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "f53436a5-a7d1-4780-b2f8-d59d649210b8",
+                            "sourceId": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                            "startLine": 221,
+                            "startColumn": 37,
+                            "endLine": 221,
+                            "endColumn": 91,
+                            "isValidated": false,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "../../../../../../../spring-security-web-5.7.4.jar/org.springframework.security.web.authentication.rememberme/RememberMeAuthenticationFilter.class",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "a5f696ac-603a-47dc-9ba4-4c745580d869",
+                            "sourceId": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                            "startLine": 126,
+                            "startColumn": 25,
+                            "endLine": 126,
+                            "endColumn": 83,
+                            "isValidated": false,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "../../../../../../../spring-security-web-5.7.4.jar/org.springframework.security.web.authentication.switchuser/SwitchUserFilter.class",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "87da0863-a0f7-4d31-8c5a-1f4e18ebf5c1",
+                            "sourceId": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                            "startLine": 182,
+                            "startColumn": 24,
+                            "endLine": 182,
+                            "endColumn": 78,
+                            "isValidated": false,
+                            "isFromMarker": false
+                        },
+                        {
+                            "propagationId": "ac20587e-9b7d-468b-9880-182d0e3a6dda",
+                            "sourceId": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                            "startLine": 199,
+                            "startColumn": 23,
+                            "endLine": 199,
+                            "endColumn": 79,
+                            "isValidated": false,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "../../../../../../../spring-security-web-5.7.4.jar/org.springframework.security.web.authentication/AbstractAuthenticationProcessingFilter.class",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "2ef0054f-bfbd-4f38-bb92-aa144e505ee4",
+                            "sourceId": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                            "startLine": 328,
+                            "startColumn": 22,
+                            "endLine": 328,
+                            "endColumn": 76,
+                            "isValidated": false,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "../../../../../../../spring-security-web-5.7.4.jar/org.springframework.security.web.authentication/AuthenticationSuccessHandler.class",
+            "propagations": [
+                {
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "ranges": [
+                        {
+                            "propagationId": "2fa214c0-2ea1-4144-a737-eeb025ceb67a",
+                            "sourceId": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                            "startLine": 54,
+                            "startColumn": 2,
+                            "endLine": 54,
+                            "endColumn": 60,
+                            "isValidated": false,
+                            "isFromMarker": false
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "replacementPropagations": [],

@@ -774,6 +774,21 @@
                     "isValidated": true
                 }
             ]
+        },
+        {
+            "file": "src/main/java/devrep/projet/devmed/security/ApplicationSecurityConfiguration.java",
+            "seeds": [
+                {
+                    "id": "1fb85baa-9f17-4142-ba31-e032acac7d43",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "endLine": 85,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
         }
     ],
     "fileSeeds": [
