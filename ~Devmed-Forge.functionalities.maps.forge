@@ -242,16 +242,6 @@
                     "endColumn": 9,
                     "type": "Deletion",
                     "isValidated": true
-                },
-                {
-                    "id": "ee89f150-d240-4a86-a018-4c05155de821",
-                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
-                    "startLine": 232,
-                    "startColumn": 8,
-                    "endLine": 232,
-                    "endColumn": 52,
-                    "type": "Deletion",
-                    "isValidated": true
                 }
             ]
         },
@@ -274,16 +264,6 @@
                     "startLine": 43,
                     "startColumn": 4,
                     "endLine": 64,
-                    "endColumn": 5,
-                    "type": "Deletion",
-                    "isValidated": true
-                },
-                {
-                    "id": "22c3c306-554b-4b47-97b4-1fc5950a06ec",
-                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
-                    "startLine": 66,
-                    "startColumn": 4,
-                    "endLine": 99,
                     "endColumn": 5,
                     "type": "Deletion",
                     "isValidated": true
@@ -400,16 +380,6 @@
                     "startColumn": 12,
                     "endLine": 87,
                     "endColumn": 17,
-                    "type": "Deletion",
-                    "isValidated": true
-                },
-                {
-                    "id": "32cc9ef1-40ac-4353-a374-8552808e7c4f",
-                    "featureKey": "2019b9eb-faea-4979-a03a-8685c7351be6",
-                    "startLine": 168,
-                    "startColumn": 8,
-                    "endLine": 168,
-                    "endColumn": 91,
                     "type": "Deletion",
                     "isValidated": true
                 },

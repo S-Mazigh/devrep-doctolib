@@ -31,8 +31,8 @@
             "name": "Géneraliste",
             "type": "Functionality feature",
             "parent": "9b714186-fed2-4cee-a103-3b362c9f2ef9",
-            "parentRelation": "Normal",
-            "presence": "Optional",
+            "parentRelation": "Or",
+            "presence": "Normal",
             "lgFile": "",
             "role": "",
             "hexColor": "#3db296",
@@ -44,8 +44,8 @@
             "name": "Spécialistes",
             "type": "Functionality feature",
             "parent": "9b714186-fed2-4cee-a103-3b362c9f2ef9",
-            "parentRelation": "Normal",
-            "presence": "Optional",
+            "parentRelation": "Or",
+            "presence": "Normal",
             "lgFile": "",
             "role": "",
             "hexColor": "#9fb8ca",
@@ -57,8 +57,8 @@
             "name": "Infirmiers(es)",
             "type": "Functionality feature",
             "parent": "9b714186-fed2-4cee-a103-3b362c9f2ef9",
-            "parentRelation": "Normal",
-            "presence": "Optional",
+            "parentRelation": "Or",
+            "presence": "Normal",
             "lgFile": "",
             "role": "",
             "hexColor": "#7eba8b",
@@ -88,19 +88,6 @@
             "lgFile": "",
             "role": "",
             "hexColor": "#f5611b",
-            "help": "",
-            "nodeWeight": -1
-        },
-        {
-            "key": "2019b9eb-faea-4979-a03a-8685c7351be6",
-            "name": "Modification de Profile",
-            "type": "Functionality feature",
-            "parent": "dce0e42b-6827-4f7e-8918-a4707e60a759",
-            "parentRelation": "Normal",
-            "presence": "Optional",
-            "lgFile": "",
-            "role": "",
-            "hexColor": "#72f1eb",
             "help": "",
             "nodeWeight": -1
         },
@@ -136,7 +123,7 @@
             "type": "Functionality feature",
             "parent": "e376d73c-9994-4f37-adc7-dff200df8bd5",
             "parentRelation": "Normal",
-            "presence": "Optional",
+            "presence": "Mandatory",
             "lgFile": "",
             "role": "",
             "hexColor": "#2edddb",
@@ -162,7 +149,7 @@
             "type": "Functionality feature",
             "parent": "db18960d-44c3-447a-85a5-7d904e024539",
             "parentRelation": "Normal",
-            "presence": "Optional",
+            "presence": "Mandatory",
             "lgFile": "",
             "role": "",
             "hexColor": "#979500",
@@ -228,17 +215,6 @@
     "colorResources": [],
     "referencedModels": [],
     "constraints": [
-        {
-            "type": "⇒",
-            "left": {
-                "type": "feature",
-                "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d"
-            },
-            "right": {
-                "type": "feature",
-                "featureKey": "9b714186-fed2-4cee-a103-3b362c9f2ef9"
-            }
-        },
         {
             "type": "⇒",
             "left": {
@@ -311,13 +287,13 @@
                 "type": "∨",
                 "left": {
                     "type": "feature",
-                    "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b"
+                    "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a"
                 },
                 "right": {
                     "type": "∨",
                     "left": {
                         "type": "feature",
-                        "featureKey": "a88e5ada-a8f6-4666-a236-091ece04d97a"
+                        "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b"
                     },
                     "right": {
                         "type": "feature",
