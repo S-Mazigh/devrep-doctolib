@@ -1,4 +1,50 @@
 {
-    "rangeSeeds": [],
-    "fileSeeds": []
+    "rangeSeeds": [
+        {
+            "file": "src/main/resources/templates/Home.html",
+            "seeds": [
+                {
+                    "id": "14711649-bfab-40a9-85b2-95dd118a88b8",
+                    "featureKey": "c7620969-9ee1-4a93-9c6e-7608fad84d0a",
+                    "startLine": 8,
+                    "startColumn": 33,
+                    "endLine": 8,
+                    "endColumn": 51,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/Connexion.html",
+            "seeds": [
+                {
+                    "id": "846d90e7-b298-4ac2-8696-7b074aa2cc4f",
+                    "featureKey": "d25ca054-84ea-436d-8a27-32b2c2a22bd9",
+                    "startLine": 9,
+                    "startColumn": 33,
+                    "endLine": 9,
+                    "endColumn": 50,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        }
+    ],
+    "fileSeeds": [
+        {
+            "id": "5add4d19-3e5a-44a5-8830-9cb726d6e0d0",
+            "file": "src/main/resources/static/css/styleLog.css",
+            "featureKey": "d25ca054-84ea-436d-8a27-32b2c2a22bd9",
+            "isValidated": true,
+            "contentAnalysis": false
+        },
+        {
+            "id": "99ec027c-cd37-4966-b914-b46ca23386b0",
+            "file": "src/main/resources/static/css/stylePage.css",
+            "featureKey": "c7620969-9ee1-4a93-9c6e-7608fad84d0a",
+            "isValidated": true,
+            "contentAnalysis": false
+        }
+    ]
 }

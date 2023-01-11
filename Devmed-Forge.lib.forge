@@ -4,6 +4,16 @@
             "id": "-Without-Rendez-Vous",
             "content": "List<RendezVous> toDelete = new ArrayList<>();",
             "editorExtension": ".java"
+        },
+        {
+            "id": "-Without-Connexion",
+            "content": "http.authorizeRequests().anyRequest().permitAll().and().formLogin().loginPage(\"/login\"); http.cors().and().csrf().disable();",
+            "editorExtension": ".java"
+        },
+        {
+            "id": "-Without-Recherche",
+            "content": "model.addAttribute(\"listePro\",searchService.getProByDomaine(\"Generaliste\", \"\"));",
+            "editorExtension": ".java"
         }
     ]
 }

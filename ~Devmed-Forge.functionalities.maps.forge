@@ -25,7 +25,7 @@
                 },
                 {
                     "id": "a5a2d546-04f0-4f7c-a512-ec58daa0c76d",
-                    "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
+                    "featureKey": "3767ea36-0d70-4efa-ba8f-1cb5d77af47f",
                     "startLine": 59,
                     "startColumn": 4,
                     "endLine": 63,
@@ -109,16 +109,6 @@
                     "isValidated": true
                 },
                 {
-                    "id": "774ca46f-fd35-466d-bc12-c57467650feb",
-                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
-                    "startLine": 79,
-                    "startColumn": 4,
-                    "endLine": 86,
-                    "endColumn": 5,
-                    "type": "Deletion",
-                    "isValidated": true
-                },
-                {
                     "id": "64a25fbc-4b03-4f8d-a57b-e6b1131625d2",
                     "featureKey": "2bcd7985-4346-4712-afc9-f949f2f18a3d",
                     "startLine": 91,
@@ -140,25 +130,16 @@
                     "startColumn": 8,
                     "endLine": 57,
                     "endColumn": 84,
-                    "type": "Deletion",
+                    "type": "Replacement",
+                    "libraryId": "-Without-Recherche",
                     "isValidated": true
                 },
                 {
-                    "id": "34c1116d-f214-4047-a666-037147ef1d10",
+                    "id": "5f3ac9a5-9b84-4f74-9c61-9098726ee240",
                     "featureKey": "db18960d-44c3-447a-85a5-7d904e024539",
-                    "startLine": 61,
+                    "startLine": 66,
                     "startColumn": 4,
                     "endLine": 79,
-                    "endColumn": 5,
-                    "type": "Deletion",
-                    "isValidated": true
-                },
-                {
-                    "id": "a243326e-ff0c-4789-aff2-4402eced5fc2",
-                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
-                    "startLine": 81,
-                    "startColumn": 4,
-                    "endLine": 92,
                     "endColumn": 5,
                     "type": "Deletion",
                     "isValidated": true
@@ -214,12 +195,12 @@
                     "isValidated": true
                 },
                 {
-                    "id": "5ce3b5c0-1694-4438-b784-6ecb66deaaee",
+                    "id": "06e31ff7-8005-4731-9a03-029ad135b3c2",
                     "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
                     "startLine": 202,
-                    "startColumn": 12,
+                    "startColumn": 8,
                     "endLine": 202,
-                    "endColumn": 53,
+                    "endColumn": 50,
                     "type": "Deletion",
                     "isValidated": true
                 },
@@ -229,6 +210,16 @@
                     "startLine": 206,
                     "startColumn": 4,
                     "endLine": 214,
+                    "endColumn": 5,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "25b6b61b-62bf-4237-9688-b82b3a7f3b50",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 222,
+                    "startColumn": 4,
+                    "endLine": 234,
                     "endColumn": 5,
                     "type": "Deletion",
                     "isValidated": true
@@ -283,16 +274,6 @@
         {
             "file": "src/main/resources/templates/ProfileInfPerso.html",
             "seeds": [
-                {
-                    "id": "ccd09a24-3d4f-4cb9-af3c-096aa6cba650",
-                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
-                    "startLine": 22,
-                    "startColumn": 16,
-                    "endLine": 39,
-                    "endColumn": 21,
-                    "type": "Deletion",
-                    "isValidated": true
-                },
                 {
                     "id": "fec7543c-1678-469f-a3d7-654dd11ac850",
                     "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
@@ -384,6 +365,16 @@
                     "isValidated": true
                 },
                 {
+                    "id": "2c3d0f39-0b24-449e-9e40-a2d2b77239c8",
+                    "featureKey": "dce0e42b-6827-4f7e-8918-a4707e60a759",
+                    "startLine": 90,
+                    "startColumn": 4,
+                    "endLine": 170,
+                    "endColumn": 11,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
                     "id": "ceca4fb1-4727-45d8-8568-bf4202f41722",
                     "featureKey": "42e1c2cf-acd0-4ca9-886a-975ef9a6e2be",
                     "startLine": 169,
@@ -398,16 +389,6 @@
         {
             "file": "src/main/resources/templates/ProfileRdv.html",
             "seeds": [
-                {
-                    "id": "47eb2c41-abb7-4b14-aa71-ae35832d6209",
-                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
-                    "startLine": 23,
-                    "startColumn": 16,
-                    "endLine": 40,
-                    "endColumn": 21,
-                    "type": "Deletion",
-                    "isValidated": true
-                },
                 {
                     "id": "c5c7af39-e88f-4b6b-912a-4b58467be3b1",
                     "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
@@ -514,16 +495,6 @@
             "file": "src/main/resources/templates/PubProfile.html",
             "seeds": [
                 {
-                    "id": "285dfe02-c0e7-4599-8b62-c04bb866dc44",
-                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
-                    "startLine": 30,
-                    "startColumn": 16,
-                    "endLine": 48,
-                    "endColumn": 21,
-                    "type": "Deletion",
-                    "isValidated": true
-                },
-                {
                     "id": "1539abff-bf3b-49c2-8224-00298bb9e974",
                     "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
                     "startLine": 36,
@@ -609,16 +580,6 @@
             "file": "src/main/resources/templates/Home.html",
             "seeds": [
                 {
-                    "id": "feca622f-3b1e-4e4d-81d4-da432824109b",
-                    "featureKey": "bb7f7c56-821a-4cb9-8270-a7d17665e81d",
-                    "startLine": 35,
-                    "startColumn": 20,
-                    "endLine": 46,
-                    "endColumn": 25,
-                    "type": "Deletion",
-                    "isValidated": true
-                },
-                {
                     "id": "7bf55b12-a404-4751-8769-54a21c884866",
                     "featureKey": "b526e65f-f611-4bc0-b8db-ec91d2547d8b",
                     "startLine": 36,
@@ -691,10 +652,30 @@
                 {
                     "id": "f2cbcc58-196a-4e96-a11b-9dd820c63e43",
                     "featureKey": "db18960d-44c3-447a-85a5-7d904e024539",
-                    "startLine": 84,
-                    "startColumn": 4,
-                    "endLine": 127,
+                    "startLine": 86,
+                    "startColumn": 12,
+                    "endLine": 103,
                     "endColumn": 10,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "8faa5edc-ba34-498c-a7da-22af77628841",
+                    "featureKey": "2bcd7985-4346-4712-afc9-f949f2f18a3d",
+                    "startLine": 91,
+                    "startColumn": 20,
+                    "endLine": 93,
+                    "endColumn": 35,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "798240c0-ee21-4606-aaa9-b75ae36598b5",
+                    "featureKey": "3f1144a6-1ceb-4df4-80d9-0e47dd654fe4",
+                    "startLine": 94,
+                    "startColumn": 20,
+                    "endLine": 95,
+                    "endColumn": 105,
                     "type": "Deletion",
                     "isValidated": true
                 }
@@ -704,10 +685,10 @@
             "file": "src/main/resources/templates/InscriptionPro.html",
             "seeds": [
                 {
-                    "id": "366b17c8-ba9d-435d-a34f-bef097befb54",
+                    "id": "316c4b6f-1008-4a0c-b06f-e93d08f2dd98",
                     "featureKey": "9b714186-fed2-4cee-a103-3b362c9f2ef9",
                     "startLine": 43,
-                    "startColumn": 20,
+                    "startColumn": 19,
                     "endLine": 58,
                     "endColumn": 26,
                     "type": "Deletion",
@@ -734,12 +715,32 @@
                     "isValidated": true
                 },
                 {
+                    "id": "538f6556-b563-44bc-9b30-80f865550266",
+                    "featureKey": "5fff45dc-2282-4669-8373-8fa511a10ba4",
+                    "startLine": 56,
+                    "startColumn": 28,
+                    "endLine": 56,
+                    "endColumn": 92,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
                     "id": "1a044825-7e54-48fb-8520-0bd90415a981",
                     "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
                     "startLine": 59,
                     "startColumn": 20,
                     "endLine": 59,
                     "endColumn": 89,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "d28bd13b-967e-451d-a23d-ab1a389c7511",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 61,
+                    "startColumn": 16,
+                    "endLine": 63,
+                    "endColumn": 22,
                     "type": "Deletion",
                     "isValidated": true
                 }
@@ -751,24 +752,47 @@
                 {
                     "id": "1fb85baa-9f17-4142-ba31-e032acac7d43",
                     "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
-                    "startLine": 48,
-                    "startColumn": 4,
-                    "endLine": 85,
-                    "endColumn": 5,
+                    "startLine": 50,
+                    "startColumn": 8,
+                    "endLine": 78,
+                    "endColumn": 43,
+                    "type": "Replacement",
+                    "libraryId": "-Without-Connexion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/Connexion.html",
+            "seeds": [
+                {
+                    "id": "b957187d-603d-4319-af37-261dd25aa74b",
+                    "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
+                    "startLine": 25,
+                    "startColumn": 8,
+                    "endLine": 61,
+                    "endColumn": 15,
+                    "type": "Deletion",
+                    "isValidated": true
+                },
+                {
+                    "id": "bdfcbf29-e754-4235-a6f7-355c3b33c84d",
+                    "featureKey": "211a15d0-ab16-4977-aa8c-8d658659bfd5",
+                    "startLine": 62,
+                    "startColumn": 8,
+                    "endLine": 64,
+                    "endColumn": 14,
                     "type": "Deletion",
                     "isValidated": true
                 }
             ]
+        },
+        {
+            "file": "src/main/resources/templates/InscriptionUser.html",
+            "seeds": []
         }
     ],
     "fileSeeds": [
-        {
-            "id": "ae5325ec-e0bf-4721-8550-95bfd5550e79",
-            "file": "src/main/resources/templates/Connexion.html",
-            "featureKey": "15a815f2-0c76-46a5-b573-02368738bbdd",
-            "isValidated": true,
-            "contentAnalysis": true
-        },
         {
             "id": "c5ab3a6d-2028-402e-989c-c5f0d4cced35",
             "file": "src/main/resources/templates/InscriptionUser.html",

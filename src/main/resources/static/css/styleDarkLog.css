@@ -8,19 +8,21 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: black;
 }
 
 .homelogo {
     font-family: 'Pacifico', cursive;
     font-size: 50px;
     text-decoration: none;
-    color: black;
+    color: whitesmoke;
 }
 
 /* Login Card */
 .alert {
-    background-color: darkred;
+    background-color: rgb(255, 72, 72);
     color: azure;
+    border-radius: 5px;
     text-decoration: solid;
     text-align: center;
     white-space: pre-wrap;
@@ -32,7 +34,7 @@ body {
 }
 .login-card {
     width: 450px;
-    background: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .2);
     padding: 2rem;
     border-radius: 10px;
     position: relative;
@@ -43,12 +45,13 @@ body {
 .login-card-logo,
 .login-card-header,
 .login-card-footer {
+    color: white;
     text-align: center;
 }
 
 .login-card a {
     text-decoration: none;
-    color: #35339a;
+    color: #6f6cff;
 }
 
 .login-card a:hover {
@@ -124,23 +127,24 @@ body {
     padding: 1rem 1.5rem;
     padding-left: calc(1rem * 3.5);
     border-radius: 100px;
-    width: 100%;
+    width: 82%;
     transition: background .5s;
 }
 
 .login-card input:focus {
-    background: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    color:rgba(255, 255, 255, .9);
 }
 
 .login-card input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    accent-color: black;
+    accent-color: whitesmoke;
 }
 
 .login-card button {
-    background: black;
-    color: white;
+    background: whitesmoke;
+    color: black;
     padding: 1rem;
     border-radius: 100px;
     text-align: center;
@@ -154,22 +158,23 @@ body {
     margin-left: 20px;
     padding: 1em 1em;
     padding-left: 2em;
-    border: 2px solid azure;
+    border: 2px solid black;
     background-color: transparent;
     transition: 1s;
-    /*color: azure;*/
+    /*color: black;*/
 }
 
 .login-card select:hover, .login-card select:focus {
-    background-color: rgba(17, 17, 17, 0.1);
-    color:rgba(0, 0, 0, .5);
-    /*color: azure;*/
+    background-color: rgba(255, 255, 255, 0.1);
+    color:rgba(255, 255, 255, .9);
+    /*color: black;*/
 }
 
 .login-card button:hover {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
     cursor: pointer;
 }
 /* ---------- */
+
 
 
