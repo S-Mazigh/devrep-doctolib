@@ -11,7 +11,13 @@
         "2bcd7985-4346-4712-afc9-f949f2f18a3d",
         "3f1144a6-1ceb-4df4-80d9-0e47dd654fe4"
     ],
-    "fileResourceConfiguration": [],
+    "fileResourceConfiguration": [
+        {
+            "key": "d25ca054-84ea-436d-8a27-32b2c2a22bd9",
+            "value": "src/main/resources/static/css",
+            "fileName": "styleDarkLog.css"
+        }
+    ],
     "textResourceConfiguration": [],
     "assetResourceConfiguration": [],
     "colorResourceConfiguration": []

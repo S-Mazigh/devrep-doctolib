@@ -29,6 +29,36 @@
                     "isValidated": true
                 }
             ]
+        },
+        {
+            "file": "src/main/resources/templates/InscriptionPro.html",
+            "seeds": [
+                {
+                    "id": "2efc9e0c-6829-478f-8720-16abb68e765c",
+                    "featureKey": "d25ca054-84ea-436d-8a27-32b2c2a22bd9",
+                    "startLine": 6,
+                    "startColumn": 37,
+                    "endLine": 6,
+                    "endColumn": 54,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/InscriptionUser.html",
+            "seeds": [
+                {
+                    "id": "85ef0532-d732-46d0-a12c-a3dad36acd47",
+                    "featureKey": "d25ca054-84ea-436d-8a27-32b2c2a22bd9",
+                    "startLine": 6,
+                    "startColumn": 37,
+                    "endLine": 6,
+                    "endColumn": 54,
+                    "type": "Deletion",
+                    "isValidated": true
+                }
+            ]
         }
     ],
     "fileSeeds": [

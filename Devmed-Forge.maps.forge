@@ -1205,6 +1205,46 @@
                     ]
                 }
             ]
+        },
+        {
+            "file": "src/main/resources/templates/InscriptionPro.html",
+            "propagations": [
+                {
+                    "featureKey": "d25ca054-84ea-436d-8a27-32b2c2a22bd9",
+                    "ranges": [
+                        {
+                            "propagationId": "2efc9e0c-6829-478f-8720-16abb68e765c",
+                            "sourceId": "2efc9e0c-6829-478f-8720-16abb68e765c",
+                            "startLine": 6,
+                            "startColumn": 37,
+                            "endLine": 6,
+                            "endColumn": 54,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "src/main/resources/templates/InscriptionUser.html",
+            "propagations": [
+                {
+                    "featureKey": "d25ca054-84ea-436d-8a27-32b2c2a22bd9",
+                    "ranges": [
+                        {
+                            "propagationId": "85ef0532-d732-46d0-a12c-a3dad36acd47",
+                            "sourceId": "85ef0532-d732-46d0-a12c-a3dad36acd47",
+                            "startLine": 6,
+                            "startColumn": 37,
+                            "endLine": 6,
+                            "endColumn": 54,
+                            "isValidated": true,
+                            "isFromMarker": true
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "pathPropagations": [

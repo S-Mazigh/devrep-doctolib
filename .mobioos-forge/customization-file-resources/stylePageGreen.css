@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #048B9A;
+  background-color: #049a0c;
 }
 
 /* header bar style */
@@ -18,7 +18,7 @@ body {
 nav {
   display: flex;
   width: 100%;
-  background-color: #333;
+  background-color: rgb(3, 12, 0);;
   flex-direction: row;
 }
 
@@ -30,11 +30,11 @@ nav div ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  background-color: #333;
+  background-color: rgb(3, 12, 0);
 }
 
 nav div ul li{
-  background-color: #333;
+  background-color: rgb(3, 12, 0);
   float: left;
   text-align: center;
   position: relative;
@@ -59,7 +59,7 @@ nav a:hover{
 
 .sous {
   display: none;
-  background-color: #333;
+  background-color: rgb(3, 12, 0);;
   position: absolute;
   width: 100%;
   z-index: 1000;
@@ -89,7 +89,7 @@ nav > div ul li:hover .sous{
 
 .searchCont {
   display: flex;
-  background-color: #048B9A;
+  background-color: #049a0c;
   color: white;
   height: 300px;
   width: 100%;
@@ -124,21 +124,21 @@ nav > div ul li:hover .sous{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #333;
+  color: rgb(3, 12, 0);;
 }
 
 .form-item input[type=text] {
   font-family: 'Poppins', sans-serif;
   font-size: 100%;
   font-weight: 500;
-  color: #333;
+  color: rgb(3, 12, 0);;
   outline: none;
   border: 0;
   border-radius: 5px;
 }
 
 .form-item input[type=text]::placeholder {
-  color: #333;
+  color: rgb(3, 12, 0);;
   opacity: 1;
 }
 
